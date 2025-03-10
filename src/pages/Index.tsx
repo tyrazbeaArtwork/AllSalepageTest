@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProblemStatement from '@/components/ProblemStatement';
 import HowItWorks from '@/components/HowItWorks';
+import ProductShowcase from '@/components/ProductShowcase';
 import Testimonials from '@/components/Testimonials';
 import { motion } from 'framer-motion';
 import { HandHelping, ArrowRight } from 'lucide-react';
@@ -42,6 +43,7 @@ const Index = () => {
         <Hero />
         <ProblemStatement />
         <HowItWorks />
+        <ProductShowcase />
         <Testimonials />
         
         <section className="py-16 overflow-hidden bg-gradient-to-b from-white to-gray-50" id="cta">
@@ -56,9 +58,9 @@ const Index = () => {
               <div className="relative bg-white p-8 md:p-12 rounded-3xl shadow-md border border-gray-100 overflow-hidden">
                 {/* Background image with overlay */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-20" 
+                  className="absolute inset-0 bg-cover bg-center opacity-15" 
                   style={{ 
-                    backgroundImage: "url('/lovable-uploads/52c24ea1-70c6-454b-b141-c120be9178da.png')",
+                    backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80')",
                     backgroundSize: "cover"
                   }}
                 >
