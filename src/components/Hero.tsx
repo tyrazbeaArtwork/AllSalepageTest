@@ -62,11 +62,12 @@ const Hero = () => {
           {/* Glass Card - Product Screenshot */}
           <div className="relative max-w-5xl mx-auto glass p-1 mb-12">
             <div className="w-full aspect-[16/9] bg-convrt-dark-blue rounded-xl overflow-hidden relative">
-              <img 
-                src="/lovable-uploads/8324ce9d-a25b-4480-beb0-990b38071d97.png" 
-                alt="Convrt AI Platform" 
-                className="w-full h-full object-contain"
-              />
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-convrt-dark-blue to-convrt-dark-blue/80">
+                <div className="text-white text-xl font-medium p-6 text-center">
+                  <span className="block mb-4 text-convrt-cyan">Convrt.ai Platform</span>
+                  The only platform that puts you exactly where your buyers make decisions
+                </div>
+              </div>
             </div>
           </div>
           
