@@ -32,7 +32,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-28 pb-32 overflow-hidden bg-[#F9F6F3]">
+    <section className="relative min-h-screen pt-20 pb-32 overflow-hidden bg-[#F9F6F3]">
       <AnimatedBackground />
       
       <div className="container-section relative z-10">
@@ -54,7 +54,7 @@ const Hero = () => {
             variants={itemVariants}
             className="font-inter font-bold text-4xl md:text-5xl lg:text-7xl tracking-tight max-w-4xl mx-auto mb-6 text-convrt-dark-blue leading-[1.1]"
           >
-            From <span className="text-[#6936F5] font-extrabold">Ignored</span> to <span className="text-[#6936F5] font-extrabold">Influential</span>
+            From <span className="text-[#EA384C] font-extrabold">Ignored</span> to <span className="text-[#6936F5] font-extrabold">Influential</span>
           </motion.h1>
           
           <motion.p 

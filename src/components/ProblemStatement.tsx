@@ -68,7 +68,7 @@ const ProblemStatement = () => {
             className="bg-[#F9F6F3] rounded-[20px] p-8 border border-gray-100 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 bg-red-50 px-4 py-2 rounded-bl-2xl">
-              <X className="w-5 h-5 text-convrt-ignored" />
+              <X className="w-5 h-5 text-[#EA384C]" />
             </div>
             
             <h3 className="heading-sm text-convrt-dark-blue mb-8 flex items-center">
@@ -78,7 +78,7 @@ const ProblemStatement = () => {
             <ul className="space-y-6">
               <li className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-4">
-                  <X className="w-4 h-4 text-convrt-ignored" />
+                  <X className="w-4 h-4 text-[#EA384C]" />
                 </div>
                 <div>
                   <p className="font-semibold text-lg text-convrt-dark-blue">1% cold email response rates</p>
@@ -88,7 +88,7 @@ const ProblemStatement = () => {
               
               <li className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-4">
-                  <X className="w-4 h-4 text-convrt-ignored" />
+                  <X className="w-4 h-4 text-[#EA384C]" />
                 </div>
                 <div>
                   <p className="font-semibold text-lg text-convrt-dark-blue">80% of calls screened out</p>
@@ -98,7 +98,7 @@ const ProblemStatement = () => {
               
               <li className="flex items-start">
                 <div className="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-4">
-                  <X className="w-4 h-4 text-convrt-ignored" />
+                  <X className="w-4 h-4 text-[#EA384C]" />
                 </div>
                 <div>
                   <p className="font-semibold text-lg text-convrt-dark-blue">No relationship before outreach</p>
@@ -109,22 +109,22 @@ const ProblemStatement = () => {
             
             <div className="mt-12 grid grid-cols-3 gap-4">
               <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3">
-                <PhoneCall className="w-8 h-8 text-convrt-ignored mb-2" />
-                <div className="text-sm text-center text-convrt-ignored font-medium">Cold Calls</div>
+                <PhoneCall className="w-8 h-8 text-[#EA384C] mb-2" />
+                <div className="text-sm text-center text-[#EA384C] font-medium">Cold Calls</div>
               </div>
               
               <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3">
-                <Mail className="w-8 h-8 text-convrt-ignored mb-2" />
-                <div className="text-sm text-center text-convrt-ignored font-medium">Mass Emails</div>
+                <Mail className="w-8 h-8 text-[#EA384C] mb-2" />
+                <div className="text-sm text-center text-[#EA384C] font-medium">Mass Emails</div>
               </div>
               
               <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3">
-                <MessageSquare className="w-8 h-8 text-convrt-ignored mb-2" />
-                <div className="text-sm text-center text-convrt-ignored font-medium">Generic Messages</div>
+                <MessageSquare className="w-8 h-8 text-[#EA384C] mb-2" />
+                <div className="text-sm text-center text-[#EA384C] font-medium">Generic Messages</div>
               </div>
             </div>
             
-            <div className="absolute -bottom-1 left-0 right-0 h-1 bg-convrt-ignored"></div>
+            <div className="absolute -bottom-1 left-0 right-0 h-1 bg-[#EA384C]"></div>
           </motion.div>
           
           {/* AI Organic Outbound - simplified box */}

@@ -6,7 +6,7 @@ import ProblemStatement from '@/components/ProblemStatement';
 import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight, Check, Sparkles } from 'lucide-react';
 
 const Index = () => {
   useEffect(() => {
@@ -47,15 +47,17 @@ const Index = () => {
         <section className="py-16 px-6" id="cta">
           <div className="container mx-auto max-w-5xl">
             <div 
-              className="rounded-2xl overflow-hidden relative"
-              style={{ 
-                backgroundImage: "url('/lovable-uploads/0f228602-2449-495f-866b-df124fde272a.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center"
-              }}
+              className="rounded-2xl overflow-hidden relative bg-convrt-dark-blue"
             >
-              {/* Overlay to ensure text readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-800/50"></div>
+              {/* Background Image with Overlay */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src="/lovable-uploads/eada8c8b-332c-4ac7-813d-42884f942368.png" 
+                  alt="Team Collaboration" 
+                  className="w-full h-full object-cover object-center opacity-50"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-convrt-dark-blue via-convrt-dark-blue/90 to-convrt-dark-blue/80"></div>
+              </div>
               
               <div className="relative z-10 p-12 md:p-16 text-white">
                 <motion.div 
@@ -65,9 +67,14 @@ const Index = () => {
                   viewport={{ once: true }}
                   className="max-w-lg"
                 >
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-convrt-purple/20 text-convrt-purple mb-6">
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    <span className="text-sm font-medium font-inter tracking-wide">Start Your AI Journey Today</span>
+                  </div>
+                  
                   <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
                     Ready to Move from 
-                    <span className="text-convrt-purple font-extrabold"> Ignored </span> 
+                    <span className="text-[#EA384C] font-extrabold"> Ignored </span> 
                     to 
                     <span className="text-convrt-purple font-extrabold"> Influential</span>?
                   </h2>

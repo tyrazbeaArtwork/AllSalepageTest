@@ -60,7 +60,7 @@ export default {
           "purple-light": "#9B87F5",
           "white": "#FFFFFF",
           "light-gray": "#F5F7FA",
-          "ignored": "#6936F5",
+          "ignored": "#EA384C",
           "influential": "#6936F5"
         }
       },
