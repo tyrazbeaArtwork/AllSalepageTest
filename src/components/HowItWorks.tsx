@@ -59,7 +59,7 @@ const HowItWorks = () => {
         {/* Boxed Content Section */}
         <div className="max-w-5xl mx-auto bg-gray-100 rounded-2xl p-8 shadow-md border border-gray-200">
           {/* Image Display */}
-          <div className="mb-12 relative overflow-hidden rounded-xl bg-white p-4 border border-gray-200 shadow-sm">
+          <div className="mb-8 relative overflow-hidden rounded-xl bg-white p-4 border border-gray-200 shadow-sm">
             <div className="aspect-video relative">
               {steps.map((step) => (
                 <div 
@@ -75,20 +75,6 @@ const HowItWorks = () => {
                   />
                 </div>
               ))}
-            </div>
-            <div className="flex justify-center mt-4">
-              <div className="flex items-center gap-2">
-                {steps.map((step) => (
-                  <button
-                    key={step.id}
-                    onClick={() => setActiveStep(step.id)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      activeStep === step.id ? 'bg-convrt-purple' : 'bg-gray-300'
-                    }`}
-                    aria-label={`View step ${step.id}`}
-                  />
-                ))}
-              </div>
             </div>
           </div>
           
