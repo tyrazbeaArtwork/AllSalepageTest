@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react';
 import AnimatedBackground from './AnimatedBackground';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import PlatformDemo from './hero/PlatformDemo';
 import StatsSection from './hero/StatsSection';
@@ -32,7 +32,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen pt-28 pb-32 overflow-hidden bg-[#F9F6F3]">
+    <section className="relative min-h-screen pt-28 pb-16 overflow-hidden bg-[#F9F6F3]">
       <AnimatedBackground />
       
       <div className="container-section relative z-10">
@@ -42,14 +42,6 @@ const Hero = () => {
           variants={containerVariants}
           className="max-w-5xl mx-auto text-center"
         >
-          <motion.div 
-            variants={itemVariants}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-convrt-purple/10 text-convrt-purple mb-6"
-          >
-            <Zap className="w-4 h-4 mr-2" />
-            <span className="text-sm font-medium font-inter tracking-wide">The First AI Organic Outbound Platform</span>
-          </motion.div>
-          
           <motion.h1 
             variants={itemVariants}
             className="font-inter font-bold text-4xl md:text-5xl lg:text-7xl tracking-tight max-w-4xl mx-auto mb-6 text-convrt-dark-blue leading-[1.1]"
