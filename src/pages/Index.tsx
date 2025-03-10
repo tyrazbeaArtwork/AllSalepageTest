@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProblemStatement from '@/components/ProblemStatement';
 import HowItWorks from '@/components/HowItWorks';
-import ProductShowcase from '@/components/ProductShowcase';
 import Testimonials from '@/components/Testimonials';
 import { motion } from 'framer-motion';
 import { HandHelping, ArrowRight } from 'lucide-react';
@@ -43,7 +42,6 @@ const Index = () => {
         <Hero />
         <ProblemStatement />
         <HowItWorks />
-        <ProductShowcase />
         <Testimonials />
         
         <section className="py-16 overflow-hidden bg-gradient-to-b from-white to-gray-50" id="cta">
