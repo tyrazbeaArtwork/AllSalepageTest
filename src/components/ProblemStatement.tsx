@@ -1,186 +1,206 @@
 
 import React, { useEffect, useRef } from 'react';
 import { X, Check, PhoneCall, Mail, MessageSquare, Users, Zap, BarChart3 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ProblemStatement = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const comparisonRef = useRef<HTMLDivElement>(null);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3
+      }
+    }
+  };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (entry.target === sectionRef.current) {
-              entry.target.classList.add('opacity-100');
-              entry.target.classList.remove('opacity-0');
-            } else if (entry.target === comparisonRef.current) {
-              entry.target.classList.add('opacity-100');
-              entry.target.classList.remove('opacity-0', 'translate-y-8');
-            }
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    if (comparisonRef.current) observer.observe(comparisonRef.current);
-
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-      if (comparisonRef.current) observer.unobserve(comparisonRef.current);
-    };
-  }, []);
+  const itemVariants = {
+    hidden: { y: 40, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+    }
+  };
 
   return (
-    <section className="relative py-20 bg-convrt-light-gray/50" id="problem">
-      <div className="container-section">
-        <div 
-          ref={sectionRef}
-          className="max-w-3xl mx-auto text-center opacity-0 transition-opacity duration-700"
+    <section className="relative py-32 overflow-hidden" id="problem">
+      {/* Background elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-convrt-light-gray/50 to-white"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-[400px] right-[20%] w-[600px] h-[600px] rounded-full bg-convrt-ignored/5 blur-3xl"></div>
+        <div className="absolute -bottom-[300px] left-[10%] w-[500px] h-[500px] rounded-full bg-convrt-influential/5 blur-3xl"></div>
+      </div>
+      
+      <div className="container-section relative z-10">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="max-w-3xl mx-auto text-center mb-16"
         >
-          <div className="section-tag">
+          <motion.div variants={itemVariants} className="section-tag">
             Why Traditional Outbound Is Dead
-          </div>
-          <h2 className="heading-lg text-convrt-dark-blue mb-6">
+          </motion.div>
+          
+          <motion.h2 
+            variants={itemVariants}
+            className="heading-lg text-convrt-dark-blue mb-6"
+          >
             Cold Outreach Doesn't Work Anymore. <br />
-            <span className="gradient-text">AI Organic Outbound</span> Does.
-          </h2>
-          <p className="text-convrt-dark-blue/80 text-lg mb-16 max-w-2xl mx-auto">
+            <span className="text-convrt-purple font-extrabold">AI Organic Outbound</span> Does.
+          </motion.h2>
+          
+          <motion.p 
+            variants={itemVariants}
+            className="text-convrt-dark-blue/80 text-lg mb-8 max-w-2xl mx-auto"
+          >
             The days of cold calls and emails are over. Today's buyers expect personalized engagement from people they trust. Convrt.ai puts you exactly where your buyers make decisions.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         
-        <div 
-          ref={comparisonRef}
-          className="grid md:grid-cols-2 gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-300"
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+          className="grid md:grid-cols-2 gap-10"
         >
           {/* Traditional Cold Outbound */}
-          <div className="bg-white rounded-2xl p-8 border border-red-100 relative overflow-hidden group shadow-lg">
+          <motion.div 
+            variants={itemVariants}
+            whileHover={{ y: -5 }}
+            className="bg-white rounded-2xl p-8 border border-red-100 relative overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-500"
+          >
             <div className="absolute top-0 right-0 bg-red-50 px-4 py-2 rounded-bl-2xl">
-              <X className="w-5 h-5 text-red-500" />
+              <X className="w-5 h-5 text-convrt-ignored" />
             </div>
             
-            <h3 className="heading-sm text-convrt-dark-blue mb-6 flex items-center">
+            <h3 className="heading-sm text-convrt-dark-blue mb-8 flex items-center">
               Traditional Cold Outbound
             </h3>
             
-            <ul className="space-y-5">
+            <ul className="space-y-6">
               <li className="flex items-start">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-3">
-                  <X className="w-3.5 h-3.5 text-red-500" />
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-4">
+                  <X className="w-4 h-4 text-convrt-ignored" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">1% cold email response rates</p>
-                  <p className="text-sm text-convrt-dark-blue/70 mt-1">Millions of emails sent, almost all ignored</p>
+                  <p className="font-semibold text-lg text-convrt-dark-blue">1% cold email response rates</p>
+                  <p className="text-convrt-dark-blue/70 mt-1">Millions of emails sent, almost all ignored</p>
                 </div>
               </li>
               
               <li className="flex items-start">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-3">
-                  <X className="w-3.5 h-3.5 text-red-500" />
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-4">
+                  <X className="w-4 h-4 text-convrt-ignored" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">80% of calls screened out</p>
-                  <p className="text-sm text-convrt-dark-blue/70 mt-1">Decision makers don't take cold calls</p>
+                  <p className="font-semibold text-lg text-convrt-dark-blue">80% of calls screened out</p>
+                  <p className="text-convrt-dark-blue/70 mt-1">Decision makers don't take cold calls</p>
                 </div>
               </li>
               
               <li className="flex items-start">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-3">
-                  <X className="w-3.5 h-3.5 text-red-500" />
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-red-100 flex items-center justify-center mt-0.5 mr-4">
+                  <X className="w-4 h-4 text-convrt-ignored" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">No relationship before outreach</p>
-                  <p className="text-sm text-convrt-dark-blue/70 mt-1">Cold outreach feels impersonal and salesy</p>
+                  <p className="font-semibold text-lg text-convrt-dark-blue">No relationship before outreach</p>
+                  <p className="text-convrt-dark-blue/70 mt-1">Cold outreach feels impersonal and salesy</p>
                 </div>
               </li>
             </ul>
             
-            <div className="mt-8 grid grid-cols-3 gap-3">
-              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-lg p-3">
-                <PhoneCall className="w-6 h-6 text-red-400 mb-2" />
-                <div className="text-xs text-center text-red-600 font-medium">Cold Calls</div>
+            <div className="mt-12 grid grid-cols-3 gap-4">
+              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3 shadow-md">
+                <PhoneCall className="w-8 h-8 text-convrt-ignored mb-2" />
+                <div className="text-sm text-center text-convrt-ignored font-medium">Cold Calls</div>
               </div>
               
-              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-lg p-3">
-                <Mail className="w-6 h-6 text-red-400 mb-2" />
-                <div className="text-xs text-center text-red-600 font-medium">Mass Emails</div>
+              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3 shadow-md">
+                <Mail className="w-8 h-8 text-convrt-ignored mb-2" />
+                <div className="text-sm text-center text-convrt-ignored font-medium">Mass Emails</div>
               </div>
               
-              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-lg p-3">
-                <MessageSquare className="w-6 h-6 text-red-400 mb-2" />
-                <div className="text-xs text-center text-red-600 font-medium">Generic Messages</div>
+              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3 shadow-md">
+                <MessageSquare className="w-8 h-8 text-convrt-ignored mb-2" />
+                <div className="text-sm text-center text-convrt-ignored font-medium">Generic Messages</div>
               </div>
             </div>
             
-            <div className="absolute -bottom-1 left-0 right-0 h-1 bg-red-300"></div>
-          </div>
+            <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-red-300/30 via-convrt-ignored to-red-300/30"></div>
+          </motion.div>
           
           {/* AI Organic Outbound */}
-          <div className="bg-white rounded-2xl p-8 border border-convrt-purple/30 relative overflow-hidden group shadow-xl shadow-convrt-purple/10">
+          <motion.div 
+            variants={itemVariants}
+            whileHover={{ y: -5 }}
+            className="bg-white rounded-2xl p-8 border border-convrt-purple/30 relative overflow-hidden group shadow-xl hover:shadow-2xl hover:shadow-convrt-purple/10 transition-all duration-500"
+          >
             <div className="absolute top-0 right-0 bg-convrt-purple/10 px-4 py-2 rounded-bl-2xl">
               <Check className="w-5 h-5 text-convrt-purple" />
             </div>
             
-            <h3 className="heading-sm text-convrt-dark-blue mb-6 flex items-center">
+            <h3 className="heading-sm text-convrt-dark-blue mb-8 flex items-center">
               AI Organic Outbound
               <span className="ml-2 px-2 py-0.5 text-xs font-medium bg-convrt-purple/10 text-convrt-purple rounded-full">Convrt.ai</span>
             </h3>
             
-            <ul className="space-y-5">
+            <ul className="space-y-6">
               <li className="flex items-start">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-convrt-purple/10 flex items-center justify-center mt-0.5 mr-3">
-                  <Check className="w-3.5 h-3.5 text-convrt-purple" />
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-convrt-purple/10 flex items-center justify-center mt-0.5 mr-4">
+                  <Check className="w-4 h-4 text-convrt-purple" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">15x higher conversion rates</p>
-                  <p className="text-sm text-convrt-dark-blue/70 mt-1">Build trust before you reach out</p>
+                  <p className="font-semibold text-lg text-convrt-dark-blue">15x higher conversion rates</p>
+                  <p className="text-convrt-dark-blue/70 mt-1">Build trust before you reach out</p>
                 </div>
               </li>
               
               <li className="flex items-start">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-convrt-purple/10 flex items-center justify-center mt-0.5 mr-3">
-                  <Check className="w-3.5 h-3.5 text-convrt-purple" />
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-convrt-purple/10 flex items-center justify-center mt-0.5 mr-4">
+                  <Check className="w-4 h-4 text-convrt-purple" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">Key touchpoints and discussions</p>
-                  <p className="text-sm text-convrt-dark-blue/70 mt-1">Tracks the entire buyer's journey</p>
+                  <p className="font-semibold text-lg text-convrt-dark-blue">Key touchpoints and discussions</p>
+                  <p className="text-convrt-dark-blue/70 mt-1">Tracks the entire buyer's journey</p>
                 </div>
               </li>
               
               <li className="flex items-start">
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-convrt-purple/10 flex items-center justify-center mt-0.5 mr-3">
-                  <Check className="w-3.5 h-3.5 text-convrt-purple" />
+                <div className="flex-shrink-0 w-8 h-8 rounded-full bg-convrt-purple/10 flex items-center justify-center mt-0.5 mr-4">
+                  <Check className="w-4 h-4 text-convrt-purple" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">Fully automated growth hacking</p>
-                  <p className="text-sm text-convrt-dark-blue/70 mt-1">Enterprise-grade AI engagement</p>
+                  <p className="font-semibold text-lg text-convrt-dark-blue">Fully automated growth hacking</p>
+                  <p className="text-convrt-dark-blue/70 mt-1">Enterprise-grade AI engagement</p>
                 </div>
               </li>
             </ul>
             
-            <div className="mt-8 grid grid-cols-3 gap-3">
-              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-lg p-3">
-                <Users className="w-6 h-6 text-convrt-purple mb-2" />
-                <div className="text-xs text-center text-convrt-purple font-medium">Engagement</div>
+            <div className="mt-12 grid grid-cols-3 gap-4">
+              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3 shadow-md">
+                <Users className="w-8 h-8 text-convrt-purple mb-2" />
+                <div className="text-sm text-center text-convrt-purple font-medium">Engagement</div>
               </div>
               
-              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-lg p-3">
-                <Zap className="w-6 h-6 text-convrt-purple mb-2" />
-                <div className="text-xs text-center text-convrt-purple font-medium">Trust Building</div>
+              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3 shadow-md">
+                <Zap className="w-8 h-8 text-convrt-purple mb-2" />
+                <div className="text-sm text-center text-convrt-purple font-medium">Trust Building</div>
               </div>
               
-              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-lg p-3">
-                <BarChart3 className="w-6 h-6 text-convrt-purple mb-2" />
-                <div className="text-xs text-center text-convrt-purple font-medium">Win More Deals</div>
+              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3 shadow-md">
+                <BarChart3 className="w-8 h-8 text-convrt-purple mb-2" />
+                <div className="text-sm text-center text-convrt-purple font-medium">Win More Deals</div>
               </div>
             </div>
             
             <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-convrt-purple/30 via-convrt-purple to-convrt-purple/30"></div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

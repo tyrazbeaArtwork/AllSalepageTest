@@ -58,7 +58,9 @@ export default {
           "purple-hover": "#5828E0",
           "purple-light": "#9B87F5",
           "white": "#FFFFFF",
-          "light-gray": "#F5F7FA"
+          "light-gray": "#F5F7FA",
+          "ignored": "#FF4D6A",
+          "influential": "#00C2FF"
         }
       },
       borderRadius: {
@@ -105,6 +107,22 @@ export default {
           '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
         },
+        parallax: {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(-20px)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0) scale(1)' },
+          '50%': { transform: 'translateY(-15px) scale(1.02)' },
+        },
+        reveal: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slowSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -115,6 +133,10 @@ export default {
         pulse: 'pulse 2s ease-in-out infinite',
         gradient: 'gradient 5s ease infinite alternate',
         scaleIn: 'scaleIn 0.3s ease-out',
+        parallax: 'parallax 10s ease-in-out infinite alternate',
+        float: 'float 6s ease-in-out infinite',
+        reveal: 'reveal 1s ease-out forwards',
+        slowSpin: 'slowSpin 20s linear infinite',
       },
     },
   },
