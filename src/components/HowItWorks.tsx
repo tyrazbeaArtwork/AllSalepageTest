@@ -62,7 +62,7 @@ const HowItWorks = () => {
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     if (stepsRef.current) observer.observe(stepsRef.current);
-    if (screenRef.current) observer.observe(screenRef.current);
+    if (screenRef.current) observer.unobserve(screenRef.current);
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
@@ -118,24 +118,28 @@ const HowItWorks = () => {
           </p>
         </div>
         
-        {/* Sticky Progress Indicator */}
+        {/* Progress Indicator */}
         <div className="hidden md:flex justify-center mb-8 sticky top-24 z-20">
-          <div className="flex items-center p-4 bg-white rounded-full border border-gray-100 shadow-md">
+          <div className="flex items-center gap-4 p-4 bg-gray-100 rounded-lg border border-gray-200">
             {steps.map((step) => (
               <div 
                 key={step.id}
-                className={`w-4 h-4 rounded-full mx-2 transition-all duration-300 ${
-                  activeStep >= step.id ? 'bg-convrt-purple scale-110' : 'bg-gray-200'
+                className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+                  activeStep >= step.id 
+                    ? 'bg-convrt-purple text-white' 
+                    : 'bg-white text-convrt-dark-blue border border-gray-200'
                 }`}
-              />
+              >
+                {step.id}
+              </div>
             ))}
           </div>
         </div>
         
-        {/* Steps container with increased spacing for scroll behavior */}
+        {/* Steps Container */}
         <div 
           ref={stepsRef}
-          className="grid md:grid-cols-1 gap-32 opacity-0 translate-y-8 transition-all duration-700 delay-300 mb-16"
+          className="grid gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-300 mb-16 max-w-4xl mx-auto"
         >
           {steps.map((step) => (
             <StepContent
@@ -152,7 +156,7 @@ const HowItWorks = () => {
           ))}
         </div>
         
-        {/* UI Demo */}
+        {/* UI Demo Section */}
         <div 
           ref={screenRef}
           className="opacity-0 scale-95 transition-all duration-700 delay-500"
