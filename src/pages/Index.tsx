@@ -6,7 +6,6 @@ import ProblemStatement from '@/components/ProblemStatement';
 import HowItWorks from '@/components/HowItWorks';
 import ProductShowcase from '@/components/ProductShowcase';
 import Testimonials from '@/components/Testimonials';
-import Pricing from '@/components/Pricing';
 import { motion } from 'framer-motion';
 
 const Index = () => {
@@ -59,20 +58,14 @@ const Index = () => {
         
         {/* Product Showcase Section - with blended transition */}
         <div className="relative">
-          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-convrt-purple/5 z-10"></div>
+          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white z-10"></div>
           <ProductShowcase />
         </div>
         
         {/* Testimonials Section - with blended transition */}
         <div className="relative">
-          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-convrt-purple/5 to-white/0 z-10"></div>
+          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <Testimonials />
-        </div>
-        
-        {/* Pricing Section - with blended transition */}
-        <div className="relative">
-          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-convrt-light-gray/30 z-10"></div>
-          <Pricing />
         </div>
         
         {/* Final CTA Section */}
