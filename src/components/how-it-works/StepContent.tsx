@@ -9,8 +9,8 @@ export interface StepContentProps {
   highlightText: string;
   highlightDetails: string;
   icon: React.ReactNode;
+  gifUrl?: string;
   isActive: boolean;
-  onClick: () => void;
 }
 
 const StepContent: React.FC<StepContentProps> = ({
@@ -20,40 +20,48 @@ const StepContent: React.FC<StepContentProps> = ({
   highlightText,
   highlightDetails,
   icon,
+  gifUrl,
   isActive,
-  onClick,
 }) => {
   return (
-    <div 
-      className={`bg-white rounded-lg shadow-sm border ${
-        isActive ? 'border-convrt-purple' : 'border-gray-200'
-      } overflow-hidden cursor-pointer hover:border-convrt-purple/70 transition-colors`}
-      onClick={onClick}
-    >
-      <div className="p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <div className={`w-8 h-8 rounded-md ${
-            isActive ? 'bg-convrt-purple text-white' : 'bg-gray-100 text-convrt-dark-blue'
-          } flex items-center justify-center font-medium transition-colors`}>
+    <div className={`relative bg-gray-100 rounded-lg p-8 transition-all duration-500 ${
+      isActive ? 'border-2 border-convrt-purple' : 'border border-gray-200'
+    }`}>
+      <div className="flex items-start gap-4">
+        <div className="flex-shrink-0">
+          <div className="w-12 h-12 rounded-lg bg-convrt-purple text-white flex items-center justify-center font-bold text-xl">
             {stepNumber}
           </div>
-          <h3 className="text-xl font-bold text-convrt-dark-blue">
-            {title}
-          </h3>
         </div>
         
-        <div className="mb-4 pl-11">
+        <div className="flex-1">
           <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-4">
             {icon}
           </div>
           
-          <p className="text-convrt-dark-blue/80 mb-5">
+          <h3 className="text-xl font-bold text-convrt-dark-blue mb-3">
+            {title}
+          </h3>
+          
+          <p className="text-convrt-dark-blue/80 mb-4">
             {description}
           </p>
           
-          <div className="bg-gray-100 rounded-md p-3 text-sm text-convrt-dark-blue/90 border border-gray-200">
+          <div className="bg-white rounded-lg p-3 text-sm text-convrt-dark-blue/90 border border-gray-200">
             <span className="font-medium text-convrt-dark-blue">{highlightText}</span> {highlightDetails}
           </div>
+          
+          {gifUrl && (
+            <div className={`mt-4 overflow-hidden rounded-lg transition-all duration-500 ${
+              isActive ? 'opacity-100 max-h-60' : 'opacity-0 max-h-0'
+            }`}>
+              <img 
+                src={gifUrl} 
+                alt={`Step ${stepNumber} demonstration`} 
+                className="w-full h-auto rounded-lg border border-gray-200" 
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

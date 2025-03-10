@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Target, Users, LineChart, ArrowRight } from 'lucide-react';
 import StepContent from './how-it-works/StepContent';
@@ -14,7 +13,7 @@ const HowItWorks = () => {
     {
       id: 1,
       icon: <Target className="w-6 h-6" />,
-      title: "Identify",
+      title: "AI Identifies Where Your Buyers Engage",
       description: "Our AI scans social media to find where your target audience is most active, identifying the exact channels, topics, and content they engage with.",
       highlightText: "AI identifies:",
       highlightDetails: "Relevant conversations, active communities, and engagement opportunities",
@@ -23,7 +22,7 @@ const HowItWorks = () => {
     {
       id: 2,
       icon: <Users className="w-6 h-6" />,
-      title: "Research",
+      title: "AI Auto-Warms & Builds Trust",
       description: "Convrt creates meaningful touchpoints that position you as a trusted advisor by engaging with prospects' content and contributing value.",
       highlightText: "AI automates:",
       highlightDetails: "Targeted comments, relevant reactions, and personalized interactions",
@@ -32,20 +31,11 @@ const HowItWorks = () => {
     {
       id: 3,
       icon: <LineChart className="w-6 h-6" />,
-      title: "Personalize",
+      title: "AI Converts Warm Leads Into Pipeline",
       description: "With pre-established trust, your outreach achieves 15x higher conversion rates, turning social connections into qualified leads and deals.",
       highlightText: "AI delivers:",
       highlightDetails: "Warmed leads, engagement analytics, and conversion opportunities",
       gifUrl: "https://api.microlink.io?url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fchart-jtECu4TAPnhbGv2iwx&embed=true&screenshot=true&meta=false"
-    },
-    {
-      id: 4,
-      icon: <ArrowRight className="w-6 h-6" />,
-      title: "Engage",
-      description: "Convert opportunities through multi-channel engagement, executing follow-through from interaction to outcomes.",
-      highlightText: "AI engages:",
-      highlightDetails: "Personalized outreach, consistent follow-ups, and timely responses",
-      gifUrl: "https://api.microlink.io?url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fshaking-hands-handshake-2xPJgmjMrILKbBVd1h5&embed=true&screenshot=true&meta=false"
     }
   ];
 
@@ -72,7 +62,7 @@ const HowItWorks = () => {
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     if (stepsRef.current) observer.observe(stepsRef.current);
-    if (screenRef.current) observer.observe(screenRef.current);
+    if (screenRef.current) observer.unobserve(screenRef.current);
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
@@ -81,73 +71,199 @@ const HowItWorks = () => {
     };
   }, []);
 
-  const handleStepClick = (stepId: number) => {
-    setActiveStep(stepId);
-  };
+  // Handle scroll events to update the active step
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      // Calculate where each step should trigger
+      if (stepsRef.current) {
+        const stepsElement = stepsRef.current;
+        const stepsPosition = stepsElement.getBoundingClientRect().top + window.scrollY;
+        const stepsHeight = stepsElement.offsetHeight;
+        
+        // Divide the steps section into equal parts for each step
+        const stepHeight = stepsHeight / steps.length;
+        
+        steps.forEach(step => {
+          const stepTriggerPosition = stepsPosition + (step.id - 1) * stepHeight;
+          const nextStepTriggerPosition = stepsPosition + step.id * stepHeight;
+          
+          if (scrollPosition >= stepTriggerPosition && scrollPosition < nextStepTriggerPosition) {
+            setActiveStep(step.id);
+          }
+        });
+      }
+    };
 
-  // Get the current active step data
-  const activeStepData = steps.find(step => step.id === activeStep) || steps[0];
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <section className="relative py-20 bg-gray-50" id="how-it-works">
+    <section className="relative py-20 bg-white" id="how-it-works">
       <div className="container-section">
         <div 
           ref={sectionRef}
           className="max-w-3xl mx-auto text-center opacity-0 transition-opacity duration-700"
         >
-          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-gray-100 rounded-full text-convrt-dark-blue text-sm font-medium mb-4">
-            How It Works
+          <div className="section-tag">
+            From Ignored to Trusted
           </div>
           <h2 className="heading-lg text-convrt-dark-blue mb-6">
-            From prospecting to closing: <span className="gradient-text">All-in-one</span>
+            How <span className="gradient-text">Convrt.ai</span> Works in 3 Steps
           </h2>
           <p className="text-convrt-dark-blue/80 text-lg mb-16 max-w-2xl mx-auto">
-            Turn your prospects from cold outreach to closed deals
+            Our AI-driven platform automates social engagement for your sales and GTM teams, transforming cold outreach into warm connections.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div 
-            ref={stepsRef}
-            className="md:col-span-1 grid gap-4 opacity-0 translate-y-8 transition-all duration-700 delay-300"
-          >
+        {/* Progress Indicator */}
+        <div className="hidden md:flex justify-center mb-8 sticky top-24 z-20">
+          <div className="flex items-center gap-4 p-4 bg-gray-100 rounded-lg border border-gray-200">
             {steps.map((step) => (
-              <StepContent
+              <div 
                 key={step.id}
-                stepNumber={step.id}
-                title={step.title}
-                description={step.description}
-                highlightText={step.highlightText}
-                highlightDetails={step.highlightDetails}
-                icon={step.icon}
-                isActive={activeStep === step.id}
-                onClick={() => handleStepClick(step.id)}
-              />
+                className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+                  activeStep >= step.id 
+                    ? 'bg-convrt-purple text-white' 
+                    : 'bg-white text-convrt-dark-blue border border-gray-200'
+                }`}
+              >
+                {step.id}
+              </div>
             ))}
           </div>
-          
-          {/* Platform Preview Box - Shows currently active step */}
-          <div 
-            ref={screenRef}
-            className="md:col-span-2 opacity-0 scale-95 transition-all duration-700 delay-500 bg-white rounded-lg border border-gray-200 shadow-md overflow-hidden h-[500px]"
-          >
-            <div className="bg-gray-100 p-4 border-b border-gray-200 flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+        </div>
+        
+        {/* Steps Container */}
+        <div 
+          ref={stepsRef}
+          className="grid gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-300 mb-16 max-w-4xl mx-auto"
+        >
+          {steps.map((step) => (
+            <StepContent
+              key={step.id}
+              stepNumber={step.id}
+              title={step.title}
+              description={step.description}
+              highlightText={step.highlightText}
+              highlightDetails={step.highlightDetails}
+              icon={step.icon}
+              gifUrl={step.gifUrl}
+              isActive={activeStep === step.id}
+            />
+          ))}
+        </div>
+        
+        {/* UI Demo Section */}
+        <div 
+          ref={screenRef}
+          className="opacity-0 scale-95 transition-all duration-700 delay-500"
+        >
+          <div className="bg-[#F9F6F3] p-6 rounded-2xl border border-gray-100">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center">
+                <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <div className="text-sm text-gray-500">convrt.ai/dashboard</div>
-              <div className="w-5"></div>
+              <div className="px-4 py-1.5 rounded-full bg-white border border-gray-100 text-convrt-dark-blue/80 text-xs">
+                convrt.ai/engagement-dashboard
+              </div>
             </div>
             
-            <div className="p-0 h-full">
-              {/* Display the current active step's GIF */}
-              <img 
-                src={activeStepData.gifUrl} 
-                alt={`${activeStepData.title} demonstration`} 
-                className="w-full h-full object-cover"
-              />
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white rounded-xl overflow-hidden border border-gray-100">
+                <div className="p-4 border-b border-gray-100">
+                  <h4 className="text-convrt-dark-blue font-medium">Prospect Identification</h4>
+                </div>
+                <div className="p-4">
+                  <div className="space-y-3">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="flex items-center p-2 rounded-lg bg-[#F9F6F3] border border-gray-100">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-convrt-purple/60 to-convrt-purple-light/40 flex items-center justify-center text-white mr-3">
+                          {i}
+                        </div>
+                        <div>
+                          <div className="text-convrt-dark-blue text-sm font-medium">Prospect {i}</div>
+                          <div className="text-convrt-dark-blue/70 text-xs">High-value target</div>
+                        </div>
+                        <div className="ml-auto">
+                          <div className="w-8 h-8 rounded-full bg-convrt-purple/20 text-convrt-purple-light flex items-center justify-center">
+                            <ArrowRight className="w-4 h-4" />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-xl overflow-hidden border border-gray-100">
+                <div className="p-4 border-b border-gray-100">
+                  <h4 className="text-convrt-dark-blue font-medium">AI Engagement</h4>
+                </div>
+                <div className="p-4">
+                  <div className="space-y-3">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="p-2 rounded-lg bg-[#F9F6F3] border border-gray-100">
+                        <div className="flex items-center">
+                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-convrt-purple/60 to-convrt-purple-light/40 flex items-center justify-center text-white mr-3">
+                            {i}
+                          </div>
+                          <div>
+                            <div className="text-convrt-dark-blue text-sm font-medium">Touchpoint {i}</div>
+                            <div className="text-convrt-dark-blue/70 text-xs">Auto engagement</div>
+                          </div>
+                          <div className="ml-auto text-convrt-purple-light text-xs font-medium">
+                            +Trust
+                          </div>
+                        </div>
+                        <div className="mt-2 text-xs text-convrt-dark-blue/80 bg-white rounded-lg p-2 border border-gray-100">
+                          "Great insights on your recent post about {i === 1 ? "AI adoption" : i === 2 ? "revenue growth" : "lead conversion"}."
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-xl overflow-hidden border border-gray-100">
+                <div className="p-4 border-b border-gray-100">
+                  <h4 className="text-convrt-dark-blue font-medium">Conversion Analytics</h4>
+                </div>
+                <div className="p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-convrt-dark-blue text-sm">Trust Score</div>
+                    <div className="text-convrt-purple-light font-medium">87%</div>
+                  </div>
+                  <div className="w-full h-2 bg-[#F9F6F3] rounded-full mb-4">
+                    <div className="h-2 bg-gradient-to-r from-convrt-purple/80 to-convrt-purple-light rounded-full" style={{ width: "87%" }}></div>
+                  </div>
+                  
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-convrt-dark-blue text-sm">Engagement Rate</div>
+                    <div className="text-convrt-purple-light font-medium">92%</div>
+                  </div>
+                  <div className="w-full h-2 bg-[#F9F6F3] rounded-full mb-4">
+                    <div className="h-2 bg-gradient-to-r from-convrt-purple/80 to-convrt-purple-light rounded-full" style={{ width: "92%" }}></div>
+                  </div>
+                  
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="text-convrt-dark-blue text-sm">Response Rate</div>
+                    <div className="text-convrt-purple-light font-medium">76%</div>
+                  </div>
+                  <div className="w-full h-2 bg-[#F9F6F3] rounded-full mb-4">
+                    <div className="h-2 bg-gradient-to-r from-convrt-purple/80 to-convrt-purple-light rounded-full" style={{ width: "76%" }}></div>
+                  </div>
+                  
+                  <div className="bg-[#F9F6F3] p-3 rounded-lg text-center">
+                    <div className="text-convrt-purple-light font-medium">15x Higher Conversion</div>
+                    <div className="text-convrt-dark-blue/80 text-xs mt-1">Compared to cold outreach</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
