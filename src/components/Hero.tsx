@@ -38,15 +38,15 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-convrt-cyan/10 text-convrt-cyan mb-6">
             <Zap className="w-4 h-4 mr-2" />
-            <span className="text-sm font-medium">AI-Driven Social Selling Platform</span>
+            <span className="text-sm font-medium">The First AI Organic Outbound Platform</span>
           </div>
           
           <h1 className="heading-xl max-w-4xl mx-auto text-convrt-dark-blue mb-6">
-            <span className="gradient-text">AI-Driven Social Selling</span> That Wins More Deals
+            From <span className="gradient-text">Ignored</span> to <span className="gradient-text">Influential</span>
           </h1>
           
           <p className="text-xl text-convrt-dark-blue/70 max-w-3xl mx-auto mb-8">
-            Stop being ignored. Convrt puts you where your buyers are, making you trusted before you even reach out.
+            AI that makes buyers trust you, so you win more deals
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16">
@@ -59,68 +59,14 @@ const Hero = () => {
             </a>
           </div>
           
-          {/* Glass Card */}
+          {/* Glass Card - Product Screenshot */}
           <div className="relative max-w-5xl mx-auto glass p-1 mb-12">
             <div className="w-full aspect-[16/9] bg-convrt-dark-blue rounded-xl overflow-hidden relative">
-              {/* Mockup UI with Abstract Data Visualization */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="absolute top-0 left-0 right-0 h-14 bg-convrt-dark-blue/90 backdrop-blur-sm flex items-center px-4">
-                  <div className="flex space-x-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500/50"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/50"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-500/50"></div>
-                  </div>
-                  <div className="ml-4 px-3 py-1 rounded bg-convrt-dark-blue/80 text-convrt-cyan text-xs font-mono">
-                    convrt.ai/dashboard
-                  </div>
-                </div>
-                
-                <div className="w-full h-full flex items-center justify-center pt-14">
-                  <div className="w-full p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {/* Visualization Placeholder */}
-                    <div className="col-span-1 md:col-span-2 aspect-video rounded-lg bg-gradient-to-br from-convrt-dark-blue to-convrt-dark-blue/80 p-3 flex items-center justify-center">
-                      <div className="w-full h-full bg-grid-pattern bg-grid opacity-25 rounded">
-                        <div className="w-3/4 h-3/4 mx-auto mt-6 relative">
-                          <div className="absolute bottom-0 left-0 w-2 h-[15%] bg-convrt-cyan/50 rounded-t"></div>
-                          <div className="absolute bottom-0 left-[15%] w-2 h-[45%] bg-convrt-cyan/60 rounded-t"></div>
-                          <div className="absolute bottom-0 left-[30%] w-2 h-[20%] bg-convrt-cyan/70 rounded-t"></div>
-                          <div className="absolute bottom-0 left-[45%] w-2 h-[65%] bg-convrt-cyan/80 rounded-t"></div>
-                          <div className="absolute bottom-0 left-[60%] w-2 h-[35%] bg-convrt-cyan/90 rounded-t"></div>
-                          <div className="absolute bottom-0 left-[75%] w-2 h-[80%] bg-convrt-cyan rounded-t"></div>
-                          <div className="absolute bottom-0 left-[90%] w-2 h-[60%] bg-convrt-cyan/70 rounded-t"></div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Side Panel */}
-                    <div className="flex flex-col space-y-4">
-                      <div className="rounded-lg bg-white/5 p-3">
-                        <div className="text-xs text-white/60 mb-1">Engagement Rate</div>
-                        <div className="text-lg font-bold text-convrt-cyan">15.7%</div>
-                        <div className="w-full h-1 bg-white/10 rounded-full mt-2">
-                          <div className="w-[85%] h-1 bg-convrt-cyan rounded-full"></div>
-                        </div>
-                      </div>
-                      
-                      <div className="rounded-lg bg-white/5 p-3">
-                        <div className="text-xs text-white/60 mb-1">Trust Score</div>
-                        <div className="text-lg font-bold text-convrt-cyan">87.3%</div>
-                        <div className="w-full h-1 bg-white/10 rounded-full mt-2">
-                          <div className="w-[87%] h-1 bg-convrt-cyan rounded-full"></div>
-                        </div>
-                      </div>
-                      
-                      <div className="rounded-lg bg-white/5 p-3">
-                        <div className="text-xs text-white/60 mb-1">Leads Generated</div>
-                        <div className="text-lg font-bold text-convrt-cyan">124</div>
-                        <div className="w-full h-1 bg-white/10 rounded-full mt-2">
-                          <div className="w-[70%] h-1 bg-convrt-cyan rounded-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/lovable-uploads/8324ce9d-a25b-4480-beb0-990b38071d97.png" 
+                alt="Convrt AI Platform" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
           
@@ -134,7 +80,7 @@ const Hero = () => {
                 <Zap className="w-6 h-6" />
               </div>
               <div className="text-3xl font-bold text-convrt-dark-blue">15x</div>
-              <div className="text-convrt-dark-blue/70 mt-1">Higher Conversion</div>
+              <div className="text-convrt-dark-blue/70 mt-1">Higher Conversion Rates</div>
             </div>
             
             <div className="bg-white rounded-xl p-6 shadow-sm border border-convrt-light-gray/30">

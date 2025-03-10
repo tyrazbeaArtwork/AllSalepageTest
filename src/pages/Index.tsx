@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Navbar from '@/components/Navbar';
-import AnimatedBackground from '@/components/AnimatedBackground';
 import Hero from '@/components/Hero';
 import ProblemStatement from '@/components/ProblemStatement';
 import HowItWorks from '@/components/HowItWorks';
@@ -24,7 +23,7 @@ const Index = () => {
         {/* Final CTA Section */}
         <section className="container-section text-center" id="cta">
           <div className="max-w-3xl mx-auto">
-            <h2 className="heading-lg mb-6">Ready to Win More Deals?</h2>
+            <h2 className="heading-lg mb-6">Ready to Move from Ignored to Influential?</h2>
             <button className="button-primary text-lg px-8 py-4">
               Start Free – No Credit Card Needed
             </button>

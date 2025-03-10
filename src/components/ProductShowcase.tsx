@@ -56,10 +56,10 @@ const ProductShowcase = () => {
             Product Overview
           </div>
           <h2 className="heading-lg text-convrt-dark-blue mb-6">
-            AI-Powered <span className="gradient-text">Social Selling</span> Platform
+            The First <span className="gradient-text">AI Organic Outbound</span> Platform
           </h2>
           <p className="text-convrt-dark-blue/70 text-lg mb-16 max-w-2xl mx-auto">
-            Our suite of AI tools automates social engagement, builds trust, and delivers warm leads ready for conversion.
+            Our AI platform tracks key touchpoints, discussions, and content across the buyer's journey, letting you engage, warm up, and build trust—before you reach out.
           </p>
         </div>
         
@@ -80,116 +80,12 @@ const ProductShowcase = () => {
               </div>
             </div>
             
-            <div className="grid md:grid-cols-4 gap-6">
-              {/* Sidebar */}
-              <div className="bg-white/5 backdrop-blur rounded-xl overflow-hidden border border-white/10 md:col-span-1">
-                <div className="p-4 border-b border-white/10">
-                  <h4 className="text-white font-medium">Dashboard</h4>
-                </div>
-                <div className="p-2">
-                  <div className="space-y-1">
-                    {['Targets', 'Engagement', 'Analytics', 'Campaigns', 'Settings'].map((item, i) => (
-                      <div 
-                        key={i} 
-                        className={`px-3 py-2 rounded-lg text-sm ${i === 1 ? 'bg-convrt-cyan/20 text-convrt-cyan' : 'text-white/70 hover:bg-white/5'}`}
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Main Content */}
-              <div className="bg-white/5 backdrop-blur rounded-xl overflow-hidden border border-white/10 md:col-span-3">
-                <div className="p-4 border-b border-white/10 flex justify-between items-center">
-                  <h4 className="text-white font-medium">Engagement Dashboard</h4>
-                  <div className="px-3 py-1 rounded-lg bg-convrt-cyan/20 text-convrt-cyan text-xs font-medium">
-                    AI Active
-                  </div>
-                </div>
-                <div className="p-4">
-                  {/* Stats Row */}
-                  <div className="grid grid-cols-3 gap-4 mb-6">
-                    {[
-                      { label: 'Leads Engaged', value: '134', icon: Users },
-                      { label: 'Auto Comments', value: '246', icon: MessageSquare },
-                      { label: 'Conversion Rate', value: '15.7%', icon: LineChart }
-                    ].map((stat, i) => (
-                      <div key={i} className="bg-white/5 rounded-lg p-3 border border-white/5">
-                        <div className="flex items-center justify-between mb-1">
-                          <div className="text-xs text-white/60">{stat.label}</div>
-                          <stat.icon className="w-4 h-4 text-convrt-cyan/70" />
-                        </div>
-                        <div className="text-lg font-bold text-white">{stat.value}</div>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Graph Section */}
-                  <div className="bg-white/5 rounded-lg p-4 border border-white/5 mb-6">
-                    <div className="mb-3 flex justify-between items-center">
-                      <div className="text-sm font-medium text-white">Engagement Growth</div>
-                      <div className="flex space-x-2">
-                        {['Daily', 'Weekly', 'Monthly'].map((period, i) => (
-                          <div 
-                            key={i}
-                            className={`px-2 py-1 rounded text-xs ${i === 1 ? 'bg-convrt-cyan/20 text-convrt-cyan' : 'text-white/60'}`}
-                          >
-                            {period}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* Simple Graph Mockup */}
-                    <div className="h-40 relative">
-                      <div className="absolute bottom-0 left-0 right-0 h-px bg-white/10"></div>
-                      <div className="absolute top-0 bottom-0 left-0 w-px bg-white/10"></div>
-                      
-                      {/* Simulated Graph Line */}
-                      <div className="absolute bottom-0 left-0 right-0 h-full">
-                        <svg className="w-full h-full" viewBox="0 0 100 40">
-                          <path 
-                            d="M0,35 C10,30 20,32 30,25 C40,18 50,15 60,10 C70,5 80,5 90,2 L100,0" 
-                            stroke="rgba(0, 194, 255, 0.7)" 
-                            strokeWidth="2" 
-                            fill="none"
-                          />
-                          <path 
-                            d="M0,35 C10,30 20,32 30,25 C40,18 50,15 60,10 C70,5 80,5 90,2 L100,0 L100,40 L0,40 Z" 
-                            fill="url(#gradient)" 
-                            fillOpacity="0.2" 
-                          />
-                          <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                              <stop offset="0%" stopColor="rgba(0, 194, 255, 0.5)" />
-                              <stop offset="100%" stopColor="rgba(0, 194, 255, 0)" />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Recent Activities */}
-                  <div>
-                    <div className="text-sm font-medium text-white mb-3">Recent Activities</div>
-                    <div className="space-y-2">
-                      {[
-                        { activity: 'AI commented on Sarah M\'s post', time: '5 min ago' },
-                        { activity: 'John B. replied to your comment', time: '27 min ago' },
-                        { activity: 'New lead identified: Michael T.', time: '2 hours ago' }
-                      ].map((item, i) => (
-                        <div key={i} className="flex items-center justify-between py-2 border-b border-white/5">
-                          <div className="text-sm text-white/90">{item.activity}</div>
-                          <div className="text-xs text-white/50">{item.time}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="relative w-full overflow-hidden rounded-xl">
+              <img 
+                src="/lovable-uploads/ceb0d5d2-2d83-407f-bb1e-8f6959b93eb9.png" 
+                alt="Convrt AI Platform Dashboard" 
+                className="w-full h-auto object-cover rounded-xl"
+              />
             </div>
           </div>
         </div>
@@ -202,23 +98,23 @@ const ProductShowcase = () => {
           {[
             {
               icon: Brain,
-              title: "AI Engagement",
-              description: "Automated, natural interactions with your prospects' content.",
+              title: "AI Organic Outbound",
+              description: "Puts you exactly where your buyers make decisions.",
             },
             {
               icon: Users,
-              title: "Trust Building",
+              title: "Build Trust First",
               description: "Establish credibility before your first direct outreach.",
             },
             {
               icon: MessageSquare,
-              title: "Auto Comments",
-              description: "Smart, relevant comments that drive meaningful conversations.",
+              title: "Key Touchpoints",
+              description: "Track discussions and content across buyer's journey.",
             },
             {
               icon: BarChart3,
-              title: "Performance Analytics",
-              description: "Track engagement, trust scores, and conversion rates.",
+              title: "15x Conversion Rates",
+              description: "Fully automated, enterprise-grade growth hacking.",
             }
           ].map((feature, i) => (
             <div 
@@ -258,12 +154,12 @@ const ProductShowcase = () => {
               </thead>
               <tbody>
                 {[
-                  { feature: "Pre-warms leads before outreach", convrt: true, traditional: false },
-                  { feature: "Builds social trust and credibility", convrt: true, traditional: false },
-                  { feature: "Engagement Intelligence", convrt: true, traditional: false },
-                  { feature: "Automated social interactions", convrt: true, traditional: false },
+                  { feature: "Puts you where buyers make decisions", convrt: true, traditional: false },
+                  { feature: "Tracks key touchpoints and discussions", convrt: true, traditional: false },
+                  { feature: "Builds trust before outreach", convrt: true, traditional: false },
+                  { feature: "Automated engagement", convrt: true, traditional: false },
                   { feature: "Cold email capabilities", convrt: true, traditional: true },
-                  { feature: "Response rates", convrt: "15%+", traditional: "1-2%" },
+                  { feature: "Conversion rates", convrt: "15x+", traditional: "1-2%" },
                   { feature: "Time spent prospecting", convrt: "80% less", traditional: "5+ hours/day" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-convrt-light-gray/30">

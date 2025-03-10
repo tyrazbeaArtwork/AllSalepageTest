@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { X, Check, PhoneCall, Mail, MessageSquare, Users, Zap, BarChart3 } from 'lucide-react';
 
@@ -44,10 +45,10 @@ const ProblemStatement = () => {
           </div>
           <h2 className="heading-lg text-convrt-dark-blue mb-6">
             Cold Outreach Doesn't Work Anymore. <br />
-            <span className="gradient-text">AI-Driven Social Selling</span> Does.
+            <span className="gradient-text">AI Organic Outbound</span> Does.
           </h2>
           <p className="text-convrt-dark-blue/70 text-lg mb-16 max-w-2xl mx-auto">
-            The days of cold calls and emails are over. Today's buyers expect personalized engagement from people they trust. Convrt.ai bridges that gap.
+            The days of cold calls and emails are over. Today's buyers expect personalized engagement from people they trust. Convrt.ai puts you exactly where your buyers make decisions.
           </p>
         </div>
         
@@ -134,8 +135,8 @@ const ProblemStatement = () => {
                   <Check className="w-3.5 h-3.5 text-convrt-cyan" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">15%+ response rates</p>
-                  <p className="text-sm text-convrt-dark-blue/60 mt-1">Pre-warmed leads ready to engage</p>
+                  <p className="font-medium text-convrt-dark-blue">15x higher conversion rates</p>
+                  <p className="text-sm text-convrt-dark-blue/60 mt-1">Build trust before you reach out</p>
                 </div>
               </li>
               
@@ -144,8 +145,8 @@ const ProblemStatement = () => {
                   <Check className="w-3.5 h-3.5 text-convrt-cyan" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">5x higher engagement</p>
-                  <p className="text-sm text-convrt-dark-blue/60 mt-1">Conversations start organically and naturally</p>
+                  <p className="font-medium text-convrt-dark-blue">Key touchpoints and discussions</p>
+                  <p className="text-sm text-convrt-dark-blue/60 mt-1">Tracks the entire buyer's journey</p>
                 </div>
               </li>
               
@@ -154,8 +155,8 @@ const ProblemStatement = () => {
                   <Check className="w-3.5 h-3.5 text-convrt-cyan" />
                 </div>
                 <div>
-                  <p className="font-medium text-convrt-dark-blue">Social sellers outsell peers by 78%</p>
-                  <p className="text-sm text-convrt-dark-blue/60 mt-1">Trust is established before the first meeting</p>
+                  <p className="font-medium text-convrt-dark-blue">Fully automated growth hacking</p>
+                  <p className="text-sm text-convrt-dark-blue/60 mt-1">Enterprise-grade AI engagement</p>
                 </div>
               </li>
             </ul>
@@ -163,17 +164,17 @@ const ProblemStatement = () => {
             <div className="mt-8 grid grid-cols-3 gap-3">
               <div className="aspect-square flex flex-col items-center justify-center bg-convrt-cyan/5 rounded-lg p-3">
                 <Users className="w-6 h-6 text-convrt-cyan mb-2" />
-                <div className="text-xs text-center text-convrt-cyan font-medium">AI Engagement</div>
+                <div className="text-xs text-center text-convrt-cyan font-medium">Engagement</div>
               </div>
               
               <div className="aspect-square flex flex-col items-center justify-center bg-convrt-cyan/5 rounded-lg p-3">
                 <Zap className="w-6 h-6 text-convrt-cyan mb-2" />
-                <div className="text-xs text-center text-convrt-cyan font-medium">Auto Warming</div>
+                <div className="text-xs text-center text-convrt-cyan font-medium">Trust Building</div>
               </div>
               
               <div className="aspect-square flex flex-col items-center justify-center bg-convrt-cyan/5 rounded-lg p-3">
                 <BarChart3 className="w-6 h-6 text-convrt-cyan mb-2" />
-                <div className="text-xs text-center text-convrt-cyan font-medium">Trust Building</div>
+                <div className="text-xs text-center text-convrt-cyan font-medium">Win More Deals</div>
               </div>
             </div>
             
