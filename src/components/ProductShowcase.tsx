@@ -1,6 +1,6 @@
 
 import React, { useRef } from 'react';
-import { Check, X } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ProductShowcase = () => {
@@ -28,7 +28,7 @@ const ProductShowcase = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-white" id="product">
+    <section className="relative py-16 overflow-hidden bg-white" id="product">
       <div className="container-section max-w-6xl mx-auto">
         <motion.div 
           ref={sectionRef}
@@ -36,7 +36,7 @@ const ProductShowcase = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
-          className="max-w-3xl mx-auto text-center mb-20"
+          className="max-w-3xl mx-auto text-center mb-16"
         >
           <motion.h2 
             variants={itemVariants}
@@ -52,14 +52,13 @@ const ProductShowcase = () => {
           </motion.p>
         </motion.div>
         
-        {/* Clean Product UI Showcase with simplified rectangles */}
+        {/* Clean Product UI Showcase */}
         <motion.div 
           ref={contentRef}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={containerVariants}
-          className="mb-24"
         >
           <motion.div 
             variants={itemVariants}
@@ -137,118 +136,6 @@ const ProductShowcase = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
-        
-        {/* Features with simplified rectangles */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24"
-        >
-          {[
-            {
-              title: "AI Organic Outbound",
-              description: "Puts you exactly where your buyers make decisions.",
-            },
-            {
-              title: "Build Trust First",
-              description: "Establish credibility before your first direct outreach.",
-            },
-            {
-              title: "Key Touchpoints",
-              description: "Track discussions and content across buyer's journey.",
-            },
-            {
-              title: "15x Conversion Rates",
-              description: "Fully automated, enterprise-grade growth hacking.",
-            }
-          ].map((feature, i) => (
-            <motion.div 
-              key={i}
-              variants={itemVariants}
-              className="bg-[#F9F6F3] p-8 rounded-[20px] border border-gray-100 transition-all duration-300"
-            >
-              <h3 className="text-xl font-semibold text-convrt-dark-blue mb-3">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-        
-        {/* Comparison Table */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-        >
-          <motion.h3 
-            variants={itemVariants}
-            className="text-2xl font-semibold text-convrt-dark-blue mb-6 text-center"
-          >
-            Convrt vs. Traditional Outreach Tools
-          </motion.h3>
-          
-          <motion.div 
-            variants={itemVariants}
-            className="overflow-x-auto"
-          >
-            <table className="w-full border-collapse">
-              <thead>
-                <tr>
-                  <th className="p-4 text-left bg-[#F9F6F3] rounded-tl-lg"></th>
-                  <th className="p-4 text-center bg-[#F9F6F3] text-convrt-dark-blue font-semibold">Convrt.ai</th>
-                  <th className="p-4 text-center bg-[#F9F6F3] text-gray-500 font-medium rounded-tr-lg">Traditional Tools</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { feature: "Puts you where buyers make decisions", convrt: true, traditional: false },
-                  { feature: "Tracks key touchpoints and discussions", convrt: true, traditional: false },
-                  { feature: "Builds trust before outreach", convrt: true, traditional: false },
-                  { feature: "Automated engagement", convrt: true, traditional: false },
-                  { feature: "Cold email capabilities", convrt: true, traditional: true },
-                  { feature: "Conversion rates", convrt: "15x+", traditional: "1-2%" },
-                  { feature: "Time spent prospecting", convrt: "80% less", traditional: "5+ hours/day" },
-                ].map((row, i) => (
-                  <tr key={i} className="border-b border-gray-100">
-                    <td className="p-4 text-left font-medium text-gray-700">{row.feature}</td>
-                    <td className="p-4 text-center bg-[#F9F6F3]">
-                      {typeof row.convrt === "boolean" ? (
-                        row.convrt ? (
-                          <div className="flex justify-center">
-                            <Check className="w-5 h-5 text-green-500" />
-                          </div>
-                        ) : (
-                          <div className="flex justify-center">
-                            <X className="w-5 h-5 text-red-500" />
-                          </div>
-                        )
-                      ) : (
-                        <div className="font-medium text-convrt-dark-blue">{row.convrt}</div>
-                      )}
-                    </td>
-                    <td className="p-4 text-center bg-[#F9F6F3]">
-                      {typeof row.traditional === "boolean" ? (
-                        row.traditional ? (
-                          <div className="flex justify-center">
-                            <Check className="w-5 h-5 text-green-500" />
-                          </div>
-                        ) : (
-                          <div className="flex justify-center">
-                            <X className="w-5 h-5 text-red-500" />
-                          </div>
-                        )
-                      ) : (
-                        <div className="font-medium text-gray-600">{row.traditional}</div>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </motion.div>
         </motion.div>
       </div>

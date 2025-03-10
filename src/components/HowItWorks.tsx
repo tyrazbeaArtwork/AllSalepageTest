@@ -57,11 +57,10 @@ const HowItWorks = () => {
           </p>
         </div>
         
-        {/* Content Section with Steps on Left */}
-        <div className="max-w-5xl mx-auto bg-gray-100 rounded-2xl p-6 shadow-md border border-gray-200">
-          <div className="flex flex-col lg:flex-row gap-6">
+        <div className="max-w-5xl mx-auto bg-gray-100 rounded-2xl overflow-hidden">
+          <div className="flex flex-col lg:flex-row">
             {/* Steps Section - Now on the left */}
-            <div className="lg:w-1/3 flex flex-col gap-3">
+            <div className="lg:w-1/3 flex flex-col gap-1 p-4 bg-gray-50">
               {steps.map((step) => (
                 <StepContent
                   key={step.id}
@@ -77,32 +76,29 @@ const HowItWorks = () => {
               ))}
             </div>
             
-            {/* Image Display - Now on the right */}
-            <div className="lg:w-2/3 relative overflow-hidden rounded-xl bg-white p-4 border border-gray-200 shadow-sm">
-              <div className="aspect-video h-full flex items-center justify-center">
-                {steps.map((step) => (
-                  <motion.div 
-                    key={step.id}
-                    className="absolute inset-0 h-full"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ 
-                      opacity: activeStep === step.id ? 1 : 0,
-                      scale: activeStep === step.id ? 1 : 0.95,
-                      zIndex: activeStep === step.id ? 10 : 1
-                    }}
-                    transition={{ 
-                      duration: 0.5, 
-                      ease: "easeInOut"
-                    }}
-                  >
-                    <img 
-                      src={step.gifUrl} 
-                      alt={`Step ${step.id}: ${step.title}`} 
-                      className="w-full h-full object-contain rounded-lg"
-                    />
-                  </motion.div>
-                ))}
-              </div>
+            {/* Image Display - Filling the entire right side */}
+            <div className="lg:w-2/3 relative h-full min-h-[400px]">
+              {steps.map((step) => (
+                <motion.div 
+                  key={step.id}
+                  className="absolute inset-0 h-full"
+                  initial={{ opacity: 0 }}
+                  animate={{ 
+                    opacity: activeStep === step.id ? 1 : 0,
+                    zIndex: activeStep === step.id ? 10 : 1
+                  }}
+                  transition={{ 
+                    duration: 0.5, 
+                    ease: "easeInOut"
+                  }}
+                >
+                  <img 
+                    src={step.gifUrl} 
+                    alt={`Step ${step.id}: ${step.title}`} 
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

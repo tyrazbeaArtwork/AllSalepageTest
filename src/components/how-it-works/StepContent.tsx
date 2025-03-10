@@ -27,8 +27,8 @@ const StepContent: React.FC<StepContentProps> = ({
     <motion.div 
       className={`relative px-4 py-3 cursor-pointer transition-all duration-300 w-full ${
         isActive 
-          ? 'bg-white border-l-4 border-convrt-purple rounded-r-lg shadow-md' 
-          : 'bg-gray-50 border-l-4 border-gray-200 rounded-r-lg hover:bg-gray-50/80'
+          ? 'bg-white border-l-4 border-convrt-purple rounded-r-lg' 
+          : 'bg-gray-50/60 border-l-4 border-gray-200 rounded-r-lg hover:bg-gray-50/80'
       }`}
       onClick={onClick}
       initial={{ opacity: 0.9, x: -10 }}
@@ -74,7 +74,7 @@ const StepContent: React.FC<StepContentProps> = ({
           
           {isActive && (
             <motion.div 
-              className="bg-white rounded-md p-2 text-xs text-convrt-dark-blue/90 border border-gray-200 mt-1"
+              className="bg-white rounded-md p-2 text-xs text-convrt-dark-blue/90 border border-gray-100"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.1 }}

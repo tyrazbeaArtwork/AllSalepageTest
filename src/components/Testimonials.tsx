@@ -1,187 +1,181 @@
 
-import React, { useEffect, useRef } from 'react';
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const testimonials = [
   {
     id: 1,
-    quote: "Convrt changed the way we do outbound. Our response rates are 10x better than traditional methods.",
-    name: "Marcel Müller",
-    title: "VP Sales, Scaling Sales",
-    logo: "scaling-sales",
+    quote: "Alice allowed us to scale outbound efforts without sacrificing personalization. It's been a crucial multiplier for our team.",
+    name: "Matthew Lenhart",
+    title: "Senior Manager, Sales Ops & Strategy at Otter.ai",
+    company: "Otter.ai",
+    logo: "otter",
+    bgColor: "bg-[#efeaf5]",
   },
   {
     id: 2,
-    quote: "We closed a deal in just 4 days using Convrt.ai. The lead was pre-warmed and ready to talk before we even reached out.",
-    name: "Brendan",
-    title: "XDR Team Lead",
-    logo: "company-x",
+    quote: "Mike allows us to retarget hundreds of thousands of old leads. It's like unlocking a new opportunity we never thought was possible.",
+    name: "Sales Team",
+    title: "Connecteam",
+    company: "Connecteam",
+    logo: "connecteam",
+    bgColor: "bg-[#fde7dc]",
   },
   {
     id: 3,
-    quote: "Our sales team used to spend 80% of their time on prospecting. With Convrt, they now focus on closing while AI handles the warm-up.",
-    name: "Sarah Johnson",
-    title: "CRO, Enterprise Solutions",
-    logo: "enterprise-solutions",
-  },
+    quote: "With Mike, we could reach customers in languages we couldn't otherwise support.",
+    name: "Growth Marketing",
+    title: "Spectinga",
+    company: "Spectinga",
+    logo: "spectinga",
+    bgColor: "bg-[#e9e9e9]",
+  }
 ];
 
-// Customer logos data
-const customerLogos = [
-  { id: 1, name: "Acme Inc.", imageClass: "bg-gradient-to-br from-blue-400 to-blue-600" },
-  { id: 2, name: "Global Tech", imageClass: "bg-gradient-to-br from-green-400 to-green-600" },
-  { id: 3, name: "Innovate AI", imageClass: "bg-gradient-to-br from-purple-400 to-purple-600" },
-  { id: 4, name: "FutureCorp", imageClass: "bg-gradient-to-br from-red-400 to-red-600" },
-  { id: 5, name: "DataFlow", imageClass: "bg-gradient-to-br from-yellow-400 to-yellow-600" },
-  { id: 6, name: "TechNova", imageClass: "bg-gradient-to-br from-indigo-400 to-indigo-600" },
+const stats = [
+  {
+    id: 1,
+    value: "$500k",
+    description: "on hiring costs saved",
+    company: "Otter.ai",
+    bgColor: "bg-[#efeaf5]",
+  },
+  {
+    id: 2,
+    value: "Handshake",
+    description: "",
+    company: "Handshake",
+    bgColor: "bg-white",
+  },
+  {
+    id: 3,
+    value: "Sumup",
+    description: "",
+    company: "Sumup",
+    bgColor: "bg-white",
+  }
 ];
 
 const Testimonials = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const testimonialsRef = useRef<HTMLDivElement>(null);
-  const logosRef = useRef<HTMLDivElement>(null);
-  const metricsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (entry.target === sectionRef.current) {
-              entry.target.classList.add('opacity-100');
-              entry.target.classList.remove('opacity-0');
-            } else if (entry.target === testimonialsRef.current) {
-              entry.target.classList.add('opacity-100');
-              entry.target.classList.remove('opacity-0', 'translate-y-8');
-            } else if (entry.target === logosRef.current) {
-              entry.target.classList.add('opacity-100');
-              entry.target.classList.remove('opacity-0', 'translate-y-8');
-            } else if (entry.target === metricsRef.current) {
-              entry.target.classList.add('opacity-100');
-              entry.target.classList.remove('opacity-0', 'translate-y-8');
-            }
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    if (testimonialsRef.current) observer.observe(testimonialsRef.current);
-    if (logosRef.current) observer.observe(logosRef.current);
-    if (metricsRef.current) observer.observe(metricsRef.current);
-
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-      if (testimonialsRef.current) observer.unobserve(testimonialsRef.current);
-      if (logosRef.current) observer.unobserve(logosRef.current);
-      if (metricsRef.current) observer.unobserve(metricsRef.current);
-    };
-  }, []);
-
   return (
-    <section className="relative py-20 bg-white" id="testimonials">
-      <div className="container-section">
-        <div 
-          ref={sectionRef}
-          className="max-w-3xl mx-auto text-center opacity-0 transition-opacity duration-700"
+    <section className="py-16 bg-white" id="testimonials">
+      <div className="container-section max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mb-12 text-center"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-convrt-dark-blue text-sm font-medium mb-4">
-            Success Stories
-          </div>
-          <h2 className="heading-lg text-convrt-dark-blue mb-6">
-            Loved by Sales Teams <span className="text-[#6936F5]">Worldwide</span>
-          </h2>
-          <p className="text-convrt-dark-blue/70 text-lg mb-16 max-w-2xl mx-auto">
-            Join hundreds of sales teams who've transformed their outbound with AI-driven social selling.
-          </p>
-        </div>
-        
-        <div 
-          ref={testimonialsRef}
-          className="grid md:grid-cols-3 gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-300 mb-16"
-        >
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={testimonial.id}
-              className="bg-gray-100 rounded-[20px] p-6 border border-gray-100 relative"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#6936F5]/10 flex items-center justify-center">
-                <Quote className="w-4 h-4 text-[#6936F5]" />
+          <h2 className="text-5xl font-bold mb-12">Trusted by industry leaders</h2>
+        </motion.div>
+
+        <div className="grid grid-cols-12 gap-4">
+          {/* Stats box */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-4 lg:col-span-3 rounded-xl overflow-hidden"
+          >
+            <div className={`h-full ${stats[0].bgColor} p-8 flex flex-col`}>
+              <div className="mt-auto">
+                <div className="text-5xl font-bold mb-2">{stats[0].value}</div>
+                <div className="text-gray-600">{stats[0].description}</div>
               </div>
-              
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                ))}
-              </div>
-              
-              <blockquote className="text-convrt-dark-blue mb-6">
-                "{testimonial.quote}"
-              </blockquote>
-              
-              <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-[#6936F5]/30 flex items-center justify-center text-convrt-dark-blue/80 mr-3">
-                  {testimonial.name.charAt(0)}
-                </div>
-                <div>
-                  <div className="text-convrt-dark-blue font-medium">{testimonial.name}</div>
-                  <div className="text-convrt-dark-blue/60 text-sm">{testimonial.title}</div>
+              <div className="mt-auto pt-6">
+                <div className="font-bold text-lg">
+                  <span className="font-black">OI</span>•<span className="font-black">I</span> Otter.ai
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </motion.div>
 
-        {/* Customer Logos Section with simplified rectangles */}
-        <div 
-          ref={logosRef}
-          className="opacity-0 translate-y-8 transition-all duration-700 delay-400 mb-16"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-convrt-dark-blue text-xl font-medium">Trusted by innovative companies</h3>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {customerLogos.map((logo) => (
-              <div 
-                key={logo.id}
-                className="bg-gray-100 rounded-[20px] aspect-[3/2] flex items-center justify-center border border-gray-100 p-4 transition-all duration-300 group"
-              >
-                <div className={`w-12 h-12 rounded-lg ${logo.imageClass} flex items-center justify-center text-white font-bold text-xl`}>
-                  {logo.name.charAt(0)}
-                </div>
-                <span className="ml-3 text-convrt-dark-blue font-medium">{logo.name}</span>
+          {/* Handshake box */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-4 lg:col-span-3 rounded-xl overflow-hidden border border-gray-100"
+          >
+            <div className="h-full flex items-center justify-center p-6">
+              <div className="font-black text-2xl italic">Handshake</div>
+            </div>
+          </motion.div>
+
+          {/* First testimonial */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-8 lg:col-span-6 rounded-xl overflow-hidden"
+          >
+            <div className={`h-full ${testimonials[0].bgColor} p-8 flex flex-col`}>
+              <div className="text-2xl font-medium mb-8">
+                "{testimonials[0].quote}"
               </div>
-            ))}
-          </div>
-        </div>
-        
-        <div 
-          ref={metricsRef}
-          className="grid md:grid-cols-3 gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-500"
-        >
-          <div className="bg-gray-100 rounded-[20px] p-6 border border-gray-100">
-            <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">$600K+</div>
-            <div className="text-convrt-dark-blue/80">ARR Generated</div>
-          </div>
-          
-          <div className="bg-gray-100 rounded-[20px] p-6 border border-gray-100">
-            <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">10X</div>
-            <div className="text-convrt-dark-blue/80">YoY Growth</div>
-          </div>
-          
-          <div className="bg-gray-100 rounded-[20px] p-6 border border-gray-100">
-            <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">80%</div>
-            <div className="text-convrt-dark-blue/80">Less Prospecting Time</div>
-          </div>
-        </div>
-        
-        <div className="mt-16 flex justify-center">
-          <a href="#cta" className="button-primary">
-            See How It Works For You
-          </a>
+              <div className="mt-auto">
+                <div className="font-medium">{testimonials[0].name}</div>
+                <div className="text-gray-600 text-sm">{testimonials[0].title}</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Second testimonial */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-7 lg:col-span-6 rounded-xl overflow-hidden"
+          >
+            <div className={`h-full ${testimonials[1].bgColor} p-8 flex flex-col`}>
+              <div className="text-2xl font-medium mb-8">
+                "{testimonials[1].quote}"
+              </div>
+              <div className="mt-auto">
+                <div className="font-bold text-lg">connecteam</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Sumup box */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-5 lg:col-span-3 rounded-xl overflow-hidden border border-gray-100"
+          >
+            <div className="h-full flex items-center justify-center p-6">
+              <div className="font-black text-xl">
+                <span className="inline-block bg-black text-white px-1 py-0.5 rounded">∫</span> sumup°
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Third testimonial */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-12 lg:col-span-3 rounded-xl overflow-hidden"
+          >
+            <div className={`h-full ${testimonials[2].bgColor} p-8 flex flex-col`}>
+              <div className="text-2xl font-medium mb-8">
+                "{testimonials[2].quote}"
+              </div>
+              <div className="mt-auto">
+                <div className="font-bold flex items-center">
+                  <span className="inline-block mr-1">⊙</span> spectinga
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
