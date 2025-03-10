@@ -99,6 +99,10 @@ export default {
           '0%': { backgroundPosition: '0% 50%' },
           '100%': { backgroundPosition: '100% 50%' },
         },
+        scaleIn: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -108,6 +112,7 @@ export default {
         floating: 'floating 3s ease-in-out infinite',
         pulse: 'pulse 2s ease-in-out infinite',
         gradient: 'gradient 5s ease infinite alternate',
+        scaleIn: 'scaleIn 0.3s ease-out',
       },
     },
   },

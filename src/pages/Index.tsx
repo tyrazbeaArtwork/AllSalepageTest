@@ -13,7 +13,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-convrt-dark-blue">
       <Navbar />
-      <AnimatedBackground />
       <main>
         <Hero />
         <ProblemStatement />
@@ -23,13 +22,13 @@ const Index = () => {
         <Pricing />
         
         {/* Final CTA Section */}
-        <section className="container-section text-center">
+        <section className="container-section text-center" id="cta">
           <div className="max-w-3xl mx-auto">
             <h2 className="heading-lg mb-6">Ready to Win More Deals?</h2>
             <button className="button-primary text-lg px-8 py-4">
               Start Free – No Credit Card Needed
             </button>
-            <div className="mt-8 grid grid-cols-3 gap-4">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="flex flex-col items-center p-4">
                 <div className="w-16 h-16 rounded-full bg-convrt-cyan/10 flex items-center justify-center mb-3">
                   <svg className="w-8 h-8 text-convrt-cyan" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
