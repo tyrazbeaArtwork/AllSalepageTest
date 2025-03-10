@@ -5,7 +5,6 @@ import { ArrowRight, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import PlatformDemo from './hero/PlatformDemo';
 import StatsSection from './hero/StatsSection';
-import CustomerLogos from './hero/CustomerLogos';
 
 const Hero = () => {
   const statsRef = useRef<HTMLDivElement>(null);
@@ -76,14 +75,6 @@ const Hero = () => {
             <a href="#how-it-works" className="button-outline font-inter">
               See How It Works
             </a>
-          </motion.div>
-          
-          {/* Customer Logos Section */}
-          <motion.div
-            variants={itemVariants}
-            className="mb-16"
-          >
-            <CustomerLogos />
           </motion.div>
           
           {/* Modern Platform Showcase */}
