@@ -76,7 +76,7 @@ const HowItWorks = () => {
               ))}
             </div>
             
-            {/* Image Display - Filling the entire right side */}
+            {/* Image Display - Now covering the entire right section */}
             <div className="lg:w-2/3 relative h-full">
               {steps.map((step) => (
                 <motion.div 
