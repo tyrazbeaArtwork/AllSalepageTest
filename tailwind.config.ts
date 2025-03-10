@@ -53,10 +53,12 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         convrt: {
-          "dark-blue": "#0A2540",
-          "cyan": "#00C2FF",
+          "dark-blue": "#222233",
+          "purple": "#6936F5",
+          "purple-hover": "#5828E0",
+          "purple-light": "#9B87F5",
           "white": "#FFFFFF",
-          "light-gray": "#F4F4F6"
+          "light-gray": "#F5F7FA"
         }
       },
       borderRadius: {
