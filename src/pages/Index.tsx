@@ -58,9 +58,9 @@ const Index = () => {
               <div className="relative bg-white p-8 md:p-12 rounded-3xl shadow-md border border-gray-100 overflow-hidden">
                 {/* Background image with overlay */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-15" 
+                  className="absolute inset-0 bg-cover bg-center opacity-20" 
                   style={{ 
-                    backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80')",
+                    backgroundImage: "url('/lovable-uploads/52c24ea1-70c6-454b-b141-c120be9178da.png')",
                     backgroundSize: "cover"
                   }}
                 >
