@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import AnimatedBackground from './AnimatedBackground';
 import { ArrowRight, Zap, Users, BarChart3 } from 'lucide-react';
@@ -82,13 +81,13 @@ const Hero = () => {
             className="relative max-w-5xl mx-auto mb-20"
           >
             {/* Gradient background for the platform demo */}
-            <div className="absolute inset-0 -m-10 bg-gradient-to-br from-convrt-influential/20 via-convrt-purple/20 to-convrt-ignored/20 rounded-3xl blur-3xl opacity-40"></div>
+            <div className="absolute inset-0 -m-10 bg-gradient-to-br from-convrt-purple/20 via-convrt-purple/20 to-convrt-purple/20 rounded-3xl blur-3xl opacity-40"></div>
             
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20 backdrop-blur-sm">
               {/* Platform UI Header */}
               <div className="bg-convrt-dark-blue/95 py-4 px-6 flex items-center justify-between border-b border-white/10">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-convrt-purple to-convrt-influential flex items-center justify-center text-white">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-convrt-purple to-convrt-purple flex items-center justify-center text-white">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 2L17 7H14V13H10V7H7L12 2Z" fill="currentColor" />
                       <path d="M22 12L17 17V14H11V10H17V7L22 12Z" fill="currentColor" />
@@ -115,7 +114,7 @@ const Hero = () => {
                     <div className="bg-white/5 rounded-xl p-4 backdrop-blur-sm border border-white/5">
                       <h3 className="text-white/80 text-sm font-medium mb-3">Navigation</h3>
                       <ul className="space-y-3">
-                        <li className="flex items-center space-x-2 text-convrt-influential p-2 bg-convrt-influential/10 rounded-lg">
+                        <li className="flex items-center space-x-2 text-convrt-purple p-2 bg-convrt-purple/10 rounded-lg">
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="7" height="9" x="3" y="3" rx="1" stroke="currentColor" strokeWidth="2" />
                             <rect width="7" height="5" x="14" y="3" rx="1" stroke="currentColor" strokeWidth="2" />
@@ -148,24 +147,24 @@ const Hero = () => {
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
                           <span className="text-xs text-white/70">Responses</span>
-                          <span className="text-xs font-medium text-convrt-influential">+24%</span>
+                          <span className="text-xs font-medium text-convrt-purple">+24%</span>
                         </div>
                         <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-convrt-influential rounded-full animate-pulse" style={{width: '76%'}}></div>
+                          <div className="h-full bg-convrt-purple rounded-full animate-pulse" style={{width: '76%'}}></div>
                         </div>
                         
                         <div className="flex justify-between items-center">
                           <span className="text-xs text-white/70">Meetings</span>
-                          <span className="text-xs font-medium text-convrt-purple-light">+12%</span>
+                          <span className="text-xs font-medium text-convrt-purple">+12%</span>
                         </div>
                         <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-convrt-purple-light rounded-full animate-pulse" style={{width: '54%'}}></div>
+                          <div className="h-full bg-convrt-purple rounded-full animate-pulse" style={{width: '54%'}}></div>
                         </div>
                       </div>
                     </div>
                   </div>
                   
-                  {/* Main Content Area */}
+                  {/* Main Content Area - AI Relationship Analysis */}
                   <div className="col-span-7">
                     <div className="bg-white/5 rounded-xl p-5 backdrop-blur-sm border border-white/5 mb-6">
                       <div className="flex justify-between items-center mb-4">
@@ -178,18 +177,15 @@ const Hero = () => {
                       </div>
                       
                       <p className="text-white/70 text-sm mb-4">
-                        Creating authentic, direct relevance with <span className="text-convrt-influential">Karen Johnson</span> requires focusing on shared values around innovation and sustainability.
+                        Creating authentic, direct relevance with <span className="text-convrt-purple">Karen Johnson</span> requires focusing on shared values around innovation and sustainability.
                       </p>
                       
                       <div className="bg-convrt-dark-blue/50 p-4 rounded-lg mb-5">
                         <div className="flex items-start">
-                          <div className="text-convrt-purple-light bg-convrt-purple/20 p-1.5 rounded-lg mr-3">
+                          <div className="text-convrt-purple bg-convrt-purple/20 p-1.5 rounded-lg mr-3">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 2a4.61 4.61 0 0 1 2.44 6.47A4.25 4.25 0 0 1 15.45 12h.05c2.5.1 4.25 1 4.5 2.73V15a3 3 0 0 1-2.3 2.92l-2.53.42a3.52 3.52 0 0 1-3.77-1.65L10.5 15.5" stroke="currentColor" strokeWidth="2" />
                               <path d="M15 9.5a4.61 4.61 0 0 0-2.44-6.47A4.25 4.25 0 0 0 9.55 0H9.5c-2.5.1-4.25 1-4.5 2.73V3a3 3 0 0 0 2.3 2.92l2.53.42a3.52 3.52 0 0 0 3.77-1.65L14.5 3.5" stroke="currentColor" strokeWidth="2" />
-                              <path d="M4 8h2.5a1.5 1.5 0 0 1 1.5 1.5V12" stroke="currentColor" strokeWidth="2" />
-                              <path d="M4 16h2.5a1.5 1.5 0 0 0 1.5-1.5V12" stroke="currentColor" strokeWidth="2" />
-                              <path d="M13 16a3 3 0 1 0 0-6" stroke="currentColor" strokeWidth="2" />
                             </svg>
                           </div>
                           <div>
@@ -273,7 +269,7 @@ const Hero = () => {
                     </div>
                   </div>
                   
-                  {/* Right Sidebar */}
+                  {/* Right Sidebar - Contact Profile */}
                   <div className="col-span-3 space-y-6">
                     <div className="bg-white/5 rounded-xl p-4 backdrop-blur-sm border border-white/5">
                       <h3 className="text-white/80 text-sm font-medium mb-3">Contact Profile</h3>
@@ -319,7 +315,7 @@ const Hero = () => {
                       <h3 className="text-white/80 text-sm font-medium mb-3">Next Steps</h3>
                       <ul className="space-y-3">
                         <li className="flex items-center text-white/90 bg-white/5 p-2 rounded-lg">
-                          <div className="w-5 h-5 rounded-full border border-convrt-influential/50 flex items-center justify-center mr-2 text-convrt-influential">
+                          <div className="w-5 h-5 rounded-full border border-convrt-purple/50 flex items-center justify-center mr-2 text-convrt-purple">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -336,7 +332,7 @@ const Hero = () => {
                         </li>
                       </ul>
                       
-                      <button className="w-full mt-4 py-2 bg-gradient-to-r from-convrt-purple to-convrt-influential rounded-lg text-white text-sm font-medium">
+                      <button className="w-full mt-4 py-2 bg-gradient-to-r from-convrt-purple to-convrt-purple rounded-lg text-white text-sm font-medium">
                         Start Sequence
                       </button>
                     </div>

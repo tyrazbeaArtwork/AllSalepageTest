@@ -1,3 +1,4 @@
+
 import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
@@ -59,8 +60,8 @@ export default {
           "purple-light": "#9B87F5",
           "white": "#FFFFFF",
           "light-gray": "#F5F7FA",
-          "ignored": "#FF4D6A",
-          "influential": "#00C2FF"
+          "ignored": "#6936F5",
+          "influential": "#6936F5"
         }
       },
       borderRadius: {
