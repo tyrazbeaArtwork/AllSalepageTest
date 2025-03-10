@@ -58,16 +58,16 @@ const stats = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-white" id="testimonials">
+    <section className="py-8 bg-white" id="testimonials">
       <div className="container-section max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-12 text-center"
+          className="mb-8 text-center"
         >
-          <h2 className="text-3xl font-bold mb-8">Trusted by industry leaders</h2>
+          <h2 className="text-3xl font-bold mb-6">Trusted by industry leaders</h2>
         </motion.div>
 
         <div className="grid grid-cols-12 gap-4">

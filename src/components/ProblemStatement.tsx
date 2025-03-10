@@ -25,14 +25,14 @@ const ProblemStatement = () => {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden bg-white" id="problem">
+    <section className="relative py-16 overflow-hidden bg-white" id="problem">
       <div className="container-section relative z-10">
         <motion.div 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
           <motion.div variants={itemVariants} className="section-tag">
             Why Traditional Outbound Is Dead

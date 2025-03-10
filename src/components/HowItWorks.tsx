@@ -43,9 +43,9 @@ const HowItWorks = () => {
   };
 
   return (
-    <section className="relative py-12 bg-white" id="how-it-works">
-      <div className="container-section py-6">
-        <div className="max-w-3xl mx-auto text-center mb-8">
+    <section className="relative py-4 bg-white" id="how-it-works">
+      <div className="container-section py-4">
+        <div className="max-w-3xl mx-auto text-center mb-6">
           <div className="section-tag">
             From Ignored to Trusted
           </div>

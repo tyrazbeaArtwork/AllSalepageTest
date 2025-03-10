@@ -44,7 +44,7 @@ const Index = () => {
         <HowItWorks />
         <Testimonials />
         
-        <section className="py-24 px-6" id="cta">
+        <section className="py-16 px-6" id="cta">
           <div className="container mx-auto max-w-5xl">
             <div 
               className="rounded-2xl overflow-hidden relative"
@@ -106,7 +106,7 @@ const Index = () => {
         </section>
       </main>
       
-      <footer className="bg-white py-12 border-t border-gray-100">
+      <footer className="bg-white py-8 border-t border-gray-100">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <motion.div 
@@ -114,7 +114,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="mb-8 md:mb-0"
+              className="mb-6 md:mb-0"
             >
               <h3 className="text-2xl font-bold text-convrt-dark-blue">Convrt.ai</h3>
               <p className="text-sm text-gray-600 mt-2">© {new Date().getFullYear()} Convrt.ai. All rights reserved.</p>
