@@ -1,6 +1,5 @@
-
 import React, { useEffect, useRef } from 'react';
-import { X, Check, PhoneCall, Mail, MessageSquare } from 'lucide-react';
+import { X, Check, PhoneCall, Mail, MessageSquare, Users, Zap, BarChart3 } from 'lucide-react';
 
 const ProblemStatement = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
