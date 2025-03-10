@@ -1,6 +1,7 @@
+
 import React, { useEffect, useRef } from 'react';
 import AnimatedBackground from './AnimatedBackground';
-import { ArrowRight, Zap, Users, BarChart3 } from 'lucide-react';
+import { ArrowRight, Zap, Users, BarChart3, TrendingUp, Award, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -203,8 +204,8 @@ const Hero = () => {
                           <div className="flex items-center">
                             <div className="w-8 h-8 rounded-lg bg-convrt-influential/20 text-convrt-influential flex items-center justify-center mr-3">
                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" strokeWidth="2" />
+                                <path d="M16 8.5v7.5h-2.5V11h-2v5H9V8.5h7z" fill="currentColor" />
                               </svg>
                             </div>
                             <div>
@@ -219,8 +220,23 @@ const Hero = () => {
                           <div className="flex items-center">
                             <div className="w-8 h-8 rounded-lg bg-convrt-purple/20 text-convrt-purple flex items-center justify-center mr-3">
                               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                <path d="M12 6v6l4 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M22 4s-4 2-7 2-7-2-7-2-4-2-7-2v15c0 0 3 2 7 2s7-2 7-2 4 2 7 2V4z" fill="none" stroke="currentColor" strokeWidth="2" />
+                                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
+                              </svg>
+                            </div>
+                            <div>
+                              <span className="text-white/90 text-sm">Reddit Discussion</span>
+                              <span className="block text-white/60 text-xs">Shared thought leadership</span>
+                            </div>
+                          </div>
+                          <span className="text-white/50 text-xs">3 days ago</span>
+                        </div>
+
+                        <div className="flex justify-between bg-white/5 p-3 rounded-lg">
+                          <div className="flex items-center">
+                            <div className="w-8 h-8 rounded-lg bg-convrt-purple/20 text-convrt-purple flex items-center justify-center mr-3">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
                             </div>
                             <div>
@@ -302,11 +318,28 @@ const Hero = () => {
                       </div>
                       
                       <div className="bg-convrt-dark-blue/50 rounded-lg p-3">
-                        <h4 className="text-white/90 text-xs font-medium mb-2">Key Interests</h4>
+                        <h4 className="text-white/90 text-xs font-medium mb-2">Social Channels</h4>
                         <div className="flex flex-wrap gap-2">
-                          <span className="px-2 py-1 bg-convrt-influential/10 text-convrt-influential/90 text-xs rounded-md">Operational Efficiency</span>
-                          <span className="px-2 py-1 bg-convrt-purple/10 text-convrt-purple-light/90 text-xs rounded-md">Sustainability</span>
-                          <span className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-md">AI Solutions</span>
+                          <div className="px-2 py-1 bg-convrt-purple/10 text-convrt-purple-light/90 text-xs rounded-md flex items-center">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="mr-1" strokeWidth="2">
+                              <rect x="2" y="2" width="20" height="20" rx="5" />
+                              <path d="M16 8.5v7.5h-2.5V11h-2v5H9V8.5h7z" fill="currentColor" />
+                            </svg>
+                            LinkedIn
+                          </div>
+                          <div className="px-2 py-1 bg-convrt-purple/10 text-convrt-purple-light/90 text-xs rounded-md flex items-center">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="mr-1" strokeWidth="2">
+                              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg>
+                            Twitter
+                          </div>
+                          <div className="px-2 py-1 bg-convrt-purple/10 text-convrt-purple-light/90 text-xs rounded-md flex items-center">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="mr-1" strokeWidth="2">
+                              <path d="M22 4s-4 2-7 2-7-2-7-2-4-2-7-2v15c0 0 3 2 7 2s7-2 7-2 4 2 7 2V4z" />
+                              <circle cx="12" cy="12" r="4" />
+                            </svg>
+                            Reddit
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -384,7 +417,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           
-          {/* Stats Section */}
+          {/* Stats Section - Enhanced with better styling and icons */}
           <motion.div 
             ref={statsRef} 
             variants={containerVariants}
@@ -395,35 +428,47 @@ const Hero = () => {
           >
             <motion.div 
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500"
+              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500 relative overflow-hidden"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6">
-                <Zap className="w-7 h-7" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-convrt-purple/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6 relative z-10">
+                <TrendingUp className="w-7 h-7" />
               </div>
-              <div className="text-4xl font-bold text-convrt-dark-blue font-inter">15x</div>
-              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg">Higher Conversion Rates</div>
+              <div className="text-4xl font-bold text-convrt-dark-blue font-inter relative z-10">15x</div>
+              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg relative z-10">Higher Conversion Rates</div>
+              <div className="text-convrt-dark-blue/60 text-sm mt-1 relative z-10">
+                Turn cold prospects into warm leads
+              </div>
             </motion.div>
             
             <motion.div 
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500"
+              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500 relative overflow-hidden"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6">
-                <Users className="w-7 h-7" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-convrt-purple/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6 relative z-10">
+                <Target className="w-7 h-7" />
               </div>
-              <div className="text-4xl font-bold text-convrt-dark-blue font-inter">80%</div>
-              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg">Less Prospecting Time</div>
+              <div className="text-4xl font-bold text-convrt-dark-blue font-inter relative z-10">80%</div>
+              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg relative z-10">Less Prospecting Time</div>
+              <div className="text-convrt-dark-blue/60 text-sm mt-1 relative z-10">
+                AI-driven relationship building
+              </div>
             </motion.div>
             
             <motion.div 
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500"
+              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500 relative overflow-hidden"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6">
-                <BarChart3 className="w-7 h-7" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-convrt-purple/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6 relative z-10">
+                <Award className="w-7 h-7" />
               </div>
-              <div className="text-4xl font-bold text-convrt-dark-blue font-inter">78%</div>
-              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg">Sales Outperformance</div>
+              <div className="text-4xl font-bold text-convrt-dark-blue font-inter relative z-10">78%</div>
+              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg relative z-10">Sales Outperformance</div>
+              <div className="text-convrt-dark-blue/60 text-sm mt-1 relative z-10">
+                Compared to traditional methods
+              </div>
             </motion.div>
           </motion.div>
         </motion.div>
