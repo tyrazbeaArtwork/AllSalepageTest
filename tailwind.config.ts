@@ -59,8 +59,8 @@ export default {
           "purple-light": "#9B87F5",
           "white": "#FFFFFF",
           "light-gray": "#F5F7FA",
-          "ignored": "#9B87F5",
-          "influential": "#7E69AB"
+          "ignored": "#6936F5",
+          "influential": "#6936F5"
         }
       },
       borderRadius: {
