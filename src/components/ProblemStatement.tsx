@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { X, Check, PhoneCall, Mail, MessageSquare, Users, Zap, BarChart3 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -26,12 +26,8 @@ const ProblemStatement = () => {
 
   return (
     <section className="relative py-32 overflow-hidden" id="problem">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-convrt-light-gray/50 to-white"></div>
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-[400px] right-[20%] w-[600px] h-[600px] rounded-full bg-convrt-ignored/5 blur-3xl"></div>
-        <div className="absolute -bottom-[300px] left-[10%] w-[500px] h-[500px] rounded-full bg-convrt-influential/5 blur-3xl"></div>
-      </div>
+      {/* Background elements - simplified */}
+      <div className="absolute inset-0 bg-white"></div>
       
       <div className="container-section relative z-10">
         <motion.div 
@@ -68,11 +64,11 @@ const ProblemStatement = () => {
           variants={containerVariants}
           className="grid md:grid-cols-2 gap-10"
         >
-          {/* Traditional Cold Outbound */}
+          {/* Traditional Cold Outbound - simplified box */}
           <motion.div 
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className="bg-white rounded-2xl p-8 border border-red-100 relative overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-500"
+            className="bg-white rounded-[20px] p-8 border border-gray-100 relative overflow-hidden group shadow-md transition-all duration-500"
           >
             <div className="absolute top-0 right-0 bg-red-50 px-4 py-2 rounded-bl-2xl">
               <X className="w-5 h-5 text-convrt-ignored" />
@@ -115,30 +111,30 @@ const ProblemStatement = () => {
             </ul>
             
             <div className="mt-12 grid grid-cols-3 gap-4">
-              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3 shadow-md">
+              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3">
                 <PhoneCall className="w-8 h-8 text-convrt-ignored mb-2" />
                 <div className="text-sm text-center text-convrt-ignored font-medium">Cold Calls</div>
               </div>
               
-              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3 shadow-md">
+              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3">
                 <Mail className="w-8 h-8 text-convrt-ignored mb-2" />
                 <div className="text-sm text-center text-convrt-ignored font-medium">Mass Emails</div>
               </div>
               
-              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3 shadow-md">
+              <div className="aspect-square flex flex-col items-center justify-center bg-red-50 rounded-xl p-3">
                 <MessageSquare className="w-8 h-8 text-convrt-ignored mb-2" />
                 <div className="text-sm text-center text-convrt-ignored font-medium">Generic Messages</div>
               </div>
             </div>
             
-            <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-red-300/30 via-convrt-ignored to-red-300/30"></div>
+            <div className="absolute -bottom-1 left-0 right-0 h-1 bg-convrt-ignored"></div>
           </motion.div>
           
-          {/* AI Organic Outbound */}
+          {/* AI Organic Outbound - simplified box */}
           <motion.div 
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className="bg-white rounded-2xl p-8 border border-convrt-purple/30 relative overflow-hidden group shadow-xl hover:shadow-2xl hover:shadow-convrt-purple/10 transition-all duration-500"
+            className="bg-white rounded-[20px] p-8 border border-gray-100 relative overflow-hidden group shadow-md transition-all duration-500"
           >
             <div className="absolute top-0 right-0 bg-convrt-purple/10 px-4 py-2 rounded-bl-2xl">
               <Check className="w-5 h-5 text-convrt-purple" />
@@ -182,23 +178,23 @@ const ProblemStatement = () => {
             </ul>
             
             <div className="mt-12 grid grid-cols-3 gap-4">
-              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3 shadow-md">
+              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3">
                 <Users className="w-8 h-8 text-convrt-purple mb-2" />
                 <div className="text-sm text-center text-convrt-purple font-medium">Engagement</div>
               </div>
               
-              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3 shadow-md">
+              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3">
                 <Zap className="w-8 h-8 text-convrt-purple mb-2" />
                 <div className="text-sm text-center text-convrt-purple font-medium">Trust Building</div>
               </div>
               
-              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3 shadow-md">
+              <div className="aspect-square flex flex-col items-center justify-center bg-convrt-purple/5 rounded-xl p-3">
                 <BarChart3 className="w-8 h-8 text-convrt-purple mb-2" />
                 <div className="text-sm text-center text-convrt-purple font-medium">Win More Deals</div>
               </div>
             </div>
             
-            <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-convrt-purple/30 via-convrt-purple to-convrt-purple/30"></div>
+            <div className="absolute -bottom-1 left-0 right-0 h-1 bg-convrt-purple"></div>
           </motion.div>
         </motion.div>
       </div>

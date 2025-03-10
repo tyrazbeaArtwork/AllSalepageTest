@@ -52,7 +52,7 @@ const ProductShowcase = () => {
           </motion.p>
         </motion.div>
         
-        {/* Clean Product UI Showcase */}
+        {/* Clean Product UI Showcase with simplified rectangles */}
         <motion.div 
           ref={contentRef}
           initial="hidden"
@@ -63,7 +63,7 @@ const ProductShowcase = () => {
         >
           <motion.div 
             variants={itemVariants}
-            className="relative bg-[#f5f5f7] rounded-2xl overflow-hidden shadow-sm border border-gray-200"
+            className="relative bg-white rounded-[20px] overflow-hidden shadow-sm border border-gray-200"
           >
             <div className="px-8 py-6 border-b border-gray-200 flex items-center justify-between">
               <div className="flex items-center space-x-2">
@@ -96,7 +96,7 @@ const ProductShowcase = () => {
                   ))}
                 </ul>
               </div>
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white rounded-[20px] border border-gray-200 p-6">
                 <div className="flex items-center mb-4">
                   <div className="h-8 w-8 rounded-full bg-[#6936F5] flex items-center justify-center text-white mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -111,7 +111,7 @@ const ProductShowcase = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="p-4 bg-gray-50 rounded-lg">
+                  <div className="p-4 bg-white rounded-lg border border-gray-100">
                     <p className="text-gray-700 text-sm leading-relaxed">
                       Based on social media activity, your prospect shows interest in sustainability initiatives and has recently shared content about AI implementation in their industry.
                     </p>
@@ -140,7 +140,7 @@ const ProductShowcase = () => {
           </motion.div>
         </motion.div>
         
-        {/* Features */}
+        {/* Features with simplified rectangles */}
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -169,7 +169,7 @@ const ProductShowcase = () => {
             <motion.div 
               key={i}
               variants={itemVariants}
-              className="bg-white p-8 rounded-xl border border-gray-100 transition-all duration-300 hover:shadow-md"
+              className="bg-white p-8 rounded-[20px] border border-gray-100 transition-all duration-300"
             >
               <h3 className="text-xl font-semibold text-convrt-dark-blue mb-3">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
@@ -198,9 +198,9 @@ const ProductShowcase = () => {
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="p-4 text-left bg-gray-50 rounded-tl-lg"></th>
-                  <th className="p-4 text-center bg-[#f5f5f7] text-convrt-dark-blue font-semibold">Convrt.ai</th>
-                  <th className="p-4 text-center bg-gray-50 text-gray-500 font-medium rounded-tr-lg">Traditional Tools</th>
+                  <th className="p-4 text-left bg-white rounded-tl-lg"></th>
+                  <th className="p-4 text-center bg-white text-convrt-dark-blue font-semibold">Convrt.ai</th>
+                  <th className="p-4 text-center bg-white text-gray-500 font-medium rounded-tr-lg">Traditional Tools</th>
                 </tr>
               </thead>
               <tbody>
@@ -215,7 +215,7 @@ const ProductShowcase = () => {
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-gray-100">
                     <td className="p-4 text-left font-medium text-gray-700">{row.feature}</td>
-                    <td className="p-4 text-center bg-[#f5f5f7]">
+                    <td className="p-4 text-center bg-white">
                       {typeof row.convrt === "boolean" ? (
                         row.convrt ? (
                           <div className="flex justify-center">

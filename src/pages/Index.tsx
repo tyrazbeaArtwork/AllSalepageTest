@@ -44,38 +44,34 @@ const Index = () => {
         {/* Main Hero Section */}
         <Hero />
         
-        {/* Problem Statement Section - with blended transition */}
+        {/* Problem Statement Section - with simplified transition */}
         <div className="relative">
-          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-convrt-light-gray/0 z-10"></div>
+          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <ProblemStatement />
         </div>
         
-        {/* How It Works Section - with blended transition */}
+        {/* How It Works Section - with simplified transition */}
         <div className="relative">
-          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-convrt-light-gray/50 to-white/0 z-10"></div>
+          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <HowItWorks />
         </div>
         
-        {/* Product Showcase Section - with blended transition */}
+        {/* Product Showcase Section - with simplified transition */}
         <div className="relative">
-          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white z-10"></div>
+          <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <ProductShowcase />
         </div>
         
-        {/* Testimonials Section - with blended transition */}
+        {/* Testimonials Section - with simplified transition */}
         <div className="relative">
           <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <Testimonials />
         </div>
         
-        {/* Final CTA Section */}
+        {/* Final CTA Section with simplified rectangles */}
         <section className="relative py-32 overflow-hidden" id="cta">
-          {/* Background elements */}
-          <div className="absolute inset-0 bg-gradient-to-b from-convrt-light-gray/30 to-white"></div>
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-[400px] -left-[300px] w-[800px] h-[800px] rounded-full bg-[#6936F5]/5 blur-3xl"></div>
-            <div className="absolute -bottom-[400px] -right-[300px] w-[800px] h-[800px] rounded-full bg-[#6936F5]/5 blur-3xl"></div>
-          </div>
+          {/* Background elements - simplified */}
+          <div className="absolute inset-0 bg-white"></div>
           
           <div className="container mx-auto px-6 relative z-10">
             <motion.div 
@@ -114,7 +110,7 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-white rounded-[20px] border border-gray-100 hover:shadow-md transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +125,7 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-white rounded-[20px] border border-gray-100 hover:shadow-md transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -144,7 +140,7 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-white rounded-[20px] border border-gray-100 hover:shadow-md transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -159,7 +155,7 @@ const Index = () => {
         </section>
       </main>
       
-      <footer className="relative overflow-hidden bg-gradient-to-b from-white to-convrt-light-gray/30 py-16">
+      <footer className="relative overflow-hidden bg-white py-16 border-t border-gray-100">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <motion.div 
