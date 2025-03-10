@@ -26,9 +26,20 @@ const testimonials = [
   },
 ];
 
+// Customer logos data
+const customerLogos = [
+  { id: 1, name: "Acme Inc.", imageClass: "bg-gradient-to-br from-blue-400 to-blue-600" },
+  { id: 2, name: "Global Tech", imageClass: "bg-gradient-to-br from-green-400 to-green-600" },
+  { id: 3, name: "Innovate AI", imageClass: "bg-gradient-to-br from-purple-400 to-purple-600" },
+  { id: 4, name: "FutureCorp", imageClass: "bg-gradient-to-br from-red-400 to-red-600" },
+  { id: 5, name: "DataFlow", imageClass: "bg-gradient-to-br from-yellow-400 to-yellow-600" },
+  { id: 6, name: "TechNova", imageClass: "bg-gradient-to-br from-indigo-400 to-indigo-600" },
+];
+
 const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const testimonialsRef = useRef<HTMLDivElement>(null);
+  const logosRef = useRef<HTMLDivElement>(null);
   const metricsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -40,6 +51,9 @@ const Testimonials = () => {
               entry.target.classList.add('opacity-100');
               entry.target.classList.remove('opacity-0');
             } else if (entry.target === testimonialsRef.current) {
+              entry.target.classList.add('opacity-100');
+              entry.target.classList.remove('opacity-0', 'translate-y-8');
+            } else if (entry.target === logosRef.current) {
               entry.target.classList.add('opacity-100');
               entry.target.classList.remove('opacity-0', 'translate-y-8');
             } else if (entry.target === metricsRef.current) {
@@ -54,11 +68,13 @@ const Testimonials = () => {
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     if (testimonialsRef.current) observer.observe(testimonialsRef.current);
+    if (logosRef.current) observer.observe(logosRef.current);
     if (metricsRef.current) observer.observe(metricsRef.current);
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
       if (testimonialsRef.current) observer.unobserve(testimonialsRef.current);
+      if (logosRef.current) observer.unobserve(logosRef.current);
       if (metricsRef.current) observer.unobserve(metricsRef.current);
     };
   }, []);
@@ -116,6 +132,30 @@ const Testimonials = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Customer Logos Section */}
+        <div 
+          ref={logosRef}
+          className="opacity-0 translate-y-8 transition-all duration-700 delay-400 mb-16"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-white text-xl font-medium">Trusted by innovative companies</h3>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {customerLogos.map((logo) => (
+              <div 
+                key={logo.id}
+                className="bg-white/5 backdrop-blur-sm rounded-xl aspect-[3/2] flex items-center justify-center border border-white/10 p-4 transition-all duration-300 hover:bg-white/10 group"
+              >
+                <div className={`w-12 h-12 rounded-lg ${logo.imageClass} flex items-center justify-center text-white font-bold text-xl transition-transform duration-300 group-hover:scale-110`}>
+                  {logo.name.charAt(0)}
+                </div>
+                <span className="ml-3 text-white font-medium">{logo.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
         
         <div 
