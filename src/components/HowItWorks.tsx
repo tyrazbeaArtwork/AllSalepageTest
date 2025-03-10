@@ -42,13 +42,13 @@ const HowItWorks = () => {
   };
 
   return (
-    <section className="relative py-20 bg-white" id="how-it-works">
-      <div className="container-section">
-        <div className="max-w-3xl mx-auto text-center mb-12">
+    <section className="relative py-12 bg-white" id="how-it-works">
+      <div className="container-section py-6">
+        <div className="max-w-3xl mx-auto text-center mb-8">
           <div className="section-tag">
             From Ignored to Trusted
           </div>
-          <h2 className="heading-lg text-convrt-dark-blue mb-6">
+          <h2 className="heading-lg text-convrt-dark-blue mb-4">
             How <span className="gradient-text">Convrt.ai</span> Works in 3 Steps
           </h2>
           <p className="text-convrt-dark-blue/80 text-lg max-w-2xl mx-auto">
@@ -57,42 +57,44 @@ const HowItWorks = () => {
         </div>
         
         {/* Boxed Content Section */}
-        <div className="max-w-5xl mx-auto bg-gray-100 rounded-2xl p-8 shadow-md border border-gray-200">
-          {/* Image Display */}
-          <div className="mb-8 relative overflow-hidden rounded-xl bg-white p-4 border border-gray-200 shadow-sm">
-            <div className="aspect-video relative">
+        <div className="max-w-5xl mx-auto bg-gray-100 rounded-2xl p-6 shadow-md border border-gray-200">
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Image Display */}
+            <div className="md:w-2/3 relative overflow-hidden rounded-xl bg-white p-4 border border-gray-200 shadow-sm">
+              <div className="aspect-video relative">
+                {steps.map((step) => (
+                  <div 
+                    key={step.id}
+                    className={`absolute inset-0 transition-opacity duration-500 ${
+                      activeStep === step.id ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                    }`}
+                  >
+                    <img 
+                      src={step.gifUrl} 
+                      alt={`Step ${step.id}: ${step.title}`} 
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Steps Section - Now positioned to the right */}
+            <div className="md:w-1/3 flex flex-col gap-3">
               {steps.map((step) => (
-                <div 
+                <StepContent
                   key={step.id}
-                  className={`absolute inset-0 transition-opacity duration-500 ${
-                    activeStep === step.id ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                  }`}
-                >
-                  <img 
-                    src={step.gifUrl} 
-                    alt={`Step ${step.id}: ${step.title}`} 
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
+                  stepNumber={step.id}
+                  title={step.title}
+                  description={step.description}
+                  highlightText={step.highlightText}
+                  highlightDetails={step.highlightDetails}
+                  icon={step.icon}
+                  isActive={activeStep === step.id}
+                  onClick={() => handleStepClick(step.id)}
+                />
               ))}
             </div>
-          </div>
-          
-          {/* Steps Section */}
-          <div className="grid md:grid-cols-3 gap-4">
-            {steps.map((step) => (
-              <StepContent
-                key={step.id}
-                stepNumber={step.id}
-                title={step.title}
-                description={step.description}
-                highlightText={step.highlightText}
-                highlightDetails={step.highlightDetails}
-                icon={step.icon}
-                isActive={activeStep === step.id}
-                onClick={() => handleStepClick(step.id)}
-              />
-            ))}
           </div>
         </div>
       </div>
