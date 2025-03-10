@@ -28,7 +28,7 @@ const ProductShowcase = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-[#F9F6F3]" id="product">
+    <section className="relative py-20 overflow-hidden bg-white" id="product">
       <div className="container-section max-w-6xl mx-auto">
         <motion.div 
           ref={sectionRef}
@@ -63,7 +63,7 @@ const ProductShowcase = () => {
         >
           <motion.div 
             variants={itemVariants}
-            className="relative bg-white rounded-[20px] overflow-hidden border border-gray-200"
+            className="relative bg-[#F9F6F3] rounded-[20px] overflow-hidden border border-gray-200"
           >
             <div className="px-8 py-6 border-b border-gray-200 flex items-center justify-between">
               <div className="flex items-center space-x-2">
@@ -111,7 +111,7 @@ const ProductShowcase = () => {
                 </div>
                 
                 <div className="space-y-4">
-                  <div className="p-4 bg-white rounded-lg border border-gray-100">
+                  <div className="p-4 bg-[#F9F6F3] rounded-lg border border-gray-100">
                     <p className="text-gray-700 text-sm leading-relaxed">
                       Based on social media activity, your prospect shows interest in sustainability initiatives and has recently shared content about AI implementation in their industry.
                     </p>
@@ -169,7 +169,7 @@ const ProductShowcase = () => {
             <motion.div 
               key={i}
               variants={itemVariants}
-              className="bg-white p-8 rounded-[20px] border border-gray-100 transition-all duration-300"
+              className="bg-[#F9F6F3] p-8 rounded-[20px] border border-gray-100 transition-all duration-300"
             >
               <h3 className="text-xl font-semibold text-convrt-dark-blue mb-3">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
@@ -198,9 +198,9 @@ const ProductShowcase = () => {
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="p-4 text-left bg-white rounded-tl-lg"></th>
-                  <th className="p-4 text-center bg-white text-convrt-dark-blue font-semibold">Convrt.ai</th>
-                  <th className="p-4 text-center bg-white text-gray-500 font-medium rounded-tr-lg">Traditional Tools</th>
+                  <th className="p-4 text-left bg-[#F9F6F3] rounded-tl-lg"></th>
+                  <th className="p-4 text-center bg-[#F9F6F3] text-convrt-dark-blue font-semibold">Convrt.ai</th>
+                  <th className="p-4 text-center bg-[#F9F6F3] text-gray-500 font-medium rounded-tr-lg">Traditional Tools</th>
                 </tr>
               </thead>
               <tbody>
@@ -215,7 +215,7 @@ const ProductShowcase = () => {
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-gray-100">
                     <td className="p-4 text-left font-medium text-gray-700">{row.feature}</td>
-                    <td className="p-4 text-center bg-white">
+                    <td className="p-4 text-center bg-[#F9F6F3]">
                       {typeof row.convrt === "boolean" ? (
                         row.convrt ? (
                           <div className="flex justify-center">
@@ -230,7 +230,7 @@ const ProductShowcase = () => {
                         <div className="font-medium text-convrt-dark-blue">{row.convrt}</div>
                       )}
                     </td>
-                    <td className="p-4 text-center">
+                    <td className="p-4 text-center bg-[#F9F6F3]">
                       {typeof row.traditional === "boolean" ? (
                         row.traditional ? (
                           <div className="flex justify-center">

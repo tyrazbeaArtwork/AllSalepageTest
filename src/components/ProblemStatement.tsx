@@ -25,10 +25,7 @@ const ProblemStatement = () => {
   };
 
   return (
-    <section className="relative py-32 overflow-hidden" id="problem">
-      {/* Background elements - simplified */}
-      <div className="absolute inset-0 bg-[#F9F6F3]"></div>
-      
+    <section className="relative py-32 overflow-hidden bg-white" id="problem">
       <div className="container-section relative z-10">
         <motion.div 
           initial="hidden"
@@ -68,7 +65,7 @@ const ProblemStatement = () => {
           <motion.div 
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className="bg-white rounded-[20px] p-8 border border-gray-100 relative overflow-hidden group"
+            className="bg-[#F9F6F3] rounded-[20px] p-8 border border-gray-100 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 bg-red-50 px-4 py-2 rounded-bl-2xl">
               <X className="w-5 h-5 text-convrt-ignored" />
@@ -134,7 +131,7 @@ const ProblemStatement = () => {
           <motion.div 
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className="bg-white rounded-[20px] p-8 border border-gray-100 relative overflow-hidden group"
+            className="bg-[#F9F6F3] rounded-[20px] p-8 border border-gray-100 relative overflow-hidden group"
           >
             <div className="absolute top-0 right-0 bg-convrt-purple/10 px-4 py-2 rounded-bl-2xl">
               <Check className="w-5 h-5 text-convrt-purple" />

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -69,10 +68,7 @@ const Index = () => {
         </div>
         
         {/* Final CTA Section with simplified rectangles */}
-        <section className="relative py-32 overflow-hidden" id="cta">
-          {/* Background elements - simplified */}
-          <div className="absolute inset-0 bg-white"></div>
-          
+        <section className="relative py-32 overflow-hidden bg-white" id="cta">
           <div className="container mx-auto px-6 relative z-10">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -110,7 +106,7 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-white rounded-[20px] border border-gray-100 hover:shadow-md transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-[#F9F6F3] rounded-[20px] border border-gray-100 transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,7 +121,7 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-white rounded-[20px] border border-gray-100 hover:shadow-md transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-[#F9F6F3] rounded-[20px] border border-gray-100 transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,7 +136,7 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-white rounded-[20px] border border-gray-100 hover:shadow-md transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-[#F9F6F3] rounded-[20px] border border-gray-100 transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
