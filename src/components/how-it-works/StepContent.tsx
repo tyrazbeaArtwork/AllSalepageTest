@@ -25,16 +25,16 @@ const StepContent: React.FC<StepContentProps> = ({
 }) => {
   return (
     <div 
-      className={`relative px-4 py-3 cursor-pointer transition-all duration-300 h-full flex flex-col ${
+      className={`relative px-3 py-2 cursor-pointer transition-all duration-300 h-full flex flex-col ${
         isActive 
           ? 'bg-white border-2 border-convrt-purple rounded-lg shadow-md' 
           : 'bg-gray-50 border border-gray-200 rounded-lg'
       }`}
       onClick={onClick}
     >
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-2">
         <div className="flex-shrink-0">
-          <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-base ${
+          <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-sm ${
             isActive 
               ? 'bg-convrt-purple text-white' 
               : 'bg-gray-200 text-convrt-dark-blue'
@@ -44,15 +44,15 @@ const StepContent: React.FC<StepContentProps> = ({
         </div>
         
         <div className="flex-1">
-          <div className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-1">
+          <div className="inline-flex items-center justify-center w-6 h-6 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-1">
             {icon}
           </div>
           
-          <h3 className="text-base font-bold text-convrt-dark-blue mb-1">
+          <h3 className="text-sm font-bold text-convrt-dark-blue mb-1">
             {title}
           </h3>
           
-          <p className="text-xs text-convrt-dark-blue/80 mb-2">
+          <p className="text-xs text-convrt-dark-blue/80 mb-1">
             {description}
           </p>
           
