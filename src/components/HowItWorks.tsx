@@ -1,11 +1,43 @@
-
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Target, Users, LineChart, ArrowRight } from 'lucide-react';
+import StepContent from './how-it-works/StepContent';
 
 const HowItWorks = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const stepsRef = useRef<HTMLDivElement>(null);
   const screenRef = useRef<HTMLDivElement>(null);
+  const [activeStep, setActiveStep] = useState(1);
+
+  // Steps data
+  const steps = [
+    {
+      id: 1,
+      icon: <Target className="w-6 h-6" />,
+      title: "AI Identifies Where Your Buyers Engage",
+      description: "Our AI scans social media to find where your target audience is most active, identifying the exact channels, topics, and content they engage with.",
+      highlightText: "AI identifies:",
+      highlightDetails: "Relevant conversations, active communities, and engagement opportunities",
+      gifUrl: "https://api.microlink.io?url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fsearch-searching-google-l46CwEYnbFtFfjZNS&embed=true&screenshot=true&meta=false"
+    },
+    {
+      id: 2,
+      icon: <Users className="w-6 h-6" />,
+      title: "AI Auto-Warms & Builds Trust",
+      description: "Convrt creates meaningful touchpoints that position you as a trusted advisor by engaging with prospects' content and contributing value.",
+      highlightText: "AI automates:",
+      highlightDetails: "Targeted comments, relevant reactions, and personalized interactions",
+      gifUrl: "https://api.microlink.io?url=https%3A%2F%2Fgiphy.com%2Fgifs%2Frevolutioncomedy-handshake-revolutioncomedy-icommitcombustion-kFHbqSdogIS0qtX6Pf&embed=true&screenshot=true&meta=false"
+    },
+    {
+      id: 3,
+      icon: <LineChart className="w-6 h-6" />,
+      title: "AI Converts Warm Leads Into Pipeline",
+      description: "With pre-established trust, your outreach achieves 15x higher conversion rates, turning social connections into qualified leads and deals.",
+      highlightText: "AI delivers:",
+      highlightDetails: "Warmed leads, engagement analytics, and conversion opportunities",
+      gifUrl: "https://api.microlink.io?url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fchart-jtECu4TAPnhbGv2iwx&embed=true&screenshot=true&meta=false"
+    }
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,6 +71,35 @@ const HowItWorks = () => {
     };
   }, []);
 
+  // Handle scroll events to update the active step
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      
+      // Calculate where each step should trigger
+      if (stepsRef.current) {
+        const stepsElement = stepsRef.current;
+        const stepsPosition = stepsElement.getBoundingClientRect().top + window.scrollY;
+        const stepsHeight = stepsElement.offsetHeight;
+        
+        // Divide the steps section into equal parts for each step
+        const stepHeight = stepsHeight / steps.length;
+        
+        steps.forEach(step => {
+          const stepTriggerPosition = stepsPosition + (step.id - 1) * stepHeight;
+          const nextStepTriggerPosition = stepsPosition + step.id * stepHeight;
+          
+          if (scrollPosition >= stepTriggerPosition && scrollPosition < nextStepTriggerPosition) {
+            setActiveStep(step.id);
+          }
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="relative py-20 bg-white" id="how-it-works">
       <div className="container-section">
@@ -57,75 +118,38 @@ const HowItWorks = () => {
           </p>
         </div>
         
+        {/* Sticky Progress Indicator */}
+        <div className="hidden md:flex justify-center mb-8 sticky top-24 z-20">
+          <div className="flex items-center p-4 bg-white rounded-full border border-gray-100 shadow-md">
+            {steps.map((step) => (
+              <div 
+                key={step.id}
+                className={`w-4 h-4 rounded-full mx-2 transition-all duration-300 ${
+                  activeStep >= step.id ? 'bg-convrt-purple scale-110' : 'bg-gray-200'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+        
+        {/* Steps container with increased spacing for scroll behavior */}
         <div 
           ref={stepsRef}
-          className="grid md:grid-cols-3 gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-300 mb-16"
+          className="grid md:grid-cols-1 gap-32 opacity-0 translate-y-8 transition-all duration-700 delay-300 mb-16"
         >
-          {/* Step 1 */}
-          <div className="relative feature-card group bg-[#F9F6F3]">
-            <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-convrt-dark-blue text-white flex items-center justify-center font-bold text-xl shadow-lg">
-              1
-            </div>
-            <div className="pt-8">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-4">
-                <Target className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-convrt-dark-blue mb-3">
-                AI Identifies Where Your Buyers Engage
-              </h3>
-              <p className="text-convrt-dark-blue/80">
-                Our AI scans social media to find where your target audience is most active, identifying the exact channels, topics, and content they engage with.
-              </p>
-              
-              <div className="mt-4 py-2 px-3 bg-white rounded-lg text-sm text-convrt-dark-blue/90">
-                <span className="font-medium text-convrt-dark-blue">AI identifies:</span> Relevant conversations, active communities, and engagement opportunities
-              </div>
-            </div>
-          </div>
-          
-          {/* Step 2 */}
-          <div className="relative feature-card group bg-[#F9F6F3]">
-            <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-convrt-dark-blue text-white flex items-center justify-center font-bold text-xl shadow-lg">
-              2
-            </div>
-            <div className="pt-8">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-4">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-convrt-dark-blue mb-3">
-                AI Auto-Warms & Builds Trust
-              </h3>
-              <p className="text-convrt-dark-blue/80">
-                Convrt creates meaningful touchpoints that position you as a trusted advisor by engaging with prospects' content and contributing value.
-              </p>
-              
-              <div className="mt-4 py-2 px-3 bg-white rounded-lg text-sm text-convrt-dark-blue/90">
-                <span className="font-medium text-convrt-dark-blue">AI automates:</span> Targeted comments, relevant reactions, and personalized interactions
-              </div>
-            </div>
-          </div>
-          
-          {/* Step 3 */}
-          <div className="relative feature-card group bg-[#F9F6F3]">
-            <div className="absolute -top-4 -left-4 w-12 h-12 rounded-full bg-convrt-dark-blue text-white flex items-center justify-center font-bold text-xl shadow-lg">
-              3
-            </div>
-            <div className="pt-8">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-4">
-                <LineChart className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold text-convrt-dark-blue mb-3">
-                AI Converts Warm Leads Into Pipeline
-              </h3>
-              <p className="text-convrt-dark-blue/80">
-                With pre-established trust, your outreach achieves 15x higher conversion rates, turning social connections into qualified leads and deals.
-              </p>
-              
-              <div className="mt-4 py-2 px-3 bg-white rounded-lg text-sm text-convrt-dark-blue/90">
-                <span className="font-medium text-convrt-dark-blue">AI delivers:</span> Warmed leads, engagement analytics, and conversion opportunities
-              </div>
-            </div>
-          </div>
+          {steps.map((step) => (
+            <StepContent
+              key={step.id}
+              stepNumber={step.id}
+              title={step.title}
+              description={step.description}
+              highlightText={step.highlightText}
+              highlightDetails={step.highlightDetails}
+              icon={step.icon}
+              gifUrl={step.gifUrl}
+              isActive={activeStep === step.id}
+            />
+          ))}
         </div>
         
         {/* UI Demo */}
