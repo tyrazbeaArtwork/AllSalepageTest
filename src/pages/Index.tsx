@@ -8,7 +8,6 @@ import Testimonials from '@/components/Testimonials';
 import { motion } from 'framer-motion';
 
 const Index = () => {
-  // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,7 +20,6 @@ const Index = () => {
       { threshold: 0.15, rootMargin: "0px 0px -100px 0px" }
     );
 
-    // Target all sections for animation
     document.querySelectorAll('section').forEach((section) => {
       observer.observe(section);
     });
@@ -40,34 +38,28 @@ const Index = () => {
       </div>
       
       <main className="pt-16">
-        {/* Main Hero Section */}
         <Hero />
         
-        {/* Problem Statement Section - with simplified transition */}
         <div className="relative">
           <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <ProblemStatement />
         </div>
         
-        {/* How It Works Section - with simplified transition */}
         <div className="relative">
           <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <HowItWorks />
         </div>
         
-        {/* Product Showcase Section - with simplified transition */}
         <div className="relative">
           <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <ProductShowcase />
         </div>
         
-        {/* Testimonials Section - with simplified transition */}
         <div className="relative">
           <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white to-white/0 z-10"></div>
           <Testimonials />
         </div>
         
-        {/* Final CTA Section with simplified rectangles */}
         <section className="relative py-32 overflow-hidden bg-white" id="cta">
           <div className="container mx-auto px-6 relative z-10">
             <motion.div 
@@ -106,11 +98,11 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-[#F9F6F3] rounded-[20px] border border-gray-100 transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-gray-100 rounded-[20px] border border-gray-100 transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M9 14L15 8M10 8H15V13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                   </div>
                   <span className="font-medium text-convrt-dark-blue">GDPR Compliant</span>
@@ -121,7 +113,7 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-[#F9F6F3] rounded-[20px] border border-gray-100 transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-gray-100 rounded-[20px] border border-gray-100 transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,7 +128,7 @@ const Index = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex flex-col items-center p-6 bg-[#F9F6F3] rounded-[20px] border border-gray-100 transition-all duration-500"
+                  className="flex flex-col items-center p-6 bg-gray-100 rounded-[20px] border border-gray-100 transition-all duration-500"
                 >
                   <div className="w-16 h-16 rounded-full bg-[#6936F5]/10 flex items-center justify-center mb-4">
                     <svg className="w-8 h-8 text-[#6936F5]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
