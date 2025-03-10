@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Target, Users, LineChart } from 'lucide-react';
 import StepContent from './how-it-works/StepContent';
+import { motion } from 'framer-motion';
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -10,7 +11,7 @@ const HowItWorks = () => {
   const steps = [
     {
       id: 1,
-      icon: <Target className="w-5 h-5" />,
+      icon: <Target className="w-4 h-4" />,
       title: "AI Identifies Where Your Buyers Engage",
       description: "Our AI scans social media to find where your target audience is most active, identifying the exact channels, topics, and content they engage with.",
       highlightText: "AI identifies:",
@@ -19,7 +20,7 @@ const HowItWorks = () => {
     },
     {
       id: 2,
-      icon: <Users className="w-5 h-5" />,
+      icon: <Users className="w-4 h-4" />,
       title: "AI Auto-Warms & Builds Trust",
       description: "Convrt creates meaningful touchpoints that position you as a trusted advisor by engaging with prospects' content and contributing value.",
       highlightText: "AI automates:",
@@ -28,7 +29,7 @@ const HowItWorks = () => {
     },
     {
       id: 3,
-      icon: <LineChart className="w-5 h-5" />,
+      icon: <LineChart className="w-4 h-4" />,
       title: "AI Converts Warm Leads Into Pipeline",
       description: "With pre-established trust, your outreach achieves 15x higher conversion rates, turning social connections into qualified leads and deals.",
       highlightText: "AI delivers:",
@@ -56,31 +57,11 @@ const HowItWorks = () => {
           </p>
         </div>
         
-        {/* Boxed Content Section */}
+        {/* Content Section with Steps on Left */}
         <div className="max-w-5xl mx-auto bg-gray-100 rounded-2xl p-6 shadow-md border border-gray-200">
-          <div className="flex flex-col md:flex-row gap-6">
-            {/* Image Display */}
-            <div className="md:w-2/3 relative overflow-hidden rounded-xl bg-white p-4 border border-gray-200 shadow-sm">
-              <div className="aspect-video relative">
-                {steps.map((step) => (
-                  <div 
-                    key={step.id}
-                    className={`absolute inset-0 transition-opacity duration-500 ${
-                      activeStep === step.id ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                    }`}
-                  >
-                    <img 
-                      src={step.gifUrl} 
-                      alt={`Step ${step.id}: ${step.title}`} 
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Steps Section - Now positioned to the right */}
-            <div className="md:w-1/3 flex flex-col gap-3">
+          <div className="flex flex-col lg:flex-row gap-6">
+            {/* Steps Section - Now on the left */}
+            <div className="lg:w-1/3 flex flex-col gap-3">
               {steps.map((step) => (
                 <StepContent
                   key={step.id}
@@ -94,6 +75,34 @@ const HowItWorks = () => {
                   onClick={() => handleStepClick(step.id)}
                 />
               ))}
+            </div>
+            
+            {/* Image Display - Now on the right */}
+            <div className="lg:w-2/3 relative overflow-hidden rounded-xl bg-white p-4 border border-gray-200 shadow-sm">
+              <div className="aspect-video h-full flex items-center justify-center">
+                {steps.map((step) => (
+                  <motion.div 
+                    key={step.id}
+                    className="absolute inset-0 h-full"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ 
+                      opacity: activeStep === step.id ? 1 : 0,
+                      scale: activeStep === step.id ? 1 : 0.95,
+                      zIndex: activeStep === step.id ? 10 : 1
+                    }}
+                    transition={{ 
+                      duration: 0.5, 
+                      ease: "easeInOut"
+                    }}
+                  >
+                    <img 
+                      src={step.gifUrl} 
+                      alt={`Step ${step.id}: ${step.title}`} 
+                      className="w-full h-full object-contain rounded-lg"
+                    />
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
