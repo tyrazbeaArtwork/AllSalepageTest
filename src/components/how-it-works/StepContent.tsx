@@ -24,46 +24,45 @@ const StepContent: React.FC<StepContentProps> = ({
   isActive,
 }) => {
   return (
-    <div className={`relative bg-gray-100 rounded-lg p-8 transition-all duration-500 ${
-      isActive ? 'border-2 border-convrt-purple' : 'border border-gray-200'
-    }`}>
-      <div className="flex items-start gap-4">
-        <div className="flex-shrink-0">
-          <div className="w-12 h-12 rounded-lg bg-convrt-purple text-white flex items-center justify-center font-bold text-xl">
+    <div className={`bg-white rounded-lg shadow-sm border ${
+      isActive ? 'border-convrt-purple' : 'border-gray-200'
+    } overflow-hidden`}>
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="w-8 h-8 rounded-md bg-convrt-purple text-white flex items-center justify-center font-medium">
             {stepNumber}
           </div>
+          <h3 className="text-xl font-bold text-convrt-dark-blue">
+            {title}
+          </h3>
         </div>
         
-        <div className="flex-1">
+        <div className="mb-4 pl-11">
           <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-4">
             {icon}
           </div>
           
-          <h3 className="text-xl font-bold text-convrt-dark-blue mb-3">
-            {title}
-          </h3>
-          
-          <p className="text-convrt-dark-blue/80 mb-4">
+          <p className="text-convrt-dark-blue/80 mb-5">
             {description}
           </p>
           
-          <div className="bg-white rounded-lg p-3 text-sm text-convrt-dark-blue/90 border border-gray-200">
+          <div className="bg-gray-100 rounded-md p-3 text-sm text-convrt-dark-blue/90 border border-gray-200">
             <span className="font-medium text-convrt-dark-blue">{highlightText}</span> {highlightDetails}
           </div>
-          
-          {gifUrl && (
-            <div className={`mt-4 overflow-hidden rounded-lg transition-all duration-500 ${
-              isActive ? 'opacity-100 max-h-60' : 'opacity-0 max-h-0'
-            }`}>
-              <img 
-                src={gifUrl} 
-                alt={`Step ${stepNumber} demonstration`} 
-                className="w-full h-auto rounded-lg border border-gray-200" 
-              />
-            </div>
-          )}
         </div>
       </div>
+      
+      {gifUrl && (
+        <div className={`transition-all duration-500 ${
+          isActive ? 'max-h-60' : 'max-h-0'
+        } overflow-hidden`}>
+          <img 
+            src={gifUrl} 
+            alt={`Step ${stepNumber} demonstration`} 
+            className="w-full h-auto border-t border-gray-200" 
+          />
+        </div>
+      )}
     </div>
   );
 };

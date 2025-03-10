@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Target, Users, LineChart, ArrowRight } from 'lucide-react';
 import StepContent from './how-it-works/StepContent';
@@ -13,7 +14,7 @@ const HowItWorks = () => {
     {
       id: 1,
       icon: <Target className="w-6 h-6" />,
-      title: "AI Identifies Where Your Buyers Engage",
+      title: "Identify",
       description: "Our AI scans social media to find where your target audience is most active, identifying the exact channels, topics, and content they engage with.",
       highlightText: "AI identifies:",
       highlightDetails: "Relevant conversations, active communities, and engagement opportunities",
@@ -22,7 +23,7 @@ const HowItWorks = () => {
     {
       id: 2,
       icon: <Users className="w-6 h-6" />,
-      title: "AI Auto-Warms & Builds Trust",
+      title: "Research",
       description: "Convrt creates meaningful touchpoints that position you as a trusted advisor by engaging with prospects' content and contributing value.",
       highlightText: "AI automates:",
       highlightDetails: "Targeted comments, relevant reactions, and personalized interactions",
@@ -31,11 +32,20 @@ const HowItWorks = () => {
     {
       id: 3,
       icon: <LineChart className="w-6 h-6" />,
-      title: "AI Converts Warm Leads Into Pipeline",
+      title: "Personalize",
       description: "With pre-established trust, your outreach achieves 15x higher conversion rates, turning social connections into qualified leads and deals.",
       highlightText: "AI delivers:",
       highlightDetails: "Warmed leads, engagement analytics, and conversion opportunities",
       gifUrl: "https://api.microlink.io?url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fchart-jtECu4TAPnhbGv2iwx&embed=true&screenshot=true&meta=false"
+    },
+    {
+      id: 4,
+      icon: <ArrowRight className="w-6 h-6" />,
+      title: "Engage",
+      description: "Convert opportunities through multi-channel engagement, executing follow-through from interaction to outcomes.",
+      highlightText: "AI engages:",
+      highlightDetails: "Personalized outreach, consistent follow-ups, and timely responses",
+      gifUrl: "https://api.microlink.io?url=https%3A%2F%2Fgiphy.com%2Fgifs%2Fshaking-hands-handshake-2xPJgmjMrILKbBVd1h5&embed=true&screenshot=true&meta=false"
     }
   ];
 
@@ -101,33 +111,33 @@ const HowItWorks = () => {
   }, []);
 
   return (
-    <section className="relative py-20 bg-white" id="how-it-works">
+    <section className="relative py-20 bg-gray-50" id="how-it-works">
       <div className="container-section">
         <div 
           ref={sectionRef}
           className="max-w-3xl mx-auto text-center opacity-0 transition-opacity duration-700"
         >
-          <div className="section-tag">
-            From Ignored to Trusted
+          <div className="inline-flex items-center justify-center px-4 py-1.5 bg-gray-100 rounded-full text-convrt-dark-blue text-sm font-medium mb-4">
+            How It Works
           </div>
           <h2 className="heading-lg text-convrt-dark-blue mb-6">
-            How <span className="gradient-text">Convrt.ai</span> Works in 3 Steps
+            From prospecting to closing: <span className="gradient-text">All-in-one</span>
           </h2>
           <p className="text-convrt-dark-blue/80 text-lg mb-16 max-w-2xl mx-auto">
-            Our AI-driven platform automates social engagement for your sales and GTM teams, transforming cold outreach into warm connections.
+            Turn your prospects from cold outreach to closed deals
           </p>
         </div>
         
         {/* Progress Indicator */}
-        <div className="hidden md:flex justify-center mb-8 sticky top-24 z-20">
-          <div className="flex items-center gap-4 p-4 bg-gray-100 rounded-lg border border-gray-200">
+        <div className="flex justify-center mb-8 sticky top-24 z-20">
+          <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
             {steps.map((step) => (
               <div 
                 key={step.id}
-                className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
+                className={`w-8 h-8 rounded-md flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
                   activeStep >= step.id 
                     ? 'bg-convrt-purple text-white' 
-                    : 'bg-white text-convrt-dark-blue border border-gray-200'
+                    : 'bg-gray-100 text-convrt-dark-blue/70 border border-gray-200'
                 }`}
               >
                 {step.id}
@@ -156,113 +166,49 @@ const HowItWorks = () => {
           ))}
         </div>
         
-        {/* UI Demo Section */}
+        {/* Platform Preview Box - Simplified */}
         <div 
           ref={screenRef}
-          className="opacity-0 scale-95 transition-all duration-700 delay-500"
+          className="opacity-0 scale-95 transition-all duration-700 delay-500 bg-white rounded-lg border border-gray-200 shadow-sm max-w-5xl mx-auto overflow-hidden"
         >
-          <div className="bg-[#F9F6F3] p-6 rounded-2xl border border-gray-100">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center">
-                <div className="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500"></div>
-              </div>
-              <div className="px-4 py-1.5 rounded-full bg-white border border-gray-100 text-convrt-dark-blue/80 text-xs">
-                convrt.ai/engagement-dashboard
-              </div>
+          <div className="bg-gray-100 p-4 border-b border-gray-200 flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
             </div>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl overflow-hidden border border-gray-100">
-                <div className="p-4 border-b border-gray-100">
-                  <h4 className="text-convrt-dark-blue font-medium">Prospect Identification</h4>
-                </div>
-                <div className="p-4">
-                  <div className="space-y-3">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="flex items-center p-2 rounded-lg bg-[#F9F6F3] border border-gray-100">
-                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-convrt-purple/60 to-convrt-purple-light/40 flex items-center justify-center text-white mr-3">
-                          {i}
-                        </div>
-                        <div>
-                          <div className="text-convrt-dark-blue text-sm font-medium">Prospect {i}</div>
-                          <div className="text-convrt-dark-blue/70 text-xs">High-value target</div>
-                        </div>
-                        <div className="ml-auto">
-                          <div className="w-8 h-8 rounded-full bg-convrt-purple/20 text-convrt-purple-light flex items-center justify-center">
-                            <ArrowRight className="w-4 h-4" />
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+            <div className="text-sm text-gray-500">convrt.ai/dashboard</div>
+            <div className="w-5"></div>
+          </div>
+          
+          <div className="p-6">
+            <div className="grid grid-cols-4 gap-6">
+              <div className="col-span-1">
+                <div className="text-lg font-medium text-convrt-dark-blue mb-4">Identify</div>
+                <p className="text-sm text-convrt-dark-blue/70">
+                  Identify perfect-fit prospects at scale, filtering millions of signals to surface your ideal opportunities across every channel.
+                </p>
               </div>
               
-              <div className="bg-white rounded-xl overflow-hidden border border-gray-100">
-                <div className="p-4 border-b border-gray-100">
-                  <h4 className="text-convrt-dark-blue font-medium">AI Engagement</h4>
-                </div>
-                <div className="p-4">
-                  <div className="space-y-3">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="p-2 rounded-lg bg-[#F9F6F3] border border-gray-100">
-                        <div className="flex items-center">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-convrt-purple/60 to-convrt-purple-light/40 flex items-center justify-center text-white mr-3">
-                            {i}
-                          </div>
-                          <div>
-                            <div className="text-convrt-dark-blue text-sm font-medium">Touchpoint {i}</div>
-                            <div className="text-convrt-dark-blue/70 text-xs">Auto engagement</div>
-                          </div>
-                          <div className="ml-auto text-convrt-purple-light text-xs font-medium">
-                            +Trust
-                          </div>
-                        </div>
-                        <div className="mt-2 text-xs text-convrt-dark-blue/80 bg-white rounded-lg p-2 border border-gray-100">
-                          "Great insights on your recent post about {i === 1 ? "AI adoption" : i === 2 ? "revenue growth" : "lead conversion"}."
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div className="col-span-1">
+                <div className="text-lg font-medium text-convrt-dark-blue mb-4">Research</div>
+                <p className="text-sm text-convrt-dark-blue/70">
+                  Research prospect signals across social, public, and engagement data to craft winning strategies.
+                </p>
               </div>
               
-              <div className="bg-white rounded-xl overflow-hidden border border-gray-100">
-                <div className="p-4 border-b border-gray-100">
-                  <h4 className="text-convrt-dark-blue font-medium">Conversion Analytics</h4>
-                </div>
-                <div className="p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="text-convrt-dark-blue text-sm">Trust Score</div>
-                    <div className="text-convrt-purple-light font-medium">87%</div>
-                  </div>
-                  <div className="w-full h-2 bg-[#F9F6F3] rounded-full mb-4">
-                    <div className="h-2 bg-gradient-to-r from-convrt-purple/80 to-convrt-purple-light rounded-full" style={{ width: "87%" }}></div>
-                  </div>
-                  
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="text-convrt-dark-blue text-sm">Engagement Rate</div>
-                    <div className="text-convrt-purple-light font-medium">92%</div>
-                  </div>
-                  <div className="w-full h-2 bg-[#F9F6F3] rounded-full mb-4">
-                    <div className="h-2 bg-gradient-to-r from-convrt-purple/80 to-convrt-purple-light rounded-full" style={{ width: "92%" }}></div>
-                  </div>
-                  
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="text-convrt-dark-blue text-sm">Response Rate</div>
-                    <div className="text-convrt-purple-light font-medium">76%</div>
-                  </div>
-                  <div className="w-full h-2 bg-[#F9F6F3] rounded-full mb-4">
-                    <div className="h-2 bg-gradient-to-r from-convrt-purple/80 to-convrt-purple-light rounded-full" style={{ width: "76%" }}></div>
-                  </div>
-                  
-                  <div className="bg-[#F9F6F3] p-3 rounded-lg text-center">
-                    <div className="text-convrt-purple-light font-medium">15x Higher Conversion</div>
-                    <div className="text-convrt-dark-blue/80 text-xs mt-1">Compared to cold outreach</div>
-                  </div>
-                </div>
+              <div className="col-span-1">
+                <div className="text-lg font-medium text-convrt-dark-blue mb-4">Personalize</div>
+                <p className="text-sm text-convrt-dark-blue/70">
+                  Calibrate conversations with precision, dynamically adapting tone and messaging to match each prospect's unique style.
+                </p>
+              </div>
+              
+              <div className="col-span-1">
+                <div className="text-lg font-medium text-convrt-dark-blue mb-4">Engage</div>
+                <p className="text-sm text-convrt-dark-blue/70">
+                  Convert opportunities through multi-channel engagement, executing follow-through from interaction to outcomes.
+                </p>
               </div>
             </div>
           </div>
