@@ -36,7 +36,7 @@ const Hero = () => {
       
       <div className="container-section relative z-10">
         <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-convrt-cyan/10 text-convrt-cyan mb-6">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-convrt-purple/10 text-convrt-purple mb-6">
             <Zap className="w-4 h-4 mr-2" />
             <span className="text-sm font-medium font-inter tracking-wide">The First AI Organic Outbound Platform</span>
           </div>
@@ -45,7 +45,7 @@ const Hero = () => {
             From <span className="gradient-text">Ignored</span> to <span className="gradient-text">Influential</span>
           </h1>
           
-          <p className="font-inter text-xl text-convrt-dark-blue/70 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="font-inter text-xl text-convrt-dark-blue/80 max-w-3xl mx-auto mb-8 leading-relaxed">
             AI that makes buyers trust you, so you win more deals
           </p>
           
@@ -60,11 +60,11 @@ const Hero = () => {
           </div>
           
           {/* Glass Card - Product Screenshot */}
-          <div className="relative max-w-5xl mx-auto glass p-1 mb-12">
+          <div className="relative max-w-5xl mx-auto glass shadow-xl shadow-convrt-purple/5 p-1 mb-12">
             <div className="w-full aspect-[16/9] bg-convrt-dark-blue rounded-xl overflow-hidden relative">
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-convrt-dark-blue to-convrt-dark-blue/80">
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-convrt-dark-blue to-convrt-dark-blue/90">
                 <div className="text-white text-xl font-medium p-6 text-center font-inter">
-                  <span className="block mb-4 text-convrt-cyan font-semibold">Convrt.ai Platform</span>
+                  <span className="block mb-4 text-convrt-purple-light font-semibold">Convrt.ai Platform</span>
                   The only platform that puts you exactly where your buyers make decisions
                 </div>
               </div>
@@ -76,28 +76,28 @@ const Hero = () => {
             ref={statsRef} 
             className="grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-500 opacity-0 translate-y-4"
           >
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-convrt-light-gray/30">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-cyan/10 text-convrt-cyan mb-4">
+            <div className="bg-white rounded-xl p-6 shadow-lg border border-convrt-light-gray/50">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-4">
                 <Zap className="w-6 h-6" />
               </div>
               <div className="text-3xl font-bold text-convrt-dark-blue font-inter">15x</div>
-              <div className="text-convrt-dark-blue/70 mt-1 font-inter">Higher Conversion Rates</div>
+              <div className="text-convrt-dark-blue/80 mt-1 font-inter">Higher Conversion Rates</div>
             </div>
             
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-convrt-light-gray/30">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-cyan/10 text-convrt-cyan mb-4">
+            <div className="bg-white rounded-xl p-6 shadow-lg border border-convrt-light-gray/50">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-4">
                 <Users className="w-6 h-6" />
               </div>
               <div className="text-3xl font-bold text-convrt-dark-blue font-inter">80%</div>
-              <div className="text-convrt-dark-blue/70 mt-1 font-inter">Less Prospecting Time</div>
+              <div className="text-convrt-dark-blue/80 mt-1 font-inter">Less Prospecting Time</div>
             </div>
             
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-convrt-light-gray/30">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-cyan/10 text-convrt-cyan mb-4">
+            <div className="bg-white rounded-xl p-6 shadow-lg border border-convrt-light-gray/50">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-convrt-purple/10 text-convrt-purple mb-4">
                 <BarChart3 className="w-6 h-6" />
               </div>
               <div className="text-3xl font-bold text-convrt-dark-blue font-inter">78%</div>
-              <div className="text-convrt-dark-blue/70 mt-1 font-inter">Sales Outperformance</div>
+              <div className="text-convrt-dark-blue/80 mt-1 font-inter">Sales Outperformance</div>
             </div>
           </div>
         </div>
