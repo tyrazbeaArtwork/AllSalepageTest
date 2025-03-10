@@ -4,9 +4,9 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import ProblemStatement from '@/components/ProblemStatement';
 import HowItWorks from '@/components/HowItWorks';
-import ProductShowcase from '@/components/ProductShowcase';
 import Testimonials from '@/components/Testimonials';
 import { motion } from 'framer-motion';
+import { ArrowRight, Check } from 'lucide-react';
 
 const Index = () => {
   useEffect(() => {
@@ -42,84 +42,68 @@ const Index = () => {
         <Hero />
         <ProblemStatement />
         <HowItWorks />
-        <ProductShowcase />
         <Testimonials />
         
-        <section className="relative py-24 overflow-hidden bg-convrt-purple/5" id="cta">
+        <section className="relative py-24 overflow-hidden bg-gray-100" id="cta">
           <div className="container mx-auto px-6 relative z-10">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
+              className="max-w-6xl mx-auto"
             >
-              <div className="bg-white p-12 rounded-3xl shadow-xl border border-gray-100 text-center">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-convrt-dark-blue leading-tight">
-                  Ready to Move from 
-                  <span className="text-convrt-purple font-extrabold mx-2">Ignored</span> 
-                  to 
-                  <span className="text-convrt-purple font-extrabold mx-2">Influential</span>?
-                </h2>
-                
-                <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                  Join hundreds of sales teams who have transformed their outbound with AI-driven social selling.
-                </p>
-                
-                <motion.button 
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className="button-primary text-lg px-8 py-4 shadow-xl shadow-convrt-purple/10 hover:shadow-2xl hover:shadow-convrt-purple/20 rounded-full"
-                >
-                  Start Free – No Credit Card Needed
-                </motion.button>
-                
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
-                  viewport={{ once: true }}
-                  className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6"
-                >
-                  {[
-                    {
-                      icon: (
-                        <svg className="w-6 h-6 text-convrt-purple" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9 14L15 8M10 8H15V13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      ),
-                      label: "GDPR Compliant"
-                    },
-                    {
-                      icon: (
-                        <svg className="w-6 h-6 text-convrt-purple" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 15V17M6 21H18C19.1046 21 20 20.1046 20 19V13C20 11.8954 19.1046 11 18 11H6C4.89543 11 4 11.8954 4 13V19C4 20.1046 4.89543 21 6 21ZM16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11H16Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      ),
-                      label: "Secure & Encrypted"
-                    },
-                    {
-                      icon: (
-                        <svg className="w-6 h-6 text-convrt-purple" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9 14L15 8M10 8H15V13M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      ),
-                      label: "24/7 Support"
-                    }
-                  ].map((item, i) => (
-                    <div 
-                      key={i}
-                      className="flex flex-col items-center"
-                    >
-                      <div className="w-12 h-12 rounded-full bg-convrt-purple/10 flex items-center justify-center mb-3">
-                        {item.icon}
-                      </div>
-                      <span className="font-medium text-convrt-dark-blue">{item.label}</span>
+              <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <div className="flex flex-col lg:flex-row">
+                  {/* Content Side */}
+                  <div className="lg:w-7/12 p-8 lg:p-12">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-convrt-dark-blue leading-tight">
+                      Ready to Move from 
+                      <span className="text-convrt-purple font-extrabold"> Ignored </span> 
+                      to 
+                      <span className="text-convrt-purple font-extrabold"> Influential</span>?
+                    </h2>
+                    
+                    <p className="text-lg text-gray-600 mb-8 max-w-2xl">
+                      Join hundreds of sales teams who have transformed their outbound with AI-driven social selling.
+                    </p>
+                    
+                    <div className="space-y-4 mb-8">
+                      {[
+                        "15x higher response rates than cold outreach",
+                        "Build trust before your first message",
+                        "AI-driven personalization at scale"
+                      ].map((benefit, i) => (
+                        <div key={i} className="flex items-center">
+                          <Check className="w-5 h-5 text-convrt-purple mr-3 flex-shrink-0" />
+                          <span className="text-convrt-dark-blue/80">{benefit}</span>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </motion.div>
+                    
+                    <motion.button 
+                      initial={{ scale: 0.9, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.3, duration: 0.5 }}
+                      viewport={{ once: true }}
+                      className="button-primary flex items-center text-lg px-6 py-3 shadow-lg shadow-convrt-purple/10 hover:shadow-xl hover:shadow-convrt-purple/20 rounded-full group"
+                    >
+                      Start Free – No Credit Card Needed
+                      <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </motion.button>
+                  </div>
+                  
+                  {/* Image Side with Gradient Overlay */}
+                  <div className="lg:w-5/12 relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-convrt-purple/30 to-convrt-purple/10 mix-blend-multiply z-10"></div>
+                    <div 
+                      className="h-full min-h-[300px] lg:min-h-0 w-full bg-cover bg-center" 
+                      style={{ 
+                        backgroundImage: `url('/lovable-uploads/ce207080-f6c2-430d-9621-79d32ab08655.png')`
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
             </motion.div>
           </div>
