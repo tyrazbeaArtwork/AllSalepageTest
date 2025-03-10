@@ -58,29 +58,63 @@ const stats = [
 
 const Testimonials = () => {
   return (
-    <section className="py-12 bg-white" id="testimonials">
+    <section className="py-16 bg-white" id="testimonials">
       <div className="container-section max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-8 text-center"
+          className="mb-12 text-center"
         >
-          <h2 className="text-3xl font-bold">Trusted by industry leaders</h2>
+          <h2 className="text-5xl font-bold mb-12">Trusted by industry leaders</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {/* First testimonial */}
+        <div className="grid grid-cols-12 gap-4">
+          {/* Stats box */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="rounded-xl overflow-hidden"
+            className="col-span-12 md:col-span-4 lg:col-span-3 rounded-xl overflow-hidden"
           >
-            <div className={`h-full ${testimonials[0].bgColor} p-6 flex flex-col`}>
-              <div className="text-lg font-medium mb-6">
+            <div className={`h-full ${stats[0].bgColor} p-8 flex flex-col`}>
+              <div className="mt-auto">
+                <div className="text-5xl font-bold mb-2">{stats[0].value}</div>
+                <div className="text-gray-600">{stats[0].description}</div>
+              </div>
+              <div className="mt-auto pt-6">
+                <div className="font-bold text-lg">
+                  <span className="font-black">OI</span>•<span className="font-black">I</span> Otter.ai
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Handshake box */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-4 lg:col-span-3 rounded-xl overflow-hidden border border-gray-100"
+          >
+            <div className="h-full flex items-center justify-center p-6">
+              <div className="font-black text-2xl italic">Handshake</div>
+            </div>
+          </motion.div>
+
+          {/* First testimonial */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-8 lg:col-span-6 rounded-xl overflow-hidden"
+          >
+            <div className={`h-full ${testimonials[0].bgColor} p-8 flex flex-col`}>
+              <div className="text-2xl font-medium mb-8">
                 "{testimonials[0].quote}"
               </div>
               <div className="mt-auto">
@@ -94,16 +128,31 @@ const Testimonials = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
-            className="rounded-xl overflow-hidden"
+            className="col-span-12 md:col-span-7 lg:col-span-6 rounded-xl overflow-hidden"
           >
-            <div className={`h-full ${testimonials[1].bgColor} p-6 flex flex-col`}>
-              <div className="text-lg font-medium mb-6">
+            <div className={`h-full ${testimonials[1].bgColor} p-8 flex flex-col`}>
+              <div className="text-2xl font-medium mb-8">
                 "{testimonials[1].quote}"
               </div>
               <div className="mt-auto">
-                <div className="font-bold">connecteam</div>
+                <div className="font-bold text-lg">connecteam</div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Sumup box */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="col-span-12 md:col-span-5 lg:col-span-3 rounded-xl overflow-hidden border border-gray-100"
+          >
+            <div className="h-full flex items-center justify-center p-6">
+              <div className="font-black text-xl">
+                <span className="inline-block bg-black text-white px-1 py-0.5 rounded">∫</span> sumup°
               </div>
             </div>
           </motion.div>
@@ -112,12 +161,12 @@ const Testimonials = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
             viewport={{ once: true }}
-            className="rounded-xl overflow-hidden"
+            className="col-span-12 md:col-span-12 lg:col-span-3 rounded-xl overflow-hidden"
           >
-            <div className={`h-full ${testimonials[2].bgColor} p-6 flex flex-col`}>
-              <div className="text-lg font-medium mb-6">
+            <div className={`h-full ${testimonials[2].bgColor} p-8 flex flex-col`}>
+              <div className="text-2xl font-medium mb-8">
                 "{testimonials[2].quote}"
               </div>
               <div className="mt-auto">
