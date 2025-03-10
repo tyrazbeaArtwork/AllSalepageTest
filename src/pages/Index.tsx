@@ -44,55 +44,64 @@ const Index = () => {
         <HowItWorks />
         <Testimonials />
         
-        <section className="relative py-24 overflow-hidden" id="cta">
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-[0.15]" 
-            style={{ backgroundImage: "url('/lovable-uploads/82aa1379-5da0-4a7b-9573-d7026fc3ac1f.png')" }}
-          ></div>
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto text-center"
+        <section className="py-24 px-6" id="cta">
+          <div className="container mx-auto max-w-5xl">
+            <div 
+              className="rounded-2xl overflow-hidden relative"
+              style={{ 
+                backgroundImage: "url('/lovable-uploads/0f228602-2449-495f-866b-df124fde272a.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center"
+              }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-convrt-dark-blue leading-tight">
-                Ready to Move from 
-                <span className="text-convrt-purple font-extrabold"> Ignored </span> 
-                to 
-                <span className="text-convrt-purple font-extrabold"> Influential</span>?
-              </h2>
+              {/* Overlay to ensure text readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-900/70 to-gray-800/50"></div>
               
-              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-                Join hundreds of sales teams who have transformed their outbound with AI-driven social selling.
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4 mb-10">
-                {[
-                  "15x higher response rates than cold outreach",
-                  "Build trust before your first message",
-                  "AI-driven personalization at scale"
-                ].map((benefit, i) => (
-                  <div key={i} className="flex items-center bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-                    <Check className="w-5 h-5 text-convrt-purple mr-2 flex-shrink-0" />
-                    <span className="text-convrt-dark-blue/80 text-sm font-medium">{benefit}</span>
+              <div className="relative z-10 p-12 md:p-16 text-white">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  viewport={{ once: true }}
+                  className="max-w-lg"
+                >
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                    Ready to Move from 
+                    <span className="text-convrt-purple font-extrabold"> Ignored </span> 
+                    to 
+                    <span className="text-convrt-purple font-extrabold"> Influential</span>?
+                  </h2>
+                  
+                  <p className="text-lg text-gray-100 mb-8">
+                    Join hundreds of sales teams who have transformed their outbound with AI-driven social selling.
+                  </p>
+                  
+                  <div className="flex flex-col space-y-3 mb-8">
+                    {[
+                      "15x higher response rates than cold outreach",
+                      "Build trust before your first message",
+                      "AI-driven personalization at scale"
+                    ].map((benefit, i) => (
+                      <div key={i} className="flex items-center">
+                        <Check className="w-5 h-5 text-convrt-purple mr-2 flex-shrink-0" />
+                        <span className="text-gray-100 text-sm font-medium">{benefit}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                  
+                  <motion.button 
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="button-primary flex items-center text-lg px-8 py-4 shadow-lg shadow-convrt-purple/10 hover:shadow-xl hover:shadow-convrt-purple/20 rounded-full group"
+                  >
+                    Start Free – No Credit Card Needed
+                    <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+                  </motion.button>
+                </motion.div>
               </div>
-              
-              <motion.button 
-                initial={{ scale: 0.9, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="button-primary flex items-center mx-auto text-lg px-8 py-4 shadow-lg shadow-convrt-purple/10 hover:shadow-xl hover:shadow-convrt-purple/20 rounded-full group"
-              >
-                Start Free – No Credit Card Needed
-                <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </motion.button>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>
