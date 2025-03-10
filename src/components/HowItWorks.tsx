@@ -72,7 +72,7 @@ const HowItWorks = () => {
 
     if (sectionRef.current) observer.observe(sectionRef.current);
     if (stepsRef.current) observer.observe(stepsRef.current);
-    if (screenRef.current) observer.unobserve(screenRef.current);
+    if (screenRef.current) observer.observe(screenRef.current);
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
@@ -81,34 +81,12 @@ const HowItWorks = () => {
     };
   }, []);
 
-  // Handle scroll events to update the active step
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      
-      // Calculate where each step should trigger
-      if (stepsRef.current) {
-        const stepsElement = stepsRef.current;
-        const stepsPosition = stepsElement.getBoundingClientRect().top + window.scrollY;
-        const stepsHeight = stepsElement.offsetHeight;
-        
-        // Divide the steps section into equal parts for each step
-        const stepHeight = stepsHeight / steps.length;
-        
-        steps.forEach(step => {
-          const stepTriggerPosition = stepsPosition + (step.id - 1) * stepHeight;
-          const nextStepTriggerPosition = stepsPosition + step.id * stepHeight;
-          
-          if (scrollPosition >= stepTriggerPosition && scrollPosition < nextStepTriggerPosition) {
-            setActiveStep(step.id);
-          }
-        });
-      }
-    };
+  const handleStepClick = (stepId: number) => {
+    setActiveStep(stepId);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Get the current active step data
+  const activeStepData = steps.find(step => step.id === activeStep) || steps[0];
 
   return (
     <section className="relative py-20 bg-gray-50" id="how-it-works">
@@ -128,88 +106,48 @@ const HowItWorks = () => {
           </p>
         </div>
         
-        {/* Progress Indicator */}
-        <div className="flex justify-center mb-8 sticky top-24 z-20">
-          <div className="flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div 
+            ref={stepsRef}
+            className="md:col-span-1 grid gap-4 opacity-0 translate-y-8 transition-all duration-700 delay-300"
+          >
             {steps.map((step) => (
-              <div 
+              <StepContent
                 key={step.id}
-                className={`w-8 h-8 rounded-md flex items-center justify-center text-sm font-medium transition-colors duration-300 ${
-                  activeStep >= step.id 
-                    ? 'bg-convrt-purple text-white' 
-                    : 'bg-gray-100 text-convrt-dark-blue/70 border border-gray-200'
-                }`}
-              >
-                {step.id}
-              </div>
+                stepNumber={step.id}
+                title={step.title}
+                description={step.description}
+                highlightText={step.highlightText}
+                highlightDetails={step.highlightDetails}
+                icon={step.icon}
+                isActive={activeStep === step.id}
+                onClick={() => handleStepClick(step.id)}
+              />
             ))}
           </div>
-        </div>
-        
-        {/* Steps Container */}
-        <div 
-          ref={stepsRef}
-          className="grid gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-300 mb-16 max-w-4xl mx-auto"
-        >
-          {steps.map((step) => (
-            <StepContent
-              key={step.id}
-              stepNumber={step.id}
-              title={step.title}
-              description={step.description}
-              highlightText={step.highlightText}
-              highlightDetails={step.highlightDetails}
-              icon={step.icon}
-              gifUrl={step.gifUrl}
-              isActive={activeStep === step.id}
-            />
-          ))}
-        </div>
-        
-        {/* Platform Preview Box - Simplified */}
-        <div 
-          ref={screenRef}
-          className="opacity-0 scale-95 transition-all duration-700 delay-500 bg-white rounded-lg border border-gray-200 shadow-sm max-w-5xl mx-auto overflow-hidden"
-        >
-          <div className="bg-gray-100 p-4 border-b border-gray-200 flex justify-between items-center">
-            <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            </div>
-            <div className="text-sm text-gray-500">convrt.ai/dashboard</div>
-            <div className="w-5"></div>
-          </div>
           
-          <div className="p-6">
-            <div className="grid grid-cols-4 gap-6">
-              <div className="col-span-1">
-                <div className="text-lg font-medium text-convrt-dark-blue mb-4">Identify</div>
-                <p className="text-sm text-convrt-dark-blue/70">
-                  Identify perfect-fit prospects at scale, filtering millions of signals to surface your ideal opportunities across every channel.
-                </p>
+          {/* Platform Preview Box - Shows currently active step */}
+          <div 
+            ref={screenRef}
+            className="md:col-span-2 opacity-0 scale-95 transition-all duration-700 delay-500 bg-white rounded-lg border border-gray-200 shadow-md overflow-hidden h-[500px]"
+          >
+            <div className="bg-gray-100 p-4 border-b border-gray-200 flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              
-              <div className="col-span-1">
-                <div className="text-lg font-medium text-convrt-dark-blue mb-4">Research</div>
-                <p className="text-sm text-convrt-dark-blue/70">
-                  Research prospect signals across social, public, and engagement data to craft winning strategies.
-                </p>
-              </div>
-              
-              <div className="col-span-1">
-                <div className="text-lg font-medium text-convrt-dark-blue mb-4">Personalize</div>
-                <p className="text-sm text-convrt-dark-blue/70">
-                  Calibrate conversations with precision, dynamically adapting tone and messaging to match each prospect's unique style.
-                </p>
-              </div>
-              
-              <div className="col-span-1">
-                <div className="text-lg font-medium text-convrt-dark-blue mb-4">Engage</div>
-                <p className="text-sm text-convrt-dark-blue/70">
-                  Convert opportunities through multi-channel engagement, executing follow-through from interaction to outcomes.
-                </p>
-              </div>
+              <div className="text-sm text-gray-500">convrt.ai/dashboard</div>
+              <div className="w-5"></div>
+            </div>
+            
+            <div className="p-0 h-full">
+              {/* Display the current active step's GIF */}
+              <img 
+                src={activeStepData.gifUrl} 
+                alt={`${activeStepData.title} demonstration`} 
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

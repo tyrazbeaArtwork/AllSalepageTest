@@ -9,8 +9,8 @@ export interface StepContentProps {
   highlightText: string;
   highlightDetails: string;
   icon: React.ReactNode;
-  gifUrl?: string;
   isActive: boolean;
+  onClick: () => void;
 }
 
 const StepContent: React.FC<StepContentProps> = ({
@@ -20,16 +20,21 @@ const StepContent: React.FC<StepContentProps> = ({
   highlightText,
   highlightDetails,
   icon,
-  gifUrl,
   isActive,
+  onClick,
 }) => {
   return (
-    <div className={`bg-white rounded-lg shadow-sm border ${
-      isActive ? 'border-convrt-purple' : 'border-gray-200'
-    } overflow-hidden`}>
+    <div 
+      className={`bg-white rounded-lg shadow-sm border ${
+        isActive ? 'border-convrt-purple' : 'border-gray-200'
+      } overflow-hidden cursor-pointer hover:border-convrt-purple/70 transition-colors`}
+      onClick={onClick}
+    >
       <div className="p-6">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-8 h-8 rounded-md bg-convrt-purple text-white flex items-center justify-center font-medium">
+          <div className={`w-8 h-8 rounded-md ${
+            isActive ? 'bg-convrt-purple text-white' : 'bg-gray-100 text-convrt-dark-blue'
+          } flex items-center justify-center font-medium transition-colors`}>
             {stepNumber}
           </div>
           <h3 className="text-xl font-bold text-convrt-dark-blue">
@@ -51,18 +56,6 @@ const StepContent: React.FC<StepContentProps> = ({
           </div>
         </div>
       </div>
-      
-      {gifUrl && (
-        <div className={`transition-all duration-500 ${
-          isActive ? 'max-h-60' : 'max-h-0'
-        } overflow-hidden`}>
-          <img 
-            src={gifUrl} 
-            alt={`Step ${stepNumber} demonstration`} 
-            className="w-full h-auto border-t border-gray-200" 
-          />
-        </div>
-      )}
     </div>
   );
 };
