@@ -80,19 +80,19 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="relative py-20 bg-convrt-dark-blue" id="testimonials">
+    <section className="relative py-20 bg-[#F9F6F3]" id="testimonials">
       <div className="container-section">
         <div 
           ref={sectionRef}
           className="max-w-3xl mx-auto text-center opacity-0 transition-opacity duration-700"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-convrt-dark-blue text-sm font-medium mb-4">
             Success Stories
           </div>
-          <h2 className="heading-lg text-white mb-6">
+          <h2 className="heading-lg text-convrt-dark-blue mb-6">
             Loved by Sales Teams <span className="text-[#6936F5]">Worldwide</span>
           </h2>
-          <p className="text-white/70 text-lg mb-16 max-w-2xl mx-auto">
+          <p className="text-convrt-dark-blue/70 text-lg mb-16 max-w-2xl mx-auto">
             Join hundreds of sales teams who've transformed their outbound with AI-driven social selling.
           </p>
         </div>
@@ -104,7 +104,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id}
-              className="bg-white/5 rounded-[20px] p-6 border border-white/10 relative"
+              className="bg-white rounded-[20px] p-6 border border-gray-100 relative"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#6936F5]/10 flex items-center justify-center">
@@ -117,17 +117,17 @@ const Testimonials = () => {
                 ))}
               </div>
               
-              <blockquote className="text-white mb-6">
+              <blockquote className="text-convrt-dark-blue mb-6">
                 "{testimonial.quote}"
               </blockquote>
               
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-[#6936F5]/30 flex items-center justify-center text-white/80 mr-3">
+                <div className="w-10 h-10 rounded-full bg-[#6936F5]/30 flex items-center justify-center text-convrt-dark-blue/80 mr-3">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
-                  <div className="text-white font-medium">{testimonial.name}</div>
-                  <div className="text-white/60 text-sm">{testimonial.title}</div>
+                  <div className="text-convrt-dark-blue font-medium">{testimonial.name}</div>
+                  <div className="text-convrt-dark-blue/60 text-sm">{testimonial.title}</div>
                 </div>
               </div>
             </div>
@@ -140,19 +140,19 @@ const Testimonials = () => {
           className="opacity-0 translate-y-8 transition-all duration-700 delay-400 mb-16"
         >
           <div className="text-center mb-8">
-            <h3 className="text-white text-xl font-medium">Trusted by innovative companies</h3>
+            <h3 className="text-convrt-dark-blue text-xl font-medium">Trusted by innovative companies</h3>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {customerLogos.map((logo) => (
               <div 
                 key={logo.id}
-                className="bg-white/5 rounded-[20px] aspect-[3/2] flex items-center justify-center border border-white/10 p-4 transition-all duration-300 hover:bg-white/10 group"
+                className="bg-white rounded-[20px] aspect-[3/2] flex items-center justify-center border border-gray-100 p-4 transition-all duration-300 group"
               >
                 <div className={`w-12 h-12 rounded-lg ${logo.imageClass} flex items-center justify-center text-white font-bold text-xl`}>
                   {logo.name.charAt(0)}
                 </div>
-                <span className="ml-3 text-white font-medium">{logo.name}</span>
+                <span className="ml-3 text-convrt-dark-blue font-medium">{logo.name}</span>
               </div>
             ))}
           </div>
@@ -162,19 +162,19 @@ const Testimonials = () => {
           ref={metricsRef}
           className="grid md:grid-cols-3 gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-500"
         >
-          <div className="bg-white/5 rounded-[20px] p-6 border border-white/10">
+          <div className="bg-white rounded-[20px] p-6 border border-gray-100">
             <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">$600K+</div>
-            <div className="text-white/80">ARR Generated</div>
+            <div className="text-convrt-dark-blue/80">ARR Generated</div>
           </div>
           
-          <div className="bg-white/5 rounded-[20px] p-6 border border-white/10">
+          <div className="bg-white rounded-[20px] p-6 border border-gray-100">
             <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">10X</div>
-            <div className="text-white/80">YoY Growth</div>
+            <div className="text-convrt-dark-blue/80">YoY Growth</div>
           </div>
           
-          <div className="bg-white/5 rounded-[20px] p-6 border border-white/10">
+          <div className="bg-white rounded-[20px] p-6 border border-gray-100">
             <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">80%</div>
-            <div className="text-white/80">Less Prospecting Time</div>
+            <div className="text-convrt-dark-blue/80">Less Prospecting Time</div>
           </div>
         </div>
         

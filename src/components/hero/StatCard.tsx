@@ -10,10 +10,9 @@ interface StatCardProps {
 
 const StatCard: React.FC<StatCardProps> = ({ value, description, icon }) => {
   return (
-    <div className="bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-[#6936F5]/10 transition-all duration-500 relative overflow-hidden group">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-[#6936F5]/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
+    <div className="bg-white rounded-xl border border-gray-100 relative overflow-hidden group">
       <div className="p-8">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#6936F5]/10 text-[#6936F5] mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#6936F5]/10 text-[#6936F5] mb-6 relative z-10">
           {icon}
         </div>
         <div className="flex items-baseline gap-1">

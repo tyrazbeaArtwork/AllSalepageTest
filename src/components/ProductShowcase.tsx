@@ -28,7 +28,7 @@ const ProductShowcase = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-white" id="product">
+    <section className="relative py-20 overflow-hidden bg-[#F9F6F3]" id="product">
       <div className="container-section max-w-6xl mx-auto">
         <motion.div 
           ref={sectionRef}
@@ -63,7 +63,7 @@ const ProductShowcase = () => {
         >
           <motion.div 
             variants={itemVariants}
-            className="relative bg-white rounded-[20px] overflow-hidden shadow-sm border border-gray-200"
+            className="relative bg-white rounded-[20px] overflow-hidden border border-gray-200"
           >
             <div className="px-8 py-6 border-b border-gray-200 flex items-center justify-between">
               <div className="flex items-center space-x-2">
