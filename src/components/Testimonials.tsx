@@ -86,7 +86,7 @@ const Testimonials = () => {
           ref={sectionRef}
           className="max-w-3xl mx-auto text-center opacity-0 transition-opacity duration-700"
         >
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-[#F9F6F3] text-convrt-dark-blue text-sm font-medium mb-4">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-convrt-dark-blue text-sm font-medium mb-4">
             Success Stories
           </div>
           <h2 className="heading-lg text-convrt-dark-blue mb-6">
@@ -104,7 +104,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id}
-              className="bg-[#F9F6F3] rounded-[20px] p-6 border border-gray-100 relative"
+              className="bg-gray-100 rounded-[20px] p-6 border border-gray-100 relative"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#6936F5]/10 flex items-center justify-center">
@@ -147,7 +147,7 @@ const Testimonials = () => {
             {customerLogos.map((logo) => (
               <div 
                 key={logo.id}
-                className="bg-[#F9F6F3] rounded-[20px] aspect-[3/2] flex items-center justify-center border border-gray-100 p-4 transition-all duration-300 group"
+                className="bg-gray-100 rounded-[20px] aspect-[3/2] flex items-center justify-center border border-gray-100 p-4 transition-all duration-300 group"
               >
                 <div className={`w-12 h-12 rounded-lg ${logo.imageClass} flex items-center justify-center text-white font-bold text-xl`}>
                   {logo.name.charAt(0)}
@@ -162,17 +162,17 @@ const Testimonials = () => {
           ref={metricsRef}
           className="grid md:grid-cols-3 gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-500"
         >
-          <div className="bg-[#F9F6F3] rounded-[20px] p-6 border border-gray-100">
+          <div className="bg-gray-100 rounded-[20px] p-6 border border-gray-100">
             <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">$600K+</div>
             <div className="text-convrt-dark-blue/80">ARR Generated</div>
           </div>
           
-          <div className="bg-[#F9F6F3] rounded-[20px] p-6 border border-gray-100">
+          <div className="bg-gray-100 rounded-[20px] p-6 border border-gray-100">
             <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">10X</div>
             <div className="text-convrt-dark-blue/80">YoY Growth</div>
           </div>
           
-          <div className="bg-[#F9F6F3] rounded-[20px] p-6 border border-gray-100">
+          <div className="bg-gray-100 rounded-[20px] p-6 border border-gray-100">
             <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">80%</div>
             <div className="text-convrt-dark-blue/80">Less Prospecting Time</div>
           </div>
