@@ -25,16 +25,16 @@ const StepContent: React.FC<StepContentProps> = ({
 }) => {
   return (
     <div 
-      className={`bg-white rounded-lg shadow-sm border ${
-        isActive ? 'border-convrt-purple' : 'border-gray-200'
-      } overflow-hidden cursor-pointer hover:border-convrt-purple/70 transition-colors`}
+      className={`bg-white rounded-lg shadow-md ${
+        isActive ? 'border-2 border-convrt-purple' : 'border border-gray-200'
+      } overflow-hidden cursor-pointer hover:border-convrt-purple transition-all duration-300`}
       onClick={onClick}
     >
       <div className="p-6">
         <div className="flex items-center gap-3 mb-4">
-          <div className={`w-8 h-8 rounded-md ${
+          <div className={`w-8 h-8 flex items-center justify-center font-medium ${
             isActive ? 'bg-convrt-purple text-white' : 'bg-gray-100 text-convrt-dark-blue'
-          } flex items-center justify-center font-medium transition-colors`}>
+          }`}>
             {stepNumber}
           </div>
           <h3 className="text-xl font-bold text-convrt-dark-blue">
@@ -51,7 +51,7 @@ const StepContent: React.FC<StepContentProps> = ({
             {description}
           </p>
           
-          <div className="bg-gray-100 rounded-md p-3 text-sm text-convrt-dark-blue/90 border border-gray-200">
+          <div className="bg-gray-50 rounded-md p-3 text-sm text-convrt-dark-blue/90 border border-gray-200">
             <span className="font-medium text-convrt-dark-blue">{highlightText}</span> {highlightDetails}
           </div>
         </div>

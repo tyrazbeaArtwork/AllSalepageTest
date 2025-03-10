@@ -109,7 +109,7 @@ const HowItWorks = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div 
             ref={stepsRef}
-            className="md:col-span-1 grid gap-4 opacity-0 translate-y-8 transition-all duration-700 delay-300"
+            className="md:col-span-1 space-y-4 opacity-0 translate-y-8 transition-all duration-700 delay-300"
           >
             {steps.map((step) => (
               <StepContent
@@ -129,7 +129,7 @@ const HowItWorks = () => {
           {/* Platform Preview Box - Shows currently active step */}
           <div 
             ref={screenRef}
-            className="md:col-span-2 opacity-0 scale-95 transition-all duration-700 delay-500 bg-white rounded-lg border border-gray-200 shadow-md overflow-hidden h-[500px]"
+            className="md:col-span-2 opacity-0 scale-95 transition-all duration-700 delay-500 bg-white rounded-lg border border-gray-200 shadow-lg overflow-hidden h-[500px]"
           >
             <div className="bg-gray-100 p-4 border-b border-gray-200 flex justify-between items-center">
               <div className="flex items-center gap-2">
