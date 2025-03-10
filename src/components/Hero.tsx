@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import AnimatedBackground from './AnimatedBackground';
-import { ArrowRight, Zap, Users, BarChart3, TrendingUp, Award, Target } from 'lucide-react';
+import { ArrowRight, Zap, Users, BarChart3, TrendingUp, Award, Target, Linkedin, Twitter, BarChart2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -52,7 +52,7 @@ const Hero = () => {
             variants={itemVariants}
             className="font-inter font-bold text-4xl md:text-5xl lg:text-7xl tracking-tight max-w-4xl mx-auto mb-6 text-convrt-dark-blue leading-[1.1]"
           >
-            From <span className="text-convrt-ignored font-extrabold">Ignored</span> to <span className="text-convrt-influential font-extrabold">Influential</span>
+            From <span className="text-[#6936F5] font-extrabold">Ignored</span> to <span className="text-[#6936F5] font-extrabold">Influential</span>
           </motion.h1>
           
           <motion.p 
@@ -169,7 +169,7 @@ const Hero = () => {
                   <div className="col-span-7">
                     <div className="bg-white/5 rounded-xl p-5 backdrop-blur-sm border border-white/5 mb-6">
                       <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-xl font-medium text-white">AI Relationship Analysis</h2>
+                        <h2 className="text-xl font-medium text-white">AI Relationship Management</h2>
                         <div className="flex space-x-1">
                           <span className="inline-block w-2 h-2 rounded-full bg-white/20"></span>
                           <span className="inline-block w-2 h-2 rounded-full bg-white/40"></span>
@@ -178,12 +178,12 @@ const Hero = () => {
                       </div>
                       
                       <p className="text-white/70 text-sm mb-4">
-                        Creating authentic, direct relevance with <span className="text-convrt-purple">Karen Johnson</span> requires focusing on shared values around innovation and sustainability.
+                        Creating authentic, direct relevance with <span className="text-[#6936F5]">Karen Johnson</span> requires focusing on shared values around innovation and sustainability.
                       </p>
                       
                       <div className="bg-convrt-dark-blue/50 p-4 rounded-lg mb-5">
                         <div className="flex items-start">
-                          <div className="text-convrt-purple bg-convrt-purple/20 p-1.5 rounded-lg mr-3">
+                          <div className="text-[#6936F5] bg-[#6936F5]/20 p-1.5 rounded-lg mr-3">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M9.5 2a4.61 4.61 0 0 1 2.44 6.47A4.25 4.25 0 0 1 15.45 12h.05c2.5.1 4.25 1 4.5 2.73V15a3 3 0 0 1-2.3 2.92l-2.53.42a3.52 3.52 0 0 1-3.77-1.65L10.5 15.5" stroke="currentColor" strokeWidth="2" />
                               <path d="M15 9.5a4.61 4.61 0 0 0-2.44-6.47A4.25 4.25 0 0 0 9.55 0H9.5c-2.5.1-4.25 1-4.5 2.73V3a3 3 0 0 0 2.3 2.92l2.53.42a3.52 3.52 0 0 0 3.77-1.65L14.5 3.5" stroke="currentColor" strokeWidth="2" />
@@ -202,11 +202,8 @@ const Hero = () => {
                       <div className="space-y-3">
                         <div className="flex justify-between bg-white/5 p-3 rounded-lg">
                           <div className="flex items-center">
-                            <div className="w-8 h-8 rounded-lg bg-convrt-influential/20 text-convrt-influential flex items-center justify-center mr-3">
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" strokeWidth="2" />
-                                <path d="M16 8.5v7.5h-2.5V11h-2v5H9V8.5h7z" fill="currentColor" />
-                              </svg>
+                            <div className="w-8 h-8 rounded-lg bg-[#6936F5]/20 text-[#6936F5] flex items-center justify-center mr-3">
+                              <Linkedin className="w-4 h-4" />
                             </div>
                             <div>
                               <span className="text-white/90 text-sm">LinkedIn Comment</span>
@@ -218,10 +215,11 @@ const Hero = () => {
                         
                         <div className="flex justify-between bg-white/5 p-3 rounded-lg">
                           <div className="flex items-center">
-                            <div className="w-8 h-8 rounded-lg bg-convrt-purple/20 text-convrt-purple flex items-center justify-center mr-3">
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22 4s-4 2-7 2-7-2-7-2-4-2-7-2v15c0 0 3 2 7 2s7-2 7-2 4 2 7 2V4z" fill="none" stroke="currentColor" strokeWidth="2" />
-                                <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
+                            <div className="w-8 h-8 rounded-lg bg-[#6936F5]/20 text-[#6936F5] flex items-center justify-center mr-3">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <circle cx="12" cy="12" r="6" />
+                                <circle cx="12" cy="12" r="2" />
                               </svg>
                             </div>
                             <div>
@@ -234,10 +232,8 @@ const Hero = () => {
 
                         <div className="flex justify-between bg-white/5 p-3 rounded-lg">
                           <div className="flex items-center">
-                            <div className="w-8 h-8 rounded-lg bg-convrt-purple/20 text-convrt-purple flex items-center justify-center mr-3">
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
+                            <div className="w-8 h-8 rounded-lg bg-[#6936F5]/20 text-[#6936F5] flex items-center justify-center mr-3">
+                              <Twitter className="w-4 h-4" />
                             </div>
                             <div>
                               <span className="text-white/90 text-sm">Twitter Engagement</span>
@@ -252,12 +248,12 @@ const Hero = () => {
                     <div className="bg-white/5 rounded-xl p-5 backdrop-blur-sm border border-white/5">
                       <h3 className="text-white font-medium mb-4">Recommended Conversation Starters</h3>
                       <div className="space-y-3">
-                        <div className="bg-gradient-to-r from-convrt-influential/10 to-convrt-influential/5 p-3 rounded-lg border border-convrt-influential/20">
+                        <div className="bg-gradient-to-r from-[#6936F5]/10 to-[#6936F5]/5 p-3 rounded-lg border border-[#6936F5]/20">
                           <p className="text-white/90 text-sm">
                             "I noticed your comment about balancing scale and quality. We've developed a framework that might address those challenges effectively."
                           </p>
                           <div className="flex justify-end mt-2">
-                            <button className="px-3 py-1 bg-convrt-influential/20 text-convrt-influential text-xs rounded-lg flex items-center">
+                            <button className="px-3 py-1 bg-[#6936F5]/20 text-[#6936F5] text-xs rounded-lg flex items-center">
                               <span>Use</span>
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-1">
                                 <path d="M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -267,12 +263,12 @@ const Hero = () => {
                           </div>
                         </div>
                         
-                        <div className="bg-gradient-to-r from-convrt-purple/10 to-convrt-purple/5 p-3 rounded-lg border border-convrt-purple/20">
+                        <div className="bg-gradient-to-r from-[#6936F5]/10 to-[#6936F5]/5 p-3 rounded-lg border border-[#6936F5]/20">
                           <p className="text-white/90 text-sm">
                             "Your recent post about sustainability goals resonated with me. I'd love to share how we've helped similar companies achieve their ESG targets."
                           </p>
                           <div className="flex justify-end mt-2">
-                            <button className="px-3 py-1 bg-convrt-purple/20 text-convrt-purple-light text-xs rounded-lg flex items-center">
+                            <button className="px-3 py-1 bg-[#6936F5]/20 text-[#6936F5] text-xs rounded-lg flex items-center">
                               <span>Use</span>
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-1">
                                 <path d="M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -290,7 +286,7 @@ const Hero = () => {
                     <div className="bg-white/5 rounded-xl p-4 backdrop-blur-sm border border-white/5">
                       <h3 className="text-white/80 text-sm font-medium mb-3">Contact Profile</h3>
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-convrt-purple to-convrt-influential flex items-center justify-center text-white mr-3">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#6936F5] to-[#6936F5] flex items-center justify-center text-white mr-3">
                           KJ
                         </div>
                         <div>
@@ -302,41 +298,37 @@ const Hero = () => {
                       <div className="space-y-2.5 mb-4">
                         <div className="flex justify-between items-center">
                           <span className="text-white/70 text-xs">Engagement Score</span>
-                          <span className="text-convrt-influential text-xs font-medium">87%</span>
+                          <span className="text-[#6936F5] text-xs font-medium">87%</span>
                         </div>
                         <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-gradient-to-r from-convrt-purple to-convrt-influential rounded-full" style={{width: '87%'}}></div>
+                          <div className="h-full bg-gradient-to-r from-[#6936F5] to-[#6936F5] rounded-full" style={{width: '87%'}}></div>
                         </div>
                         
                         <div className="flex justify-between items-center">
                           <span className="text-white/70 text-xs">Buying Intent</span>
-                          <span className="text-convrt-purple-light text-xs font-medium">73%</span>
+                          <span className="text-[#6936F5] text-xs font-medium">73%</span>
                         </div>
                         <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
-                          <div className="h-full bg-convrt-purple rounded-full" style={{width: '73%'}}></div>
+                          <div className="h-full bg-[#6936F5] rounded-full" style={{width: '73%'}}></div>
                         </div>
                       </div>
                       
                       <div className="bg-convrt-dark-blue/50 rounded-lg p-3">
                         <h4 className="text-white/90 text-xs font-medium mb-2">Social Channels</h4>
                         <div className="flex flex-wrap gap-2">
-                          <div className="px-2 py-1 bg-convrt-purple/10 text-convrt-purple-light/90 text-xs rounded-md flex items-center">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="mr-1" strokeWidth="2">
-                              <rect x="2" y="2" width="20" height="20" rx="5" />
-                              <path d="M16 8.5v7.5h-2.5V11h-2v5H9V8.5h7z" fill="currentColor" />
-                            </svg>
+                          <div className="px-2 py-1 bg-[#6936F5]/10 text-[#6936F5] text-xs rounded-md flex items-center">
+                            <Linkedin className="w-3 h-3 mr-1" />
                             LinkedIn
                           </div>
-                          <div className="px-2 py-1 bg-convrt-purple/10 text-convrt-purple-light/90 text-xs rounded-md flex items-center">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="mr-1" strokeWidth="2">
-                              <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-                            </svg>
+                          <div className="px-2 py-1 bg-[#6936F5]/10 text-[#6936F5] text-xs rounded-md flex items-center">
+                            <Twitter className="w-3 h-3 mr-1" />
                             Twitter
                           </div>
-                          <div className="px-2 py-1 bg-convrt-purple/10 text-convrt-purple-light/90 text-xs rounded-md flex items-center">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="mr-1" strokeWidth="2">
-                              <path d="M22 4s-4 2-7 2-7-2-7-2-4-2-7-2v15c0 0 3 2 7 2s7-2 7-2 4 2 7 2V4z" />
-                              <circle cx="12" cy="12" r="4" />
+                          <div className="px-2 py-1 bg-[#6936F5]/10 text-[#6936F5] text-xs rounded-md flex items-center">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mr-1">
+                              <circle cx="12" cy="12" r="10" />
+                              <circle cx="12" cy="12" r="6" />
+                              <circle cx="12" cy="12" r="2" />
                             </svg>
                             Reddit
                           </div>
@@ -348,7 +340,7 @@ const Hero = () => {
                       <h3 className="text-white/80 text-sm font-medium mb-3">Next Steps</h3>
                       <ul className="space-y-3">
                         <li className="flex items-center text-white/90 bg-white/5 p-2 rounded-lg">
-                          <div className="w-5 h-5 rounded-full border border-convrt-purple/50 flex items-center justify-center mr-2 text-convrt-purple">
+                          <div className="w-5 h-5 rounded-full border border-[#6936F5]/50 flex items-center justify-center mr-2 text-[#6936F5]">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -365,7 +357,7 @@ const Hero = () => {
                         </li>
                       </ul>
                       
-                      <button className="w-full mt-4 py-2 bg-gradient-to-r from-convrt-purple to-convrt-purple rounded-lg text-white text-sm font-medium">
+                      <button className="w-full mt-4 py-2 bg-gradient-to-r from-[#6936F5] to-[#6936F5] rounded-lg text-white text-sm font-medium">
                         Start Sequence
                       </button>
                     </div>
@@ -382,8 +374,8 @@ const Hero = () => {
               className="absolute -left-8 top-1/3 z-10"
             >
               <div className="animate-float bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/20 flex items-center">
-                <div className="bg-convrt-influential/20 rounded-lg p-2 mr-3">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-convrt-influential">
+                <div className="bg-[#6936F5]/20 rounded-lg p-2 mr-3">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#6936F5]">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
                     <path d="M12 16v-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     <path d="M12 8h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -403,8 +395,8 @@ const Hero = () => {
               className="absolute -right-8 top-2/3 z-10"
             >
               <div className="animate-float animation-delay-300 bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-xl border border-white/20 flex items-center">
-                <div className="bg-convrt-purple/20 rounded-lg p-2 mr-3">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-convrt-purple">
+                <div className="bg-[#6936F5]/20 rounded-lg p-2 mr-3">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#6936F5]">
                     <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -428,46 +420,64 @@ const Hero = () => {
           >
             <motion.div 
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500 relative overflow-hidden"
+              className="bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-[#6936F5]/10 transition-all duration-500 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-convrt-purple/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6 relative z-10">
-                <TrendingUp className="w-7 h-7" />
-              </div>
-              <div className="text-4xl font-bold text-convrt-dark-blue font-inter relative z-10">15x</div>
-              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg relative z-10">Higher Conversion Rates</div>
-              <div className="text-convrt-dark-blue/60 text-sm mt-1 relative z-10">
-                Turn cold prospects into warm leads
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#6936F5]/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
+              <div className="p-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#6936F5]/10 text-[#6936F5] mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                  <TrendingUp className="w-8 h-8" />
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <div className="text-5xl font-bold text-[#6936F5] font-inter relative z-10">15x</div>
+                </div>
+                <div className="text-convrt-dark-blue/80 mt-2 font-inter text-xl font-semibold relative z-10">
+                  Higher Conversion Rates
+                </div>
+                <div className="text-convrt-dark-blue/60 text-sm mt-2 relative z-10 leading-relaxed">
+                  Turn cold prospects into warm leads through AI-driven social touchpoints
+                </div>
               </div>
             </motion.div>
             
             <motion.div 
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500 relative overflow-hidden"
+              className="bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-[#6936F5]/10 transition-all duration-500 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-convrt-purple/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6 relative z-10">
-                <Target className="w-7 h-7" />
-              </div>
-              <div className="text-4xl font-bold text-convrt-dark-blue font-inter relative z-10">80%</div>
-              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg relative z-10">Less Prospecting Time</div>
-              <div className="text-convrt-dark-blue/60 text-sm mt-1 relative z-10">
-                AI-driven relationship building
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#6936F5]/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
+              <div className="p-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#6936F5]/10 text-[#6936F5] mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                  <BarChart2 className="w-8 h-8" />
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <div className="text-5xl font-bold text-[#6936F5] font-inter relative z-10">80%</div>
+                </div>
+                <div className="text-convrt-dark-blue/80 mt-2 font-inter text-xl font-semibold relative z-10">
+                  Less Prospecting Time
+                </div>
+                <div className="text-convrt-dark-blue/60 text-sm mt-2 relative z-10 leading-relaxed">
+                  AI-driven relationship management that handles prospect warming automatically
+                </div>
               </div>
             </motion.div>
             
             <motion.div 
               variants={itemVariants}
-              className="bg-white/80 backdrop-blur-md rounded-xl p-8 shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-convrt-purple/5 transition-all duration-500 relative overflow-hidden"
+              className="bg-white/80 backdrop-blur-md rounded-xl shadow-xl border border-white/50 hover:shadow-2xl hover:shadow-[#6936F5]/10 transition-all duration-500 relative overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-convrt-purple/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-convrt-purple/10 text-convrt-purple mb-6 relative z-10">
-                <Award className="w-7 h-7" />
-              </div>
-              <div className="text-4xl font-bold text-convrt-dark-blue font-inter relative z-10">78%</div>
-              <div className="text-convrt-dark-blue/80 mt-2 font-inter text-lg relative z-10">Sales Outperformance</div>
-              <div className="text-convrt-dark-blue/60 text-sm mt-1 relative z-10">
-                Compared to traditional methods
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#6936F5]/5 rounded-full -mr-16 -mt-16 blur-xl"></div>
+              <div className="p-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#6936F5]/10 text-[#6936F5] mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                  <Award className="w-8 h-8" />
+                </div>
+                <div className="flex items-baseline gap-1">
+                  <div className="text-5xl font-bold text-[#6936F5] font-inter relative z-10">78%</div>
+                </div>
+                <div className="text-convrt-dark-blue/80 mt-2 font-inter text-xl font-semibold relative z-10">
+                  Sales Outperformance
+                </div>
+                <div className="text-convrt-dark-blue/60 text-sm mt-2 relative z-10 leading-relaxed">
+                  Consistently outperform traditional outbound methods with authentic connections
+                </div>
               </div>
             </motion.div>
           </motion.div>

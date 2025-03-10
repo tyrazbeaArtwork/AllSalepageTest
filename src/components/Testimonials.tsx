@@ -74,7 +74,7 @@ const Testimonials = () => {
             Success Stories
           </div>
           <h2 className="heading-lg text-white mb-6">
-            Loved by Sales Teams <span className="text-convrt-cyan">Worldwide</span>
+            Loved by Sales Teams <span className="text-[#6936F5]">Worldwide</span>
           </h2>
           <p className="text-white/70 text-lg mb-16 max-w-2xl mx-auto">
             Join hundreds of sales teams who've transformed their outbound with AI-driven social selling.
@@ -91,8 +91,8 @@ const Testimonials = () => {
               className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 relative"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-convrt-cyan/10 flex items-center justify-center">
-                <Quote className="w-4 h-4 text-convrt-cyan" />
+              <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#6936F5]/10 flex items-center justify-center">
+                <Quote className="w-4 h-4 text-[#6936F5]" />
               </div>
               
               <div className="flex mb-4">
@@ -106,7 +106,7 @@ const Testimonials = () => {
               </blockquote>
               
               <div className="flex items-center">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-convrt-cyan/30 to-convrt-cyan/10 flex items-center justify-center text-white/80 mr-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#6936F5]/30 to-[#6936F5]/10 flex items-center justify-center text-white/80 mr-3">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
@@ -123,17 +123,17 @@ const Testimonials = () => {
           className="grid md:grid-cols-3 gap-8 opacity-0 translate-y-8 transition-all duration-700 delay-500"
         >
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <div className="text-3xl md:text-4xl font-bold text-convrt-cyan mb-2">$600K+</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">$600K+</div>
             <div className="text-white/80">ARR Generated</div>
           </div>
           
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <div className="text-3xl md:text-4xl font-bold text-convrt-cyan mb-2">10X</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">10X</div>
             <div className="text-white/80">YoY Growth</div>
           </div>
           
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
-            <div className="text-3xl md:text-4xl font-bold text-convrt-cyan mb-2">80%</div>
+            <div className="text-3xl md:text-4xl font-bold text-[#6936F5] mb-2">80%</div>
             <div className="text-white/80">Less Prospecting Time</div>
           </div>
         </div>
