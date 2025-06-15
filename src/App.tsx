@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -12,6 +11,7 @@ import HousewifeProductLanding from "./pages/HousewifeProductLanding";
 import BusinessDesignLanding from "./pages/BusinessDesignLanding";
 import FreelanceDesignLanding from "./pages/FreelanceDesignLanding";
 import NotFound from "./pages/NotFound";
+import EbookLanding from "./pages/EbookLanding";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +29,7 @@ const App = () => (
           <Route path="/housewife" element={<HousewifeProductLanding />} />
           <Route path="/business-design" element={<BusinessDesignLanding />} />
           <Route path="/freelance-design" element={<FreelanceDesignLanding />} />
+          <Route path="/ebook" element={<EbookLanding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

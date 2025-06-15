@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Target, TrendingUp, Heart, Briefcase, Palette } from 'lucide-react';
+import { ArrowRight, Sparkles, Target, TrendingUp, Heart, Briefcase, Palette, BookOpen } from 'lucide-react';
 
 const MainNavigation = () => {
   const navigationCards = [
@@ -51,8 +50,16 @@ const MainNavigation = () => {
       description: "Premium design services for creative professionals",
       icon: <Palette className="w-8 h-8" />,
       path: "/freelance-design",
-      gradient: "from-stone-600 to-stone-700",
+      gradient: "from-teal-600 to-cyan-600",
       delay: 0.6
+    },
+    {
+      title: "Digital Marketing Ebook",
+      description: "Master proven strategies to scale your business online",
+      icon: <BookOpen className="w-8 h-8" />,
+      path: "/ebook",
+      gradient: "from-purple-600 to-pink-600",
+      delay: 0.7
     }
   ];
 
