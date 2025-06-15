@@ -6,7 +6,7 @@ import { ArrowRight, TrendingUp, Clock } from 'lucide-react';
 const MarketingActionSection = () => {
   return (
     <>
-      <section className="py-20 px-6 bg-gradient-to-r from-slate-900 to-green-900">
+      <section className="py-20 px-6 bg-gradient-to-r from-orange-500 to-red-500">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -14,25 +14,25 @@ const MarketingActionSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-red-500/20 text-red-400 mb-8 border border-red-500/30">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-white mb-8 border border-white/30">
               <TrendingUp className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">Limited Time Offer</span>
+              <span className="text-sm font-medium">🌿 Natural Learning • Organic Growth</span>
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Stop Writing Copy That Doesn't Convert
             </h2>
             
-            <p className="text-xl text-slate-100 mb-8">
-              Every day without proven frameworks is revenue lost to competitors who know AIDA, PASTA, and STAR. Get the blueprint that has helped 5,000+ marketers succeed.
+            <p className="text-xl text-orange-50 mb-8">
+              Every day without proven frameworks is revenue lost to competitors who know AIDA, PASTA, and STAR. Get the blueprint that has helped 5,000+ marketers succeed naturally.
             </p>
 
             {/* Pricing */}
-            <div className="bg-white/10 rounded-2xl p-8 mb-8 backdrop-blur-sm">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8 border border-white/20">
               <div className="text-center">
-                <div className="text-slate-200 line-through text-lg mb-2">Regular: $39.99</div>
+                <div className="text-orange-100 line-through text-lg mb-2">Regular: $39.99</div>
                 <div className="text-4xl font-bold text-white mb-2">$29.99</div>
-                <div className="text-green-400 font-medium">This Weekend Only: 25% OFF</div>
+                <div className="text-orange-100 font-medium">This Weekend Only: 25% OFF</div>
               </div>
             </div>
 
@@ -41,19 +41,19 @@ const MarketingActionSection = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-colors flex items-center justify-center group"
+                className="w-full bg-white/90 backdrop-blur-md hover:bg-white text-orange-600 font-bold py-4 px-8 rounded-2xl text-lg transition-all flex items-center justify-center group shadow-lg border border-white/50"
               >
                 GET COPYWRITING COURSE - Save $10 Today
                 <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
               </motion.button>
               
-              <button className="w-full border border-white/30 text-white hover:bg-white/10 font-medium py-4 px-8 rounded-xl transition-colors">
+              <button className="w-full bg-white/20 backdrop-blur-sm border-2 border-white/40 text-white hover:bg-white/30 font-medium py-4 px-8 rounded-2xl transition-all">
                 View Free Templates
               </button>
             </div>
 
             {/* Urgency Elements */}
-            <div className="flex justify-center items-center mt-8 space-x-6 text-sm text-slate-200">
+            <div className="flex justify-center items-center mt-8 space-x-6 text-sm text-orange-100">
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-1" />
                 <span>Offer expires this weekend</span>
@@ -66,12 +66,12 @@ const MarketingActionSection = () => {
       </section>
 
       {/* Sticky Floating CTA Button */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-r from-green-600 to-emerald-600 shadow-lg">
+      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-gradient-to-r from-orange-500 to-red-500 shadow-lg">
         <div className="max-w-md mx-auto">
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full bg-white text-green-700 font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center group"
+            className="w-full bg-white/90 backdrop-blur-md text-orange-600 font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center group border border-white/50"
           >
             Enroll Now - $29.99!
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
