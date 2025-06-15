@@ -5,7 +5,7 @@ import { CheckCircle } from 'lucide-react';
 
 const FreelanceSolutionSection = () => {
   return (
-    <section id="solution" className="py-20 px-6 bg-slate-900">
+    <section id="solution" className="py-20 px-6 bg-gradient-to-br from-slate-900 to-teal-900">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ const FreelanceSolutionSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i, duration: 0.6 }}
               viewport={{ once: true }}
-              className="glass-dark p-6 text-center"
+              className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 text-center"
             >
               <div className="text-4xl mb-4">{benefit.icon}</div>
               <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>

@@ -29,7 +29,7 @@ const FreelanceProblemSection = () => {
           {/* Problem Dialog */}
           <div className="bg-white rounded-2xl p-8 shadow-xl border max-w-2xl mx-auto mb-12">
             <div className="flex items-start space-x-4">
-              <MessageCircle className="w-6 h-6 text-stone-500 mt-1" />
+              <MessageCircle className="w-6 h-6 text-teal-500 mt-1" />
               <div className="text-left">
                 <p className="text-slate-700 mb-4 italic">
                   "Clients always choose cheaper options. My portfolio doesn't look professional enough to charge premium rates..."

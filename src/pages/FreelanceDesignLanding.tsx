@@ -11,7 +11,7 @@ import FreelanceFooter from '../components/freelance/FreelanceFooter';
 
 const FreelanceDesignLanding = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 to-neutral-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-teal-50">
       <FreelanceWarningHeader />
       <FreelanceFloatingNavigation />
       <FreelanceBeforeAfterComparison />

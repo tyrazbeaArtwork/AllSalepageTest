@@ -4,7 +4,7 @@ import { Star, CheckCircle } from 'lucide-react';
 
 const FreelanceBeforeAfterComparison = () => {
   return (
-    <section className="pt-32 pb-20 px-6 bg-gradient-to-r from-stone-100 to-neutral-50">
+    <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-slate-50 to-teal-50">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
@@ -18,26 +18,26 @@ const FreelanceBeforeAfterComparison = () => {
         {/* Service Showcase */}
         <div className="max-w-2xl mx-auto">
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div className="bg-stone-500 text-white py-2 px-4 text-center font-bold">
+            <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-2 px-4 text-center font-bold">
               PREMIUM DESIGN SERVICES - TRUSTED BY 300+ FREELANCERS
             </div>
-            <div className="bg-stone-100 p-2 text-center">
-              <span className="bg-stone-600 text-white px-3 py-1 rounded-full text-sm">
+            <div className="bg-gradient-to-r from-teal-50 to-cyan-50 p-2 text-center">
+              <span className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-3 py-1 rounded-full text-sm">
                 ⭐ 4.9/5 Rating | Portfolio Review Available
               </span>
             </div>
             <div className="p-6">
-              <div className="bg-gradient-to-br from-stone-50 to-white rounded-lg p-4 border">
-                <div className="bg-stone-500 text-white px-3 py-1 rounded-full text-sm inline-block mb-3">
+              <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-lg p-4 border">
+                <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-3 py-1 rounded-full text-sm inline-block mb-3">
                   Get 50% Off This Week With Code: FREELANCE50
                 </div>
                 
                 <h3 className="font-bold text-xl mb-2">Boost Rates by 400%</h3>
                 <p className="text-sm text-gray-600 mb-4">With Premium Portfolio That Attracts High-Paying Clients</p>
                 
-                <div className="h-32 bg-gradient-to-br from-stone-100 to-neutral-50 rounded mb-4 flex items-center justify-center relative">
-                  <span className="text-stone-600 font-medium">Complete Portfolio Package</span>
-                  <div className="absolute top-2 right-2 bg-stone-500 text-white px-2 py-1 rounded-full text-xs">
+                <div className="h-32 bg-gradient-to-br from-teal-100 to-cyan-100 rounded mb-4 flex items-center justify-center relative">
+                  <span className="text-teal-700 font-medium">Complete Portfolio Package</span>
+                  <div className="absolute top-2 right-2 bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-2 py-1 rounded-full text-xs">
                     Pro Choice
                   </div>
                 </div>
@@ -71,7 +71,7 @@ const FreelanceBeforeAfterComparison = () => {
                   <div className="text-sm text-gray-600 mb-2">Complete Portfolio System</div>
                   
                   <div className="grid grid-cols-2 gap-2 mb-3">
-                    <div className="border-2 border-stone-500 p-2 text-center text-sm rounded bg-stone-50">
+                    <div className="border-2 border-teal-500 p-2 text-center text-sm rounded bg-gradient-to-br from-teal-50 to-cyan-50">
                       <div className="font-medium">Premium Package</div>
                       <div className="text-xs">Everything Included</div>
                     </div>
@@ -98,7 +98,7 @@ const FreelanceBeforeAfterComparison = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-stone-500 hover:bg-stone-600 text-white py-3 rounded-lg font-medium flex items-center justify-center">
+                <button className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white py-3 rounded-lg font-medium flex items-center justify-center">
                   🎨 START PROJECT - $1,997 (Save 50%)
                 </button>
                 <div className="text-center text-xs text-gray-500 mt-2">Secure Payment • 100% Satisfaction Guarantee</div>
@@ -110,7 +110,7 @@ const FreelanceBeforeAfterComparison = () => {
         {/* Key Benefits */}
         <div className="mt-16 grid md:grid-cols-3 gap-8 text-center">
           <div className="bg-white p-6 rounded-lg shadow-sm">
-            <div className="text-3xl font-bold text-stone-500 mb-2">400%</div>
+            <div className="text-3xl font-bold bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent mb-2">400%</div>
             <div className="text-sm text-gray-600">Rate Increase</div>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-sm">
