@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -27,29 +29,30 @@ const Navbar = () => {
     >
       <div className="container max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src="/lovable-uploads/ce207080-f6c2-430d-9621-79d32ab08655.png" 
               alt="Convrt.ai Logo" 
               className="h-8 md:h-10"
             />
-          </a>
+          </Link>
         </div>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
+          <Link to="/" className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors flex items-center">
+            <Home className="w-4 h-4 mr-1" />
+            Home
+          </Link>
           <a href="#how-it-works" className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors">
             How It Works
           </a>
           <a href="#testimonials" className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors">
             Case Studies
           </a>
-          <a href="#product" className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors">
-            Product
-          </a>
-          <a href="#pricing" className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors">
-            Pricing
-          </a>
+          <Link to="/custom" className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors">
+            Custom
+          </Link>
           <a href="#cta" className="button-primary">
             Get Started
           </a>
@@ -68,6 +71,14 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 px-6">
           <div className="flex flex-col space-y-4">
+            <Link 
+              to="/" 
+              className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors flex items-center"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Home className="w-4 h-4 mr-1" />
+              Home
+            </Link>
             <a 
               href="#how-it-works" 
               className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors"
@@ -82,20 +93,13 @@ const Navbar = () => {
             >
               Case Studies
             </a>
-            <a 
-              href="#product" 
+            <Link 
+              to="/custom" 
               className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Product
-            </a>
-            <a 
-              href="#pricing" 
-              className="text-convrt-dark-blue/80 hover:text-convrt-dark-blue font-medium transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Pricing
-            </a>
+              Custom
+            </Link>
             <a 
               href="#cta" 
               className="button-primary w-full text-center"
