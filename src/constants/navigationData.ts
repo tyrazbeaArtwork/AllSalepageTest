@@ -1,5 +1,5 @@
 
-import { Sparkles, Target, TrendingUp, Heart, Briefcase, Palette, BookOpen } from 'lucide-react';
+import { Sparkles, Target, TrendingUp, Heart, Briefcase, Palette, BookOpen, Zap } from 'lucide-react';
 
 export const navigationCards = [
   {
@@ -66,13 +66,22 @@ export const navigationCards = [
     delay: 0.7
   },
   {
+    title: "Sale Page Final",
+    description: "Modern design service landing with AI outbound elements",
+    icon: Zap,
+    path: "/salepagefinal",
+    gradient: "from-violet-600 to-purple-600",
+    shadowColor: "violet-600",
+    delay: 0.8
+  },
+  {
     title: "Digital Marketing Ebook",
     description: "Master proven strategies to scale your business online",
     icon: BookOpen,
     path: "/ebook",
     gradient: "from-purple-600 to-pink-600",
     shadowColor: "purple-600",
-    delay: 0.8
+    delay: 0.9
   },
   {
     title: "Marketing Copywriting",
@@ -81,6 +90,6 @@ export const navigationCards = [
     path: "/marketing-copywriting",
     gradient: "from-green-600 to-emerald-600",
     shadowColor: "green-600",
-    delay: 0.9
+    delay: 1.0
   }
 ];
