@@ -61,13 +61,22 @@ const MainNavigation = () => {
       delay: 0.6
     },
     {
+      title: "Sale Page Aina",
+      description: "PASTA technique design service landing page",
+      icon: <Target className="w-8 h-8" />,
+      path: "/salepageaina",
+      gradient: "from-blue-600 to-blue-700",
+      shadowColor: "blue-600",
+      delay: 0.7
+    },
+    {
       title: "Digital Marketing Ebook",
       description: "Master proven strategies to scale your business online",
       icon: <BookOpen className="w-8 h-8" />,
       path: "/ebook",
       gradient: "from-purple-600 to-pink-600",
       shadowColor: "purple-600",
-      delay: 0.7
+      delay: 0.8
     },
     {
       title: "Marketing Copywriting",
@@ -76,7 +85,7 @@ const MainNavigation = () => {
       path: "/marketing-copywriting",
       gradient: "from-green-600 to-emerald-600",
       shadowColor: "green-600",
-      delay: 0.8
+      delay: 0.9
     }
   ];
 

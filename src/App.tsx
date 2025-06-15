@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,6 +11,7 @@ import DesignServicesLanding from "./pages/DesignServicesLanding";
 import HousewifeProductLanding from "./pages/HousewifeProductLanding";
 import BusinessDesignLanding from "./pages/BusinessDesignLanding";
 import FreelanceDesignLanding from "./pages/FreelanceDesignLanding";
+import SalePageAinaLanding from "./pages/SalePageAinaLanding";
 import NotFound from "./pages/NotFound";
 import EbookLanding from "./pages/EbookLanding";
 import MarketingCopywritingLanding from "./pages/MarketingCopywritingLanding";
@@ -30,6 +32,7 @@ const App = () => (
           <Route path="/housewife" element={<HousewifeProductLanding />} />
           <Route path="/business-design" element={<BusinessDesignLanding />} />
           <Route path="/freelance-design" element={<FreelanceDesignLanding />} />
+          <Route path="/salepageaina" element={<SalePageAinaLanding />} />
           <Route path="/ebook" element={<EbookLanding />} />
           <Route path="/marketing-copywriting" element={<MarketingCopywritingLanding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
