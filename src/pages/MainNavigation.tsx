@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Target, TrendingUp } from 'lucide-react';
+import { ArrowRight, Sparkles, Target, TrendingUp, Heart } from 'lucide-react';
 
 const MainNavigation = () => {
   const navigationCards = [
@@ -29,6 +29,14 @@ const MainNavigation = () => {
       path: "/analytics",
       gradient: "from-convrt-dark-blue to-[#4A5FBF]",
       delay: 0.3
+    },
+    {
+      title: "Housewife Products",
+      description: "Kitchen organization solutions for busy moms",
+      icon: <Heart className="w-8 h-8" />,
+      path: "/housewife",
+      gradient: "from-blue-500 to-blue-600",
+      delay: 0.4
     }
   ];
 
@@ -69,7 +77,7 @@ const MainNavigation = () => {
         </motion.div>
 
         {/* Navigation Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {navigationCards.map((card, index) => (
             <motion.div
               key={card.title}
