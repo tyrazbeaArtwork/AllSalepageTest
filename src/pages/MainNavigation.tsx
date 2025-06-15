@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -168,7 +169,7 @@ const MainNavigation = () => {
       </div>
 
       {/* Footer */}
-      <footer className="relative mt-20 py-16 px-6 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 overflow-hidden">
+      <footer className="relative mt-20 py-16 px-6 bg-gradient-to-br from-[#3B4A6B] via-[#4A5B7C] to-[#2D3B5A] overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         
