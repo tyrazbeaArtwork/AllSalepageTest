@@ -168,7 +168,7 @@ const MainNavigation = () => {
       </div>
 
       {/* Footer */}
-      <footer className="relative mt-20 py-16 px-6 bg-gradient-to-br from-convrt-purple/90 via-convrt-purple-light/80 to-convrt-dark-blue/90 overflow-hidden">
+      <footer className="relative mt-20 py-16 px-6 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
         
