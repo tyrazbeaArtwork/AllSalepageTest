@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -154,14 +153,12 @@ const MainNavigation = () => {
                     {card.description}
                   </p>
                   
-                  {/* Arrow with Glass Button */}
-                  <div className="flex items-center justify-between">
-                    <span className="text-convrt-purple font-medium group-hover:text-convrt-purple-hover transition-colors">
+                  {/* Explore Button with Glass Effect */}
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/40 backdrop-blur-sm border border-white/60 group-hover:bg-white/60 transition-all duration-300">
+                    <span className="text-convrt-purple font-medium group-hover:text-convrt-purple-hover transition-colors mr-2">
                       Explore
                     </span>
-                    <div className="p-2 rounded-full bg-white/40 backdrop-blur-sm border border-white/60 group-hover:bg-white/60 transition-all duration-300">
-                      <ArrowRight className="w-4 h-4 text-convrt-purple transition-transform group-hover:translate-x-1" />
-                    </div>
+                    <ArrowRight className="w-4 h-4 text-convrt-purple transition-transform group-hover:translate-x-1" />
                   </div>
                 </motion.div>
               </Link>
