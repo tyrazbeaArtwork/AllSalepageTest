@@ -8,6 +8,7 @@ import MainNavigation from "./pages/MainNavigation";
 import OfficialLanding from "./pages/OfficialLanding";
 import CustomLanding from "./pages/CustomLanding";
 import DesignServicesLanding from "./pages/DesignServicesLanding";
+import HousewifeProductLanding from "./pages/HousewifeProductLanding";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/official" element={<OfficialLanding />} />
           <Route path="/custom" element={<CustomLanding />} />
           <Route path="/analytics" element={<DesignServicesLanding />} />
+          <Route path="/housewife" element={<HousewifeProductLanding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
