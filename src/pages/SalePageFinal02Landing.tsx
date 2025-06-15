@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle, Star, Shield, Clock, Users } from 'lucide-react';
@@ -9,13 +8,13 @@ import Testimonials from '@/components/Testimonials';
 const SalePageFinal02Landing = () => {
   return (
     <div className="min-h-screen bg-white font-inter">
+      {/* Header Banner - Full Width */}
+      <div className="bg-green-600 text-white py-4 px-6 text-center w-full">
+        <span className="text-base md:text-lg font-medium font-inter">Get 25% Off This Weekend With Code: EURL1</span>
+      </div>
+
       {/* Mobile-First Hero Section */}
       <div className="max-w-md mx-auto bg-white min-h-screen">
-        {/* Header Banner */}
-        <div className="bg-green-600 text-white py-3 px-6 text-center">
-          <span className="text-sm font-medium font-inter">Get 25% Off This Weekend With Code: EURL1</span>
-        </div>
-
         {/* Main Hero Content */}
         <div className="px-6 py-8 text-center">
           <motion.div
