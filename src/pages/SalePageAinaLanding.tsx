@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle, Star, Shield, Clock, Users } from 'lucide-reac
 
 const SalePageAinaLanding = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-inter">
       {/* Header Banner */}
       <div className="bg-green-600 text-white py-3 px-6 text-center">
         <span className="text-sm font-medium">Get 25% Off This Weekend With Code: EURL1</span>
@@ -38,13 +38,13 @@ const SalePageAinaLanding = () => {
                 <Star key={i} className="w-4 h-4 fill-current" />
               ))}
             </div>
-            <span className="text-sm text-gray-600">Loved by 500+ Business Owners</span>
+            <span className="text-sm text-gray-600 font-inter">Loved by 500+ Business Owners</span>
           </div>
         </div>
 
         {/* Product Title */}
         <div className="px-6 mb-6">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2 font-satoshi leading-tight">
             Professional Design Service for Converting Websites
           </h1>
           <div className="flex items-center mb-3">
@@ -53,9 +53,9 @@ const SalePageAinaLanding = () => {
                 <Star key={i} className="w-4 h-4 fill-current" />
               ))}
             </div>
-            <span className="text-sm text-gray-600">Excellent 5.0 Trusted by 500+</span>
+            <span className="text-sm text-gray-600 font-inter">Excellent 5.0 Trusted by 500+</span>
           </div>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-600 font-inter leading-relaxed">
             Psychology-driven design that converts visitors into customers - boosts conversions, eliminates guesswork naturally.
           </p>
         </div>
@@ -65,16 +65,16 @@ const SalePageAinaLanding = () => {
           <div className="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold mr-3">
             !
           </div>
-          <span className="text-sm text-red-700 font-medium">Order by today get FREE consultation call</span>
+          <span className="text-sm text-red-700 font-medium font-inter">Order by today get FREE consultation call</span>
         </div>
 
         {/* Package Selection */}
         <div className="px-6 mb-6">
           <div className="flex items-center mb-4">
             <div className="bg-yellow-500 w-3 h-3 rounded-full mr-2"></div>
-            <span className="font-medium text-gray-900">Select your package: $2,997</span>
+            <span className="font-medium text-gray-900 font-satoshi">Select your package: $2,997</span>
           </div>
-          <p className="text-sm text-gray-600 mb-4">One Time Purchase</p>
+          <p className="text-sm text-gray-600 mb-4 font-inter">One Time Purchase</p>
           
           {/* Package Options */}
           <div className="space-y-3">
@@ -82,47 +82,47 @@ const SalePageAinaLanding = () => {
               <div className="flex items-center">
                 <input type="radio" name="package" className="mr-3" />
                 <div>
-                  <div className="font-medium">Premium Package</div>
-                  <div className="text-sm text-gray-500">$2,997/each</div>
+                  <div className="font-medium font-satoshi">Premium Package</div>
+                  <div className="text-sm text-gray-500 font-inter">$2,997/each</div>
                 </div>
               </div>
-              <div className="font-bold">$2,997</div>
+              <div className="font-bold font-satoshi">$2,997</div>
             </div>
             
             <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
               <div className="flex items-center">
                 <input type="radio" name="package" className="mr-3" />
                 <div>
-                  <div className="font-medium">Standard Package</div>
-                  <div className="text-sm text-gray-500">$1,997/each</div>
+                  <div className="font-medium font-satoshi">Standard Package</div>
+                  <div className="text-sm text-gray-500 font-inter">$1,997/each</div>
                 </div>
               </div>
-              <div className="font-bold">$1,997</div>
-              <div className="text-xs text-green-600 font-medium ml-2">Save 15%</div>
+              <div className="font-bold font-satoshi">$1,997</div>
+              <div className="text-xs text-green-600 font-medium ml-2 font-inter">Save 15%</div>
             </div>
             
             <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
               <div className="flex items-center">
                 <input type="radio" name="package" className="mr-3" />
                 <div>
-                  <div className="font-medium">Basic Package</div>
-                  <div className="text-sm text-gray-500">$997/each</div>
+                  <div className="font-medium font-satoshi">Basic Package</div>
+                  <div className="text-sm text-gray-500 font-inter">$997/each</div>
                 </div>
               </div>
-              <div className="font-bold">$997</div>
-              <div className="text-xs text-green-600 font-medium ml-2">Save 25%</div>
+              <div className="font-bold font-satoshi">$997</div>
+              <div className="text-xs text-green-600 font-medium ml-2 font-inter">Save 25%</div>
             </div>
             
             <div className="flex items-center justify-between p-3 border-2 border-green-500 bg-green-50 rounded-lg">
               <div className="flex items-center">
                 <input type="radio" name="package" className="mr-3" defaultChecked />
                 <div>
-                  <div className="font-medium">Complete Package</div>
-                  <div className="text-sm text-gray-500">$597/each</div>
+                  <div className="font-medium font-satoshi">Complete Package</div>
+                  <div className="text-sm text-gray-500 font-inter">$597/each</div>
                 </div>
               </div>
-              <div className="font-bold">$597</div>
-              <div className="text-xs text-green-600 font-medium ml-2">Save 30%</div>
+              <div className="font-bold font-satoshi">$597</div>
+              <div className="text-xs text-green-600 font-medium ml-2 font-inter">Save 30%</div>
             </div>
           </div>
         </div>
@@ -132,12 +132,12 @@ const SalePageAinaLanding = () => {
           <div className="flex items-center mb-3">
             <input type="checkbox" className="mr-3" />
             <div>
-              <div className="font-medium text-green-600">Subscribe & Save</div>
-              <div className="text-sm text-gray-600">Was: $597</div>
+              <div className="font-medium text-green-600 font-satoshi">Subscribe & Save</div>
+              <div className="text-sm text-gray-600 font-inter">Was: $597</div>
             </div>
-            <div className="ml-auto font-bold text-green-600 text-lg">$297</div>
+            <div className="ml-auto font-bold text-green-600 text-lg font-satoshi">$297</div>
           </div>
-          <div className="space-y-2 text-sm text-gray-600">
+          <div className="space-y-2 text-sm text-gray-600 font-inter">
             <div className="flex items-center">
               <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
               <span>Save 25% today and every time!</span>
@@ -158,11 +158,11 @@ const SalePageAinaLanding = () => {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-lg font-bold text-lg flex items-center justify-center"
+            className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-lg font-bold text-lg flex items-center justify-center font-satoshi"
           >
             🛒 Add to Cart - $297
           </motion.button>
-          <div className="text-center text-sm text-blue-600 mt-2 underline">
+          <div className="text-center text-sm text-blue-600 mt-2 underline font-inter">
             Payment Options
           </div>
         </div>
@@ -171,15 +171,15 @@ const SalePageAinaLanding = () => {
         <div className="flex justify-center items-center space-x-8 px-6 mb-8">
           <div className="text-center">
             <Shield className="w-8 h-8 mx-auto mb-1 text-green-600" />
-            <div className="text-xs text-gray-600">Secure Payment</div>
+            <div className="text-xs text-gray-600 font-inter">Secure Payment</div>
           </div>
           <div className="text-center">
             <Clock className="w-8 h-8 mx-auto mb-1 text-green-600" />
-            <div className="text-xs text-gray-600">Free Shipping</div>
+            <div className="text-xs text-gray-600 font-inter">Free Shipping</div>
           </div>
           <div className="text-center">
             <Users className="w-8 h-8 mx-auto mb-1 text-green-600" />
-            <div className="text-xs text-gray-600">500+ Happy</div>
+            <div className="text-xs text-gray-600 font-inter">500+ Happy</div>
           </div>
         </div>
       </div>
