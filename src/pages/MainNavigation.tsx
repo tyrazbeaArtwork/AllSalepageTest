@@ -60,6 +60,14 @@ const MainNavigation = () => {
       path: "/ebook",
       gradient: "from-purple-600 to-pink-600",
       delay: 0.7
+    },
+    {
+      title: "Marketing Copywriting",
+      description: "Master high-converting copy with proven frameworks",
+      icon: <BookOpen className="w-8 h-8" />,
+      path: "/marketing-copywriting",
+      gradient: "from-green-600 to-emerald-600",
+      delay: 0.8
     }
   ];
 
