@@ -13,6 +13,7 @@ import BusinessDesignLanding from "./pages/BusinessDesignLanding";
 import FreelanceDesignLanding from "./pages/FreelanceDesignLanding";
 import SalePageAinaLanding from "./pages/SalePageAinaLanding";
 import SalePageFinalLanding from "./pages/SalePageFinalLanding";
+import SalePageFinal02Landing from "./pages/SalePageFinal02Landing";
 import NotFound from "./pages/NotFound";
 import EbookLanding from "./pages/EbookLanding";
 import MarketingCopywritingLanding from "./pages/MarketingCopywritingLanding";
@@ -35,6 +36,7 @@ const App = () => (
           <Route path="/freelance-design" element={<FreelanceDesignLanding />} />
           <Route path="/salepageaina" element={<SalePageAinaLanding />} />
           <Route path="/salepagefinal" element={<SalePageFinalLanding />} />
+          <Route path="/salepagefinal02" element={<SalePageFinal02Landing />} />
           <Route path="/ebook" element={<EbookLanding />} />
           <Route path="/marketing-copywriting" element={<MarketingCopywritingLanding />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
