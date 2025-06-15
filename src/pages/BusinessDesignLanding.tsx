@@ -11,7 +11,7 @@ import BusinessFooter from '../components/business/BusinessFooter';
 
 const BusinessDesignLanding = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-stone-100">
       <BusinessWarningHeader />
       <BusinessFloatingNavigation />
       <BusinessBeforeAfterComparison />
