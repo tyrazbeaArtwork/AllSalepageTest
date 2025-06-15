@@ -16,7 +16,7 @@ const SalePageAinaLanding = () => {
         {/* Product Hero Image */}
         <div className="relative">
           <img 
-            src="/lovable-uploads/f5d37c5e-3dd1-447b-a6cb-0b1deab3c17b.png" 
+            src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400&h=300&fit=crop" 
             alt="Design Service Mockup" 
             className="w-full h-64 object-cover"
           />
