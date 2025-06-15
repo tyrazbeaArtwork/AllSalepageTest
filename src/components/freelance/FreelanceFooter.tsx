@@ -1,0 +1,21 @@
+
+import React from 'react';
+
+const FreelanceFooter = () => {
+  return (
+    <footer className="py-8 px-6 bg-stone-900 border-t border-stone-800 mb-20">
+      <div className="max-w-4xl mx-auto text-center">
+        <div className="text-stone-200 text-sm mb-4">
+          © 2024 DesignStudio. Elevating freelancers through premium design.
+        </div>
+        <div className="flex justify-center space-x-6 text-stone-300 text-sm">
+          <a href="#" className="hover:text-stone-100 transition-colors">Privacy Policy</a>
+          <a href="#" className="hover:text-stone-100 transition-colors">Terms of Service</a>
+          <a href="#" className="hover:text-stone-100 transition-colors">Portfolio</a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default FreelanceFooter;
