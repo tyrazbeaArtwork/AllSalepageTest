@@ -17,6 +17,7 @@ import SalePageFinal02Landing from "./pages/SalePageFinal02Landing";
 import NotFound from "./pages/NotFound";
 import EbookLanding from "./pages/EbookLanding";
 import MarketingCopywritingLanding from "./pages/MarketingCopywritingLanding";
+import { HashRouter, Routes, Route } from "react-router-dom"; // Changed BrowserRouter to HashRouter
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       {/* Add the basename prop here, matching your repository name */}
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<MainNavigation />} />
           <Route path="/official" element={<OfficialLanding />} />
@@ -43,7 +44,7 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
