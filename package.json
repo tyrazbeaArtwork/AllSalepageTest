@@ -1,9 +1,11 @@
-homepage": "https://tyrazbeaArtwork.github.io/AllSalepageTest"
+
 {
+  "homepage": "https://tyrazbeaArtwork.github.io/AllSalepageTest",
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
