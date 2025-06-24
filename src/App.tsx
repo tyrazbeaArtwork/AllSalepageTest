@@ -26,7 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       {/* Add the basename prop here, matching your repository name */}
-      <BrowserRouter basename="/AllSalepageTest">
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainNavigation />} />
           <Route path="/official" element={<OfficialLanding />} />
